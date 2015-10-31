@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Website</title>
+	<title>Blog Landing Site</title>
 </head>
 <body>
-
+<header>
+<!--
+	Might want to switch the nav buttons with the blog title and then move the nav-bar where it is in the other templates.
+-->
+	<figure>
+		<img src="#" alt="Pic of Me">
+		<h4>Me</h4>
+	</figure>
+	<div class="social-media">
+		<ul>
+			<li><a href="#">Twitter</a></li>
+			<li><a href="#">LinkedIn</a></li>
+			<li><a href="#">Medium</a></li>
+			<li><a href="#">GitHub</a></li>
+		</ul>
+	</div>
 	<nav>
 		<ul>
 			<li><a href="#">Home</a></li>
@@ -14,54 +29,44 @@
 			<li><a href="#">About</a></li>
 		</ul>
 	</nav>
-
-	<header>
-		<h1>Website Title</h1>
-		<nav class="social media">
-			<ul>
-				<li><a href="#">Twitter</a></li>
-				<li><a href="#">Github</a></li>
-				<li><a href="#">Medium</a></li>
-				<li><a href="#">LinkedIn</a></li>
-			</ul>
-		</nav>
-	</header>
-
-	<main>
-		<section id="rec-projects">
-			<h2>Recent Projects</h2>
-			<a href="#"><img src="#" alt="project"></a>
-			<a href="#"><img src="#" alt="project"></a>
-			<a href="#"><img src="#" alt="project"></a>
+</header>
+<main>
+	<h1>Blog Title</h1>
+	<div id="left">
+		<section>
+			<img src="#" alt="article-thumbnail">
+			<h2>Blurb</h2>
+			<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
 		</section>
-
-		<section id="rec-blog">
-			<h2>Recent Blog Posts</h2>
-			<a href="#"><img src="#" alt="blogpost"></a>
-			<a href="#"><img src="#" alt="blogpost"></a>
-			<a href="#"><img src="#" alt="blogpost"></a>
+	</div>
+	<div id="right">
+		<section>
+			<img src="#" alt="article-thumbnail">
+			<h3>Blurb</h3>
+			<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
 		</section>
-	</main>
+		<section>
+			<img src="#" alt="article-thumbnail">
+			<h3>Blurb</h3>
+			<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
+		</section>
+		<section>
+			<img src="#" alt="article-thumbnail">
+			<h3>Blurb</h3>
+			<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
+		</section>
+		<a href="#">more>></a>
+	</div>
+</main>
+<footer>
+	<h3>Suggested</h3>
+	<div class="suggestions">
+		<img src="#" alt="Suggestion">
+		<img src="#" alt="Suggestion">
+		<img src="#" alt="Suggestion">
+		<img src="#" alt="Suggestion">
+	</div>
+</footer>
 
-
-	<aside id="about-me">
-		<figure id="me">
-			<img src="#" alt="me">
-			<ul class="social media">
-				<li><a href="#">Twitter</a></li>
-				<li><a href="#">Github</a></li>
-				<li><a href="#">Medium</a></li>
-				<li><a href="#">LinkedIn</a></li>
-			</ul>
-			<ul id="links">
-				<li><a href="#"><h3>About Me</h3></a></li>
-				<li><a href="#"><h3>Resume</h3></a></li>
-			</ul> 	
-		</figure>
-		<ul></ul>
-	</aside>
-	<footer>
-		<p>copyright, thanks for stopping by, etc</p>
-	</footer>
 </body>
 </html>
