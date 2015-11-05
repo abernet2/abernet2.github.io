@@ -6,8 +6,12 @@ dark blue: 284863;
 light blue: 2b7bb1;
  */
 
-/*** Everything in this section
-Organized by attribute **/
+/*** 
+
+Everything in this section
+Organized by attribute 
+
+**/
 * {
 	margin: 0;
 	transition: all .2s;
@@ -31,10 +35,10 @@ h1 {
 }
 
 /* color 1 */ 
- h2, footer p {
+ h2, footer p, * {
 	color: #333;
 }
-aside#about-me {
+aside#about-me  {
 	background-color: #333;
 }
 
@@ -49,11 +53,19 @@ main, footer, figure#me, html {
 	background: #ccc;
 }
 
+#bl h1, #bl footer h3,  #bl header a {
+	color: #eee;
+}
+
 nav#bar a {
 	color: #284863;
 }
 
-li a:hover, nav#bar li a:hover {
+#bl h1, #bl footer {
+	background: #284863;
+}
+
+a:hover,  #bl a:hover {
 	color: #00F982;
 }
 
@@ -67,8 +79,10 @@ ul {
 }
 
 
-/** everything here organized
-by tag */
+/** 
+ * everything here organized by tag
+ */
+
 /* Html and Body modifiers */
 
 html {
@@ -89,7 +103,6 @@ div.container {
 	margin: auto;
 	position: relative;
 	height: 100%;
-	border: 1px solid red;
 }
 
 /** Nav Panel/Bars */
@@ -119,7 +132,7 @@ nav#bar li:hover {
 }
 
 
-header {
+header#index {
 	background-image: url("../imgs/mountain-valley.jpg");
 	background-size: cover;
 	background-position: center;
@@ -127,7 +140,7 @@ header {
 	width: 100%;
 	position: relative;
 }
-header#blog {
+#bl header {
 	background: none;
 }
 
@@ -144,7 +157,7 @@ header h1 {
 	letter-spacing: .1em;
 }
 
-header .social-media {
+header#index .social-media {
 	text-align: right;
 	position: absolute;
 	bottom: 0;
@@ -159,11 +172,6 @@ header .social-media {
 	height: 20px;
 }
 
-.social-media li a img.twitter {
-	margin-bottom: -4px;
-	height: 28px;
-	margin-right: -8px;
-}
 
 /* Main */
 
@@ -224,13 +232,204 @@ ul#links {
 	font-weight: bold;
 }
 
-/** Blog Index */
-div#left {
-	float: left;
-	width: 50%;
+/** Blog Index ***/
+
+/* Header of Blog Index **/
+body#bl {
+	background-image: url("../imgs/mountain-valley.jpg");
+	background-size: cover;
+	background-position: bottom;
 }
 
-div#right {
-	float: right;
-	width: 50%;
+
+#bl main, #bl header {
+	background: transparent;
+}
+
+#bl header div.container {
+	position: relative;
+	margin: 0px auto;
+	padding: 50px 0;
+}
+
+ #bl figure {
+	width: 60px;
+	display: inline-block;
+	position: relative;
+	margin: 0 15px 10px auto;
+	bottom: -10px;
+}
+
+nav#panel {
+	margin-top: 7px;
+	position: static;
+}
+
+nav#panel a {
+	padding: 0 15px 0 15px;
+}
+
+ul#blog-links {
+	display: inline-block;
+	padding: 10px;
+	text-align: left;
+	position: static;
+}
+
+#blog-links a img {
+	display: inline;
+	margin-bottom: 0;
+}
+
+li a img.twitter {
+	margin-bottom: -5px;
+	height: 28px;
+	margin-right: -8px;
+}
+
+/* 
+	Main Body of Blog-Index
+ */
+
+
+main div#blog-landing {
+	margin-bottom: 25px;
+}
+
+div#left, div#right {
+	width: 47%;
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	margin-top: 75px;
+	margin-bottom: 75px;
+	padding: .5em;
+}
+
+div#left {
+	float: left;
+}
+
+#bl h1 {
+	width: 60%;
+	margin: 0px auto;
+	padding: 10px 0;
+}
+
+.preview img {
+	display: inline-block;
+	height: 60px;
+	width: 80px;
+	margin: 0px;
+}
+
+.preview p {
+	line-height: 1.4em;
+}
+
+#recent img {
+	width: 120px;
+	height: 90px;
+}
+
+#recent p {
+	font-size: 1.2em;
+	line-height: 1.7em;
+}
+
+section#recent p {
+	height: 60%;
+	top: 0;
+	vertical-align: top;
+	display: block;
+}
+
+.preview h2, .preview h3 {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+section.preview {
+	margin: 25px;
+}
+
+a#more {
+	position: absolute;
+	right: 10px;
+	color: #333;
+}
+
+/* 
+	Blog Footer
+ */
+
+footer {
+	padding: 25px;
+}
+
+footer h3 {
+	letter-spacing: .3em;
+	text-transform: uppercase;
+}
+
+footer img {
+	display: inline-block;
+	width: 100px;
+	height: 90px;
+	margin: 20px;
+}
+
+/**
+ *	Section for Blog Post CSS
+ */
+
+.post h4 {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	margin-top: 5px;
+}
+
+.post nav#panel {
+	background: rgba(255,255,255, .5);
+	margin: 0;
+	text-align: left;
+}
+
+.post aside#about-me {
+	background: transparent;
+}
+
+.post aside div.container {
+	background: #333;
+}
+
+div#blog-text {
+	padding: 5px;
+	text-align: left;
+	margin-top: 25px;
+}
+
+div#blog-text p {
+	line-height: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+/**
+ * The Responsive section of CSS
+ */
+@media (max-width: 710px) {
+	div.container {
+		width: 100%;
+	}
+	div#left, div#right {
+		display: block;
+		width: 100%;
+	}
+	div#left {
+		margin-bottom: 0px;
+	}
+	div#right {
+		margin-top: 0;
+	}
 }

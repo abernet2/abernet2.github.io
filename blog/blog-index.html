@@ -6,65 +6,65 @@
 	<link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
 </head>
-<body>
-<header id="blog">
+<body id="bl">
+<header>
 	<div class="container">
 		<figure>
 			<img src="#" alt="Pic of Me">
 			<h4>Me</h4>
 		</figure>
-		<div class="social-media">
-			<ul>
-				<li><a href="#">Twitter</a></li>
-				<li><a href="#">LinkedIn</a></li>
-				<li><a href="#">Medium</a></li>
-				<li><a href="#">GitHub</a></li>
-			</ul>
-		</div>
-		<nav id="panel">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#">Blog</a></li>
-				<li><a href="#">Projects</a></li>
-				<li><a href="#">Resources</a></li>
-				<li><a href="#">About</a></li>
-			</ul>
-		</nav>
+		<ul id="blog-links">
+			<li><ul class="social-media">
+				<li><a href="#"><img class="twitter" src="../imgs/TwitterLogo_white.png" onmouseover="this.src='../imgs/TwitterLogo_blue.png'" onmouseout="this.src='../imgs/TwitterLogo_white.png'" alt="twitter"></a></li>
+				<li><a href="#"><img src="../imgs/GitHub-Mark-Light-32px.png" onmouseover="src='../imgs/GitHub-Mark-32px.png'" onmouseout="src='../imgs/GitHub-Mark-Light-32px.png'"></a></li>
+				<li><a href="#"><img src="../imgs/Medium-light.png" onmouseover="src='../imgs/medium-m-color-200px.png'" onmouseout="src='../imgs/medium-light.png'" alt="Medium"></a></li>
+				<li><a href="#"><img src="../imgs/In-White-34px-TM.png" onmouseover="src='../imgs/In-2C-34px-R.png'" onmouseout="src='../imgs/In-White-34px-TM.png'"></a></li>
+			</ul></li>
+			<li><nav id="panel">
+				<ul>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="index.html">Blog</a></li>
+					<li><a href="#">Projects</a></li>
+					<li><a href="#">Resources</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</nav></li>
+		</ul>
 	</div>
 </header>
 <main>
-	<div class="container">
+	<div class="container" id="blog-landing">
 		<h1>Blog Title</h1>
 		<div id="left">
-			<section>
+			<section class="preview" id="recent">
 				<img src="#" alt="article-thumbnail">
 				<h2>Blurb</h2>
 				<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
 			</section>
 		</div>
 		<div id="right">
-			<section>
+			<section class="preview">
 				<img src="#" alt="article-thumbnail">
 				<h3>Blurb</h3>
 				<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
 			</section>
-			<section>
+			<section class="preview">
 				<img src="#" alt="article-thumbnail">
 				<h3>Blurb</h3>
 				<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
 			</section>
-			<section>
+			<section class="preview">
 				<img src="#" alt="article-thumbnail">
 				<h3>Blurb</h3>
 				<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
 			</section>
-			<a href="#">more>></a>
+			<a id="more" href="#">more>></a>
 		</div>
 	</div>
 </main>
 <footer>
 	<h3>Suggested</h3>
-	<div class="suggestions">
+	<div class="container">
 		<img src="#" alt="Suggestion">
 		<img src="#" alt="Suggestion">
 		<img src="#" alt="Suggestion">
