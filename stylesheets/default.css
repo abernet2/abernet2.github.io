@@ -1,0 +1,435 @@
+/*
+green: 425851;
+light-green: 00F982;
+grey: e0e7e2;
+dark blue: 284863;
+light blue: 2b7bb1;
+ */
+
+/*** 
+
+Everything in this section
+Organized by attribute 
+
+**/
+* {
+	margin: 0;
+	transition: all .2s;
+}
+/* sans-serif */
+* {
+	font-family: 'Asap', sans-serif;
+}
+
+::selection {
+    background-color: #00F982;
+    color: #fff;
+}
+
+h1, h2, h3, #links a {
+	font-family: Crete Round, Georgia, serif;
+}
+
+h1 {
+	color: white;
+}
+
+/* color 1 */ 
+ h2, footer p, * {
+	color: #333;
+}
+aside#about-me  {
+	background-color: #333;
+}
+
+/* color 2 */
+a, a:visited, nav#bar li a:hover {
+	color: #2b7bb1;
+	text-decoration: none;
+}
+
+/* color 3 */
+main, footer, figure#me, html { 
+	background: #ccc;
+}
+
+#bl h1, #bl footer h3,  #bl header a {
+	color: #eee;
+}
+
+nav#bar a {
+	color: #284863;
+}
+
+#bl h1, #bl footer {
+	background: #284863;
+}
+
+a:hover,  #bl a:hover {
+	color: #00F982;
+}
+
+html {
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+	display: inline;
+}
+
+
+/** 
+ * everything here organized by tag
+ */
+
+/* Html and Body modifiers */
+
+html {
+	width: 100%;
+}
+
+footer {
+	clear: both;
+	margin: 0;
+}
+
+a:hover {
+	border-bottom: 3px solid yellow;
+}
+
+div.container {
+	max-width: 700px;
+	margin: auto;
+	position: relative;
+	height: 100%;
+}
+
+/** Nav Panel/Bars */
+
+nav#panel li {
+	display: inline;
+}
+
+nav#bar {
+	text-align: left;
+	max-width: 820px;
+	margin: auto;
+}
+
+nav#bar li {
+	display: inline-block;
+	line-height: 1.5em;
+	padding: 0 5px 0 5px;
+	text-transform: uppercase;
+	font-size: .8em;
+	font-weight: bold;
+	background-color: rgba(255,255,255, .7);
+}
+
+nav#bar li:hover {
+	background-color: rgba(255,255,255, .1);
+}
+
+
+header#index {
+	background-image: url("../imgs/mountain-valley.jpg");
+	background-size: cover;
+	background-position: center;
+	height: 350px;
+	width: 100%;
+	position: relative;
+}
+#bl header {
+	background: none;
+}
+
+header div.container {
+	margin-top: 18px;
+	height: 89%;
+}
+
+header h1 {
+	text-align: left;
+	position: absolute;
+	bottom: 0;
+	margin: 25px;
+	letter-spacing: .1em;
+}
+
+header#index .social-media {
+	text-align: right;
+	position: absolute;
+	bottom: 0;
+}
+
+.social-media li {
+	display: inline;
+	margin: 0 5px 0 5px;
+}
+
+.social-media li a img {
+	height: 20px;
+}
+
+
+/* Main */
+
+main h2 {
+	margin: 0px 0px 10px 40px;
+	text-align: left;
+	padding-top: 10px;
+}
+
+section img {
+	width: 150px;
+	height: 150px;
+	margin: 10px 15px;
+}
+
+
+/* About Me */
+
+#about-me div.container div.container {
+	width: 40%;
+	float: right;
+	margin: 10px;
+}
+
+figure#me {
+	display: inline-block;
+	text-align: left;
+	padding: 20px;
+	margin: 20px;
+}
+
+#me img {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	margin: 0 30px;
+	position: relative;
+}
+
+figure#me {
+	display: inline-block;
+}
+
+ul#links {
+	display: inline-block;
+	float: top;
+	text-align: center;
+	padding: 20px;
+	line-height: 2.2em;
+}
+
+#about-me ul.social-media {
+	padding: 0;
+}
+
+#links li a {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+/** Blog Index ***/
+
+/* Header of Blog Index **/
+body#bl {
+	background-image: url("../imgs/mountain-valley.jpg");
+	background-size: cover;
+	background-position: bottom;
+}
+
+
+#bl main, #bl header {
+	background: transparent;
+}
+
+#bl header div.container {
+	position: relative;
+	margin: 0px auto;
+	padding: 50px 0;
+}
+
+ #bl figure {
+	width: 60px;
+	display: inline-block;
+	position: relative;
+	margin: 0 15px 10px auto;
+	bottom: -10px;
+}
+
+nav#panel {
+	margin-top: 7px;
+	position: static;
+}
+
+nav#panel a {
+	padding: 0 15px 0 15px;
+}
+
+ul#blog-links {
+	display: inline-block;
+	padding: 10px;
+	text-align: left;
+	position: static;
+}
+
+#blog-links a img {
+	display: inline;
+	margin-bottom: 0;
+}
+
+li a img.twitter {
+	margin-bottom: -5px;
+	height: 28px;
+	margin-right: -8px;
+}
+
+/* 
+	Main Body of Blog-Index
+ */
+
+
+main div#blog-landing {
+	margin-bottom: 25px;
+}
+
+div#left, div#right {
+	width: 47%;
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	margin-top: 75px;
+	margin-bottom: 75px;
+	padding: .5em;
+}
+
+div#left {
+	float: left;
+}
+
+#bl h1 {
+	width: 60%;
+	margin: 0px auto;
+	padding: 10px 0;
+}
+
+.preview img {
+	display: inline-block;
+	height: 60px;
+	width: 80px;
+	margin: 0px;
+}
+
+.preview p {
+	line-height: 1.4em;
+}
+
+#recent img {
+	width: 120px;
+	height: 90px;
+}
+
+#recent p {
+	font-size: 1.2em;
+	line-height: 1.7em;
+}
+
+section#recent p {
+	height: 60%;
+	top: 0;
+	vertical-align: top;
+	display: block;
+}
+
+.preview h2, .preview h3 {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+section.preview {
+	margin: 25px;
+}
+
+a#more {
+	position: absolute;
+	right: 10px;
+	color: #333;
+}
+
+/* 
+	Blog Footer
+ */
+
+footer {
+	padding: 25px;
+}
+
+footer h3 {
+	letter-spacing: .3em;
+	text-transform: uppercase;
+}
+
+footer img {
+	display: inline-block;
+	width: 100px;
+	height: 90px;
+	margin: 20px;
+}
+
+/**
+ *	Section for Blog Post CSS
+ */
+
+.post h4 {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	margin-top: 5px;
+}
+
+.post nav#panel {
+	background: rgba(255,255,255, .5);
+	margin: 0;
+	text-align: left;
+}
+
+.post aside#about-me {
+	background: transparent;
+}
+
+.post aside div.container {
+	background: #333;
+}
+
+div#blog-text {
+	padding: 5px;
+	text-align: left;
+	margin-top: 25px;
+}
+
+div#blog-text p {
+	line-height: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+/**
+ * The Responsive section of CSS
+ */
+@media (max-width: 710px) {
+	div.container {
+		width: 100%;
+	}
+	div#left, div#right {
+		display: block;
+		width: 100%;
+	}
+	div#left {
+		margin-bottom: 0px;
+	}
+	div#right {
+		margin-top: 0;
+	}
+}

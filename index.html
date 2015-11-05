@@ -2,66 +2,77 @@
 <html>
 <head>
 	<title>My Website</title>
+	<link rel="stylesheet" href="stylesheets/default.css">
+	<link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
-	<nav>
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">Blog</a></li>
-			<li><a href="#">Projects</a></li>
-			<li><a href="#">Resources</a></li>
-			<li><a href="#">About</a></li>
-		</ul>
-	</nav>
-
-	<header>
-		<h1>Website Title</h1>
-		<nav class="social media">
+	<header id="index">
+		<nav id="bar">
 			<ul>
-				<li><a href="#">Twitter</a></li>
-				<li><a href="#">Github</a></li>
-				<li><a href="#">Medium</a></li>
-				<li><a href="#">LinkedIn</a></li>
+				<li><a href="#">Home</a></li>
+				<li><a href="blog/index.html">Blog</a></li>
+				<li><a href="#">Projects</a></li>
+				<li><a href="#">Resources</a></li>
+				<li><a href="#">About</a></li>
 			</ul>
 		</nav>
+		<div class="container">
+			<h1>Website Title</h1>
+			<nav class="social-media">
+				<ul>
+					<li><a href="#"><img class="twitter" src="imgs/TwitterLogo_white.png" onmouseover="this.src='imgs/TwitterLogo_blue.png'" onmouseout="this.src='imgs/TwitterLogo_white.png'" alt="twitter"></a></li>
+					<li><a href="#"><img src="imgs/GitHub-Mark-Light-32px.png" onmouseover="src='imgs/GitHub-Mark-32px.png'" onmouseout="src='imgs/GitHub-Mark-Light-32px.png'"></a></li>
+					<li><a href="#"><img src="imgs/Medium-light.png" onmouseover="src='imgs/medium-m-color-200px.png'" onmouseout="src='imgs/medium-light.png'" alt="Medium"></a></li>
+					<li><a href="#"><img src="imgs/In-White-34px-TM.png" onmouseover="src='imgs/In-2C-34px-R.png'" onmouseout="src='imgs/In-White-34px-TM.png'"></a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 
 	<main>
-		<section id="rec-projects">
-			<h2>Recent Projects</h2>
-			<a href="#"><img src="#" alt="project"></a>
-			<a href="#"><img src="#" alt="project"></a>
-			<a href="#"><img src="#" alt="project"></a>
-		</section>
-
-		<section id="rec-blog">
-			<h2>Recent Blog Posts</h2>
-			<a href="#"><img src="#" alt="blogpost"></a>
-			<a href="#"><img src="#" alt="blogpost"></a>
-			<a href="#"><img src="#" alt="blogpost"></a>
-		</section>
+		<div class="container">
+			<section id="rec-projects">
+				<h2>Recent Projects</h2>
+				<a href="#"><img src="#" alt="project"></a>
+				<a href="#"><img src="#" alt="project"></a>
+				<a href="#"><img src="#" alt="project"></a>
+			</section>
+	
+			<section id="rec-blog">
+				<h2>Recent Blog Posts</h2>
+				<a href="#"><img src="#" alt="blogpost"></a>
+				<a href="#"><img src="#" alt="blogpost"></a>
+				<a href="#"><img src="#" alt="blogpost"></a>
+			</section>
+		</div>
 	</main>
 
 
 	<aside id="about-me">
-		<figure id="me">
-			<img src="#" alt="me">
-			<ul class="social media">
-				<li><a href="#">Twitter</a></li>
-				<li><a href="#">Github</a></li>
-				<li><a href="#">Medium</a></li>
-				<li><a href="#">LinkedIn</a></li>
-			</ul>
+		<div class="container">
+			<figure id="me">
+ 				<img src="#" alt="me">
+ 			</figure>
+			<div class='container'>
 			<ul id="links">
-				<li><a href="#"><h3>About Me</h3></a></li>
-				<li><a href="#"><h3>Resume</h3></a></li>
-			</ul> 	
-		</figure>
-		<ul></ul>
+	 				<li><a href="#">About Me</a></li>
+	 				<li><a href="#">Resume</a></li>
+	 				<li>
+						<ul class="social-media">
+		 					<li><a href="#"><img class="twitter" src="imgs/TwitterLogo_white.png"></a></li>
+							<li><a href="#"><img src="imgs/GitHub-Mark-Light-32px.png"></a></li> 
+							<li><a href="#"><img src="imgs/Medium-light.png"></a></li>
+							<li><a href="#"><img src="imgs/In-White-34px-TM.png"></a></li>
+		 				</ul>
+	 				</li>
+ 			</ul>
+	 			
+ 			</div>
+ 		</div> 	
 	</aside>
 	<footer>
-		<p>copyright, thanks for stopping by, etc</p>
+		<p>Image provided by <a href="https://unsplash.com/">Unsplash</a></p>
 	</footer>
 </body>
 </html>
