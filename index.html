@@ -8,16 +8,17 @@
 </head>
 <body>
 	<header id="index">
-		<nav id="bar">
-			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="blog/index.html">Blog</a></li>
-				<li><a href="#">Projects</a></li>
-				<li><a href="#">Resources</a></li>
-				<li><a href="#">About</a></li>
-			</ul>
-		</nav>
 		<div class="container">
+			<nav id="bar">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="blog/index.html">Blog</a></li>
+					<li><a href="#">Projects</a></li>
+					<li><a href="#">Resources</a></li>
+					<li><a href="#">About</a></li>
+				</ul>
+			</nav>
+		
 			<h1>Website Title</h1>
 			<nav class="social-media">
 				<ul>
@@ -34,42 +35,40 @@
 		<div class="container">
 			<section id="rec-projects">
 				<h2>Recent Projects</h2>
-				<a href="#"><img src="#" alt="project"></a>
-				<a href="#"><img src="#" alt="project"></a>
-				<a href="#"><img src="#" alt="project"></a>
+				<a href="#" class="img"><p>coming soon...</p></a>
+				<a href="#" class="img"><p>coming soon...</p></a>
+				<a href="#" class="img"><p>coming soon...</p></a>
 			</section>
 	
-			<section id="rec-blog">
+			<section id="rec-blog" class="thumbnail">
 				<h2>Recent Blog Posts</h2>
-				<a href="#"><img src="#" alt="blogpost"></a>
-				<a href="#"><img src="#" alt="blogpost"></a>
-				<a href="#"><img src="#" alt="blogpost"></a>
+				<a href="blog/css-concepts.html" id="css-concepts" class="img">
+					<p>CSS Concepts Reflection</p>
+				</a>
+				<a href="#" class="img"><p>coming soon...</p></a>
+				<a href="#" class="img"><p>coming soon...</p></a>
 			</section>
 		</div>
 	</main>
 
 
 	<aside id="about-me">
-		<div class="container">
-			<figure id="me">
- 				<img src="#" alt="me">
- 			</figure>
-			<div class='container'>
-			<ul id="links">
- 				<li><a href="#">About Me</a></li>
- 				<li><a href="#">Resume</a></li>
- 				<li>
-					<ul class="social-media">
-	 					<li><a href="#"><img class="twitter" src="imgs/TwitterLogo_white.png"></a></li>
-						<li><a href="#"><img src="imgs/GitHub-Mark-Light-32px.png"></a></li> 
-						<li><a href="#"><img src="imgs/Medium-light.png"></a></li>
-						<li><a href="#"><img src="imgs/In-White-34px-TM.png"></a></li>
-	 				</ul>
- 				</li>
- 			</ul>
-	 			
- 			</div>
- 		</div> 	
+		<figure id="me">
+			<img src="imgs/me.png" alt="me">
+			<h3>Jack Abernethy</h3>
+		</figure>
+		<ul id="links">
+				<li><a href="#">About Me</a></li>
+				<li><a href="#">Resume</a></li>
+				<li>
+				<ul class="social-media">
+					<li><a href="#"><img class="twitter" src="imgs/TwitterLogo_white.png" onmouseover="this.src='imgs/TwitterLogo_blue.png'" onmouseout="this.src='imgs/TwitterLogo_white.png'" alt="twitter"></a></li>
+					<li><a href="#"><img src="imgs/GitHub-Mark-Light-32px.png" onmouseover="src='imgs/GitHub-Mark-32px.png'" onmouseout="src='imgs/GitHub-Mark-Light-32px.png'" alt="github"></a></li>
+					<li><a href="#"><img src="imgs/Medium-light.png" onmouseover="src='imgs/medium-m-color-200px.png'" onmouseout="src='imgs/medium-light.png'" alt="Medium"></a></li>
+					<li><a href="#"><img src="imgs/In-White-34px-TM.png" onmouseover="src='imgs/In-2C-34px-R.png'" onmouseout="src='imgs/In-White-34px-TM.png'" alt="linkedin"></a></li>
+				</ul>
+				</li>
+			</ul>		
 	</aside>
 	<footer>
 		<p>Image provided by <a href="https://unsplash.com/">Unsplash</a></p>
