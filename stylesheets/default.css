@@ -18,7 +18,7 @@ Organized by attribute
 }
 /* sans-serif */
 * {
-	font-family: 'Asap', sans-serif;
+	font-family: 'Asap', Arial, sans-serif;
 }
 
 ::selection {
@@ -26,16 +26,19 @@ Organized by attribute
     color: #fff;
 }
 
-h1, h2, h3, #links a {
+h1, h2, h3, #links a, .img p {
 	font-family: Crete Round, Georgia, serif;
 }
 
 h1 {
-	color: white;
+	color: #fff;
+	text-shadow: 3px 3px 2px #284863;
+ 	font-size: 3em;
+ 	max-width: 60%;
 }
 
 /* color 1 */ 
- h2, footer p, * {
+ h2, footer p, *  {
 	color: #333;
 }
 aside#about-me  {
@@ -50,10 +53,10 @@ a, a:visited, nav#bar li a:hover {
 
 /* color 3 */
 main, footer, figure#me, html { 
-	background: #ccc;
+	background: #e0e7e2;
 }
 
-#bl h1, #bl footer h3,  #bl header a {
+#bl h1, #bl footer h3,  #bl header a, .img p {
 	color: #eee;
 }
 
@@ -65,7 +68,7 @@ nav#bar a {
 	background: #284863;
 }
 
-a:hover,  #bl a:hover {
+a:hover,  #bl a:hover{
 	color: #00F982;
 }
 
@@ -128,7 +131,7 @@ nav#bar li {
 }
 
 nav#bar li:hover {
-	background-color: rgba(255,255,255, .1);
+	background-color: rgba(255,255,255, 1);
 }
 
 
@@ -144,7 +147,7 @@ header#index {
 	background: none;
 }
 
-header div.container {
+#bl header div.container {
 	margin-top: 18px;
 	height: 89%;
 }
@@ -160,7 +163,8 @@ header h1 {
 header#index .social-media {
 	text-align: right;
 	position: absolute;
-	bottom: 0;
+	bottom: 20px;
+	right: 20px;
 }
 
 .social-media li {
@@ -181,25 +185,51 @@ main h2 {
 	padding-top: 10px;
 }
 
-section img {
+a.img {
 	width: 150px;
 	height: 150px;
+	display: inline-block;
+	position: relative;
 	margin: 10px 15px;
+	background: #425851;
+	overflow: hidden;
 }
 
+a.img:hover {
+	border-bottom: 0;
+}
+
+a#css-concepts {
+	background-color: #2b7bb1;
+	background: url("../imgs/CSS3.png");
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover; 
+}
+
+.img p {
+	position: absolute;
+	bottom: 0;
+	background: rgba(43,123,177, 1);
+	line-height: 15px;
+	padding: 10px 0;
+	width: 100%;
+}
+
+.img p:hover {
+	bottom: 10px;
+}
 
 /* About Me */
 
-#about-me div.container div.container {
-	width: 40%;
-	float: right;
-	margin: 10px;
+aside#about-me {
+	position: relative;
 }
 
 figure#me {
 	display: inline-block;
 	text-align: left;
-	padding: 20px;
+	padding: 20px 50px;
 	margin: 20px;
 }
 
@@ -207,19 +237,17 @@ figure#me {
 	width: 100px;
 	height: 100px;
 	display: inline-block;
-	margin: 0 30px;
+	padding: 0 10px;
 	position: relative;
-}
-
-figure#me {
-	display: inline-block;
+	border-radius: 50px;
 }
 
 ul#links {
 	display: inline-block;
+	vertical-align: center;
 	float: top;
 	text-align: center;
-	padding: 20px;
+	padding: 35px 0 10px 5px;
 	line-height: 2.2em;
 }
 
@@ -383,17 +411,27 @@ footer img {
  *	Section for Blog Post CSS
  */
 
+.post main {
+	text-align: left;
+}
+
 .post h4 {
 	display: inline-block;
-	position: absolute;
+	position: relative;
 	left: 20px;
-	margin-top: 5px;
+	margin: 15px;
+}
+
+.post h2 {
+	margin-left: 0px;
+	margin-bottom: 1.5em;
+	clear: both;
+	font-size: 26px;
 }
 
 .post nav#panel {
 	background: rgba(255,255,255, .5);
 	margin: 0;
-	text-align: left;
 }
 
 .post aside#about-me {
@@ -404,15 +442,34 @@ footer img {
 	background: #333;
 }
 
+.post figure.in-right {
+	display: block;
+	margin: 5px;
+	float: right;
+}
+
 div#blog-text {
 	padding: 5px;
-	text-align: left;
 	margin-top: 25px;
 }
 
 div#blog-text p {
 	line-height: 1.5em;
 	margin-bottom: 1.5em;
+	font-size: 18px;
+}
+
+div#blog-text h5 {
+	font-size: 22px;
+	margin-bottom: 1em;
+}
+
+figure p.descriptor {
+	font-size: 14px!important;
+}
+
+h4#date {
+	margin-bottom: 15px;
 }
 
 /**
@@ -431,5 +488,17 @@ div#blog-text p {
 	}
 	div#right {
 		margin-top: 0;
+	}
+	figure img {
+		width: 350px;
+	}
+}
+
+@media (max-width: 400px) {
+	.post figure {
+		float: none;
+	}
+	.post figure img {
+		width: 200px;
 	}
 }
