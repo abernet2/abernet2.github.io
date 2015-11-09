@@ -38,7 +38,7 @@ h1 {
 }
 
 /* color 1 */ 
- h2, footer p, *  {
+ h2, *  {
 	color: #333;
 }
 aside#about-me  {
@@ -52,19 +52,19 @@ a, a:visited, nav#bar li a:hover {
 }
 
 /* color 3 */
-main, footer, figure#me, html { 
+main, figure#me, html { 
 	background: #e0e7e2;
 }
 
-#bl h1, #bl footer h3,  #bl header a, .img p {
-	color: #eee;
+#bl h1, footer *,  #bl header a, .img p, #bl h4 {
+	color: #e0e7e2;
 }
 
 nav#bar a {
 	color: #284863;
 }
 
-#bl h1, #bl footer {
+#bl h1, footer {
 	background: #284863;
 }
 
@@ -269,6 +269,10 @@ body#bl {
 	background-position: bottom;
 }
 
+#bl header figure img {
+	height: 50px;
+}
+
 
 #bl main, #bl header {
 	background: transparent;
@@ -347,12 +351,16 @@ div#left {
 .preview img {
 	display: inline-block;
 	height: 60px;
-	width: 80px;
+	max-width: 80px;
 	margin: 0px;
 }
 
 .preview p {
 	line-height: 1.4em;
+}
+
+.preview a {
+	color: #333;
 }
 
 #recent img {
@@ -432,10 +440,6 @@ footer img {
 .post nav#panel {
 	background: rgba(255,255,255, .5);
 	margin: 0;
-}
-
-.post aside#about-me {
-	background: transparent;
 }
 
 .post aside div.container {
