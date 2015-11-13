@@ -40,10 +40,10 @@ h1 {
 
 /* color 1 */ 
  h2, .preview a, a#more, *  {
-	color: #152430;
+	color: #232b30;
 }
 aside#about-me, .post aside div.container  {
-	background-color: #152430;
+	background-color: #232b30;
 }
 
 /* color 2 */
@@ -361,7 +361,7 @@ div#left {
 }
 
 .preview a {
-	color: #152430;
+	color: #232b30;
 }
 
 #recent img {
@@ -393,7 +393,7 @@ section.preview {
 a#more {
 	position: absolute;
 	right: 10px;
-	color: #152430;
+	color: #232b30;
 }
 
 /* 
