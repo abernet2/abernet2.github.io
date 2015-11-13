@@ -12,6 +12,7 @@ Everything in this section
 Organized by attribute 
 
 **/
+
 * {
 	margin: 0;
 	transition: all .2s;
@@ -26,7 +27,7 @@ Organized by attribute
     color: #fff;
 }
 
-h1, h2, h3, #links a, .img p {
+h1, h2, h3, #links a, .img p, p#intro-blurb {
 	font-family: Crete Round, Georgia, serif;
 }
 
@@ -38,11 +39,11 @@ h1 {
 }
 
 /* color 1 */ 
- h2, *  {
-	color: #333;
+ h2, .preview a, a#more, *  {
+	color: #152430;
 }
-aside#about-me  {
-	background-color: #333;
+aside#about-me, .post aside div.container  {
+	background-color: #152430;
 }
 
 /* color 2 */
@@ -360,7 +361,7 @@ div#left {
 }
 
 .preview a {
-	color: #333;
+	color: #152430;
 }
 
 #recent img {
@@ -392,7 +393,7 @@ section.preview {
 a#more {
 	position: absolute;
 	right: 10px;
-	color: #333;
+	color: #152430;
 }
 
 /* 
@@ -443,13 +444,17 @@ footer img {
 }
 
 .post aside div.container {
-	background: #333;
+	background: #152430;
 }
 
 .post figure.in-right {
 	display: block;
 	margin: 5px;
 	float: right;
+}
+
+.post figure {
+	text-align: center;
 }
 
 div#blog-text {
@@ -474,6 +479,23 @@ figure p.descriptor {
 
 h4#date {
 	margin-bottom: 15px;
+}
+
+span.code-block {
+	font-family: "Courier New", Courier, monospace;
+	display: block;
+	border: 1px solid #284863;
+	width: 80%;
+	margin: 5px auto;
+	padding: 0 10%;
+}
+
+p#intro-blurb {
+	text-transform: uppercase;
+	font-style: italic;
+	font-weight: 700;
+	font-size: 1.2;
+	line-height: 1.5;
 }
 
 /**
