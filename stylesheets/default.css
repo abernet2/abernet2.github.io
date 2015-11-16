@@ -57,7 +57,7 @@ main, figure#me, html {
 	background: #e0e7e2;
 }
 
-#bl h1, footer *,  #bl header a, .img p, #bl h4 {
+.img p, footer p, footer h3 {
 	color: #e0e7e2;
 }
 
@@ -65,11 +65,11 @@ nav#bar a {
 	color: #284863;
 }
 
-#bl h1, footer {
+footer {
 	background: #284863;
 }
 
-a:hover,  #bl a:hover{
+a:hover {
 	color: #00F982;
 }
 
@@ -136,21 +136,13 @@ nav#bar li:hover {
 }
 
 
-header#index {
+header {
 	background-image: url("../imgs/mountain-valley.jpg");
 	background-size: cover;
 	background-position: center;
 	height: 350px;
 	width: 100%;
 	position: relative;
-}
-#bl header {
-	background: none;
-}
-
-#bl header div.container {
-	margin-top: 18px;
-	height: 89%;
 }
 
 header h1 {
@@ -161,7 +153,7 @@ header h1 {
 	letter-spacing: .1em;
 }
 
-header#index .social-media {
+header .social-media {
 	text-align: right;
 	position: absolute;
 	bottom: 20px;
@@ -208,6 +200,12 @@ a#css-concepts {
 	background-size: cover; 
 }
 
+a#arrays-hashes {
+	background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hash_table_4_1_1_0_0_1_0_LL.svg/240px-Hash_table_4_1_1_0_0_1_0_LL.svg.png");
+	background-position: center;
+	-webkit-background-size: cover;
+	background-size: cover; 
+}
 .img p {
 	position: absolute;
 	bottom: 0;
@@ -229,7 +227,7 @@ aside#about-me {
 
 figure#me {
 	display: inline-block;
-	text-align: left;
+	text-align: center;
 	padding: 20px 50px;
 	margin: 20px;
 }
@@ -264,34 +262,7 @@ ul#links {
 /** Blog Index ***/
 
 /* Header of Blog Index **/
-body#bl {
-	background-image: url("../imgs/mountain-valley.jpg");
-	background-size: cover;
-	background-position: bottom;
-}
 
-#bl header figure img {
-	height: 50px;
-}
-
-
-#bl main, #bl header {
-	background: transparent;
-}
-
-#bl header div.container {
-	position: relative;
-	margin: 0px auto;
-	padding: 50px 0;
-}
-
- #bl figure {
-	width: 60px;
-	display: inline-block;
-	position: relative;
-	margin: 0 15px 10px auto;
-	bottom: -10px;
-}
 
 nav#panel {
 	margin-top: 7px;
@@ -343,11 +314,6 @@ div#left {
 	float: left;
 }
 
-#bl h1 {
-	width: 60%;
-	margin: 0px auto;
-	padding: 10px 0;
-}
 
 .preview img {
 	display: inline-block;
