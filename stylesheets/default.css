@@ -286,9 +286,12 @@ ul#blog-links {
 }
 
 li a img.twitter {
-	margin-bottom: -5px;
-	height: 28px;
-	margin-right: -8px;
+	margin-bottom: -1px;
+	/*height: 28px;*/
+	margin-right: -3px;
+}
+.twitt {
+	fill: #ffffff;
 }
 
 /* 
