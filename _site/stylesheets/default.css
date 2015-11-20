@@ -243,11 +243,12 @@ figure#me {
 
 ul#links {
 	display: inline-block;
-	vertical-align: center;
-	float: top;
-	text-align: center;
+	vertical-align: 50%;
+	text-align: left;
 	padding: 35px 0 10px 5px;
-	line-height: 2.2em;
+	line-height: 1.8em;
+	width: 50%;
+	max-width: 250px;
 }
 
 #about-me ul.social-media {
@@ -286,9 +287,12 @@ ul#blog-links {
 }
 
 li a img.twitter {
-	margin-bottom: -5px;
-	height: 28px;
-	margin-right: -8px;
+	margin-bottom: -1px;
+	/*height: 28px;*/
+	margin-right: -3px;
+}
+.twitt {
+	fill: #ffffff;
 }
 
 /* 
