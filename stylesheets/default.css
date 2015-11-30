@@ -470,6 +470,10 @@ code {
 	width: 80%;
 }
 
+pre {
+	margin-bottom: 1.5em;
+}
+
 p#intro-blurb {
 	text-transform: uppercase;
 	font-style: italic;
