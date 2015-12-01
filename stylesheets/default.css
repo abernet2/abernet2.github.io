@@ -482,6 +482,34 @@ p#intro-blurb {
 	line-height: 1.5;
 }
 
+.likes li {
+	display: inline;
+}
+
+.likes img {
+	width: 180px;
+	margin: 10px;
+	/*margin-bottom: 20px;*/
+}
+
+li.quotes {
+	margin: 25px!important;
+	display: block;
+}
+
+#sandburg {
+	position: relative;
+	width: 90%;
+	margin: 45px auto;
+}
+#sandburg p {
+	position: absolute;
+	bottom: 0;
+	width: 60%;
+	right: 20px;
+	background-color: white;
+}
+
 /**
  * The Responsive section of CSS
  */
