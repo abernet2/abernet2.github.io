@@ -6,14 +6,68 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Dec 2015 15:59:09 -0600</pubDate>
-    <lastBuildDate>Thu, 03 Dec 2015 15:59:09 -0600</lastBuildDate>
+    <pubDate>Thu, 03 Dec 2015 17:16:35 -0600</pubDate>
+    <lastBuildDate>Thu, 03 Dec 2015 17:16:35 -0600</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
         <title>Ruby vs Javascript</title>
-        <description>
-</description>
+        <description>&lt;main&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;h4&gt;December 03, 2015&lt;/h4&gt;
+		&lt;div id=&quot;blog-text&quot;&gt;
+			&lt;article class=&quot;post&quot;&gt;
+			   &lt;p id=&quot;intro-blurb&quot;&gt;One of the biggest advantages of Ruby, and for many its defining feature, is its ability to easily iterate over objects. It accomplishes this feat by coming pre-packaged with all sorts of easy to use and intuitive methods for manipulate arrays, hashes and other types of data.&lt;/p&gt;
+            &lt;h2&gt;Iterating over Hashes/Objects&lt;/h2&gt;
+            &lt;p&gt;While Javascript maintains the ability to perform most of these functions, it can&#39;t do so with the same level of readability. For example, the good ol&#39; #each loop in ruby looks roughly like this:&lt;/p&gt;
+            &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;
+               hash = {a; 1,b: 2,c: 3,d: 4}
+               sum = 0
+               hash.each do |key, value|
+                  sum += value
+               end
+            &lt;/pre&gt;
+            &lt;p&gt;And as long as we&#39;re working with hashes (objects in Javascript) the each loop should look pretty similar:&lt;/p&gt;
+            &lt;pre class=&quot;prettyprint lang-js&quot;&gt;
+               var hash = {a; 1,b: 2,c: 3,d: 4};
+               var sum = 0;
+               for each (value in hash) {
+                  sum += value;
+               }
+            &lt;/pre&gt;  
+            &lt;h2&gt;Iterating over Arrays&lt;/h2&gt;
+            &lt;p&gt;But the real problems start showing up when we need to iterate over an array. Javascript does not support easy iteration over arrays with the for each loop. To get such functionality you can use this somewhat messy workaround:&lt;/p&gt;
+            &lt;pre class=&quot;prettyprint lang-js&quot;&gt;
+               var arr = [1,2,3,4];
+               var sum = 0;
+               arr.forEach( function(num) {
+                  sum += num;
+               });
+            &lt;/pre&gt;
+            &lt;p&gt;Notice how this creates a strange nested }); at the end of the loop. The syntax is also inconsistent with the for each loop used for objects. A main reason for using each statements is that it makes the code so much more readable. Notice that to read this new syntax you have to put in extra work. If you didn&#39;t know any better, it would look like you were iterating over an array of functions, and where did this num variable come from!? &lt;/p&gt;
+            &lt;p&gt;The better way to iterate over an array is like so:&lt;/p&gt;
+            &lt;pre class=&quot;prettyprint lang-js&quot;&gt;
+            var arr = [1,2,3,4];
+            var sum = 0;
+            for (var i = 0; i &lt; arr.length; i++) {
+               sum += arr[i];
+            }
+            &lt;/pre&gt;
+            &lt;p&gt;While this might not look much better, if you step through the code it makes much more sense. First you declare i (traditionally used as an index in for loops). While i &lt; length, you do the following function and then increment by 1. It may not be pretty, but it gets the job done!&lt;/p&gt;
+            &lt;h2&gt;Other Javascript Iteration Methods&lt;/h2&gt;
+            &lt;p&gt;None of this is to say that Javascript is completely without builtin methods, they are just much more limited and much more verbose. Here&#39;s a quick list of other Enumerable-&lt;i&gt;ish&lt;/i&gt; methods in Javascript:&lt;/p&gt;
+            &lt;ul&gt;
+               &lt;li&gt;&lt;b&gt;#reduce&lt;/b&gt;: &amp;nbsp; acts like an accumulator, great for summing/flattening arrays&lt;/li&gt;
+               &lt;li&gt;&lt;b&gt;#includes&lt;/b&gt;: &amp;nbsp; Checks if an array/object &lt;i&gt;includes&lt;/i&gt; the argument&lt;/li&gt;
+               &lt;li&gt;&lt;b&gt;#map&lt;/b&gt;: &amp;nbsp; Like map in Ruby, performs a function on every object and returns a new array.&lt;/li&gt;
+               &lt;li&gt;&lt;b&gt;#reverse&lt;/b&gt;: &amp;nbsp; Reverses the object/array you call this on&lt;/li&gt;
+               &lt;li&gt;&lt;b&gt;#sort&lt;/b&gt;: &amp;nbsp; Sorts stuff!&lt;/li&gt;
+               &lt;li&gt;&lt;b&gt;#every&lt;/b&gt;: &amp;nbsp; Checks if every element passes a certain condition&lt;/li&gt;
+            &lt;/ul&gt;
+			&lt;/article&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/main&gt;</description>
         <pubDate>Thu, 03 Dec 2015 00:00:00 -0600</pubDate>
         <link>http://yourdomain.com/technical/blog/2015/12/03/ruby-vs-javascript.html</link>
         <guid isPermaLink="true">http://yourdomain.com/technical/blog/2015/12/03/ruby-vs-javascript.html</guid>
@@ -145,10 +199,10 @@ end
 				&lt;h2&gt;Enumerable#map&lt;/h2&gt;
 				&lt;p&gt;One of the most basic ways to use an enumerable is to simlpy apply an operation to each element. Say you had an array of ints and you wanted to double all of them, #Map would be a great function to help with that!&lt;/p&gt;
 				&lt;p&gt;Map works by applying a block of code to each element that is enumerated over and then putting it in an array to return. It&#39;s important to know that no matter what you call Map on, it always returns an array. This is what makes map great! If you were to do the same operation with each, you would have to declare a new array and push every operated element in.&lt;/p&gt;
-				&lt;p&gt;An alternative way to use map is to pass in the symbol for a method name. If you&#39;re not familiar, all the names of your methods have a symbol associated with them. For instance:&lt;pre class=prettyprint&gt;def sum&lt;/pre&gt; would be &lt;pre class=prettyprint&gt;:sum&lt;/pre&gt;&lt;/p&gt;
+				&lt;p&gt;An alternative way to use map is to pass in the symbol for a method name. If you&#39;re not familiar, all the names of your methods have a symbol associated with them. For instance:&lt;pre class=&quot;prettyprint lang-rb&quot;&gt;def sum&lt;/pre&gt; would be &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;:sum&lt;/pre&gt;&lt;/p&gt;
 				&lt;h2&gt;Enumerable#group_by&lt;/h2&gt;
 				&lt;p&gt;Where the #map function always returns an array, #group_by always returns a hash. To use #group_by you need to understand that it will turn each element of your enumerable into a VALUE. That means that the block of code that you pass into #group_by calculates the KEY that each element will be hashed to.&lt;/p&gt;
-				&lt;p&gt;This confused me at first, but then I thought about it and it made sense. If you had an array of values and you wanted to hash each of them as a key to a new value, basically anything you could calculate in an enumerator would be redundant. The example given in our book is &lt;pre class=prettyprint&gt;colors.group_by {|color| color.size}&lt;/pre&gt;
+				&lt;p&gt;This confused me at first, but then I thought about it and it made sense. If you had an array of values and you wanted to hash each of them as a key to a new value, basically anything you could calculate in an enumerator would be redundant. The example given in our book is &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;colors.group_by {|color| color.size}&lt;/pre&gt;
 				If you wanted to do the inverse (map color =&gt; size), I would ask why do you need to hash? All you need to do to access the color&#39;s size is to literally code color.size.&lt;/p&gt;
 
 				&lt;h2&gt;Enumerable#cycle&lt;/h2&gt;
@@ -158,7 +212,7 @@ end
 				&lt;figure class=&quot;block&quot;&gt;
 					&lt;img src=&quot;../imgs/zip.PNG&quot; alt=&quot;demo from ruby docs&quot;&gt;
 				&lt;/figure&gt;
-				&lt;p&gt;As seen above, if you zip two arrays together you get an array of arrays paired by index. So &lt;pre class=prettyprint&gt;c[0] = [a[0], b[0]]&lt;/pre&gt; Notice this is the transpose of creating a 2d array by saying &lt;pre class=prettyprint&gt;c = [a,b]&lt;/pre&gt;&lt;/p&gt;
+				&lt;p&gt;As seen above, if you zip two arrays together you get an array of arrays paired by index. So &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;c[0] = [a[0], b[0]]&lt;/pre&gt; Notice this is the transpose of creating a 2d array by saying &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;c = [a,b]&lt;/pre&gt;&lt;/p&gt;
 				&lt;p&gt;But what if your arrays are different sizes? You have to remember that since it is an enumerable, it iterates over each element of the object that CALLS it. So you will never get a shorter or longer array as a result. It will fill in empty spaces with nil or disregard extra values, so use wisely!&lt;/p&gt;
 				&lt;h2&gt;In Conclusion...&lt;/h2&gt;
 				&lt;p&gt;Enumerables are at the heart of what separates Ruby from other languages and they are really a big part of what makes Ruby, Ruby. There&#39;s a lot more methods out there, but I hope these are a little bit clearer now!&lt;/p&gt;
