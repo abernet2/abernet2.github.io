@@ -1,73 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Blog Landing Site</title>
-	 <link rel="stylesheet" href="../stylesheets/default.css">
-	<link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
-</head>
-<body>
-	<header>
-		<div class="container">
-			<nav id="bar">
-				<ul>
-					<li><a href="../index.html">Home</a></li>
-					<li><a href="blog/index.html">Blog</a></li>
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">Resources</a></li>
-					<li><a href="../about-me.html">About</a></li>
-				</ul>
-			</nav>
-		
-			<h1>Website Title</h1>
-				<nav class="social-media">
-					<ul>
-						<li><a href="https://twitter.com/jabber_26"><img class="twitter" src="../imgs/Twitter_white_logo.svg" alt="twitter" onmouseover="src='../imgs/Twitter_blue_logo.svg'" onmouseout="src='../imgs/Twitter_white_logo.svg'"></a></li>
-						<li><a href="https://github.com/abernet2"><img src="../imgs/GitHub-Mark-Light.svg" onmouseover="src='../imgs/GitHub-Mark.svg'" onmouseout="src='../imgs/GitHub-Mark-Light.svg'"></a></li>
-						<li><a href="https://medium.com/@jackabernethy"><img src="../imgs/Medium-light.png" onmouseover="src='../imgs/medium-m-color.png'" onmouseout="src='../imgs/medium-light.png'" alt="Medium"></a></li>
-						<li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="../imgs/linked-white.svg" onmouseover="src='../imgs/linked.svg'" onmouseout="src='../imgs/linked-white.svg'"></a></li>
-					</ul>
-				</nav>
-		</div>
-	</header>
+---
+layout: default
+title: Jack's Blog
+---
+
 <main>
-	<div class="container" id="blog-landing">
-		<div id="left">
-			<section class="preview" id="recent">
-				<a href="css-concepts.html"><img src="../imgs/CSS3.png" alt="article-thumbnail"></a>
-				<h2><a href="css-concepts.html">CSS Concepts</a></h2>
-				<p>Read all about CSS positioning, margins, borders and more!</p>
-			</section>
-		</div>
-		<div id="right">
-			<section class="preview">
-				<a href="arrays-hashes.html"><img src="../imgs/doc.svg" alt="article-thumbnail"></a>
-				<a href="arrays-hashes.html"><h3>Arrays and Hashes</h3></a>
-				<p>Arrays and Hashes: when to use which and why</p>
-			</section>
-			<section class="preview">
-				<a href="ruby-classes.html"><img src="https://www.mathsisfun.com/geometry/images/quadrilateral-class.gif" alt="quadrilateral classes"></a>
-				<a href="ruby-classes.html"><h3>Classes Blog</h3></a>
-				<p>Classes are basically blueprints for ruby objects. Classes can be useful to store and manipulate data in a consistent and predictable way...</p>
-			</section>
-			<section class="preview">
-				<img src="../imgs/doc.svg" alt="article-thumbnail">
-				<h3>Blurb</h3>
-				<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
-			</section>
-			<a id="more" href="#">more>></a>
-		</div>
+	<div class="container">
+		<ul id="blog-landing">
+		  {% for post in site.posts limit: 5 %}
+		    <li class="preview"
+		    {% if post == site.posts.first %} id = "recent" {% endif %}
+		    >
+		      <a href="{{ post.url }}"><img src="{{ post.imageurl }}" alt="{{post.imagealt}}"></a>
+		      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+			  {% if post == site.posts.first %} <p>{{ post.excerpt }}</p> {% endif %}
+		    </li>
+		  {% endfor %}
+		</ul>
+
+		<!-- The more part should come with JS + JQuery -->
 	</div>
 </main>
-<footer>
-	<h3>Suggested</h3>
-	<div class="container">
-		<a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
-		<a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
-		<a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
-		<a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
-	</div>
-</footer>
 
-</body>
-</html> 

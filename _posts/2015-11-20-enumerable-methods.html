@@ -1,0 +1,39 @@
+---
+layout: default
+title: Enumerable Methods
+image: <img src="../imgs/doc.svg" alt="article-thumbnail">
+imageurl: http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/10/collections_enum.jpg
+alt: Enumerables
+---
+<main>
+	<div class="container">
+		<h4 id="date">11.20.2015</h4>	
+		<div id="blog-text">
+			<article class="post">
+				<h2>Enumerable#map</h2>
+				<p>One of the most basic ways to use an enumerable is to simlpy apply an operation to each element. Say you had an array of ints and you wanted to double all of them, #Map would be a great function to help with that!</p>
+				<p>Map works by applying a block of code to each element that is enumerated over and then putting it in an array to return. It's important to know that no matter what you call Map on, it always returns an array. This is what makes map great! If you were to do the same operation with each, you would have to declare a new array and push every operated element in.</p>
+				<p>An alternative way to use map is to pass in the symbol for a method name. If you're not familiar, all the names of your methods have a symbol associated with them. For instance:<pre class=prettyprint>def sum</pre> would be <pre class=prettyprint>:sum</pre></p>
+				<h2>Enumerable#group_by</h2>
+				<p>Where the #map function always returns an array, #group_by always returns a hash. To use #group_by you need to understand that it will turn each element of your enumerable into a VALUE. That means that the block of code that you pass into #group_by calculates the KEY that each element will be hashed to.</p>
+				<p>This confused me at first, but then I thought about it and it made sense. If you had an array of values and you wanted to hash each of them as a key to a new value, basically anything you could calculate in an enumerator would be redundant. The example given in our book is <pre class=prettyprint>colors.group_by {|color| color.size}</pre>
+				If you wanted to do the inverse (map color => size), I would ask why do you need to hash? All you need to do to access the color's size is to literally code color.size.</p>
+
+				<h2>Enumerable#cycle</h2>
+				<p>The #cycle function works basically the same way as .times, just for enumerables. Basically, if you call the cycle function it will "cycle" through your elements as many times as you tell it to.</p>
+				<h2>Enumerable#zip</h2>
+				<p>For my last piece, I chose a function I'd never heard of: zip. Zip is a little bit tricky, but basically it merges its arguments into arrays with each other. Some of the behavior gets weird unless you understand how it works.</p>
+				<figure class="block">
+					<img src="../imgs/zip.PNG" alt="demo from ruby docs">
+				</figure>
+				<p>As seen above, if you zip two arrays together you get an array of arrays paired by index. So <pre class=prettyprint>c[0] = [a[0], b[0]]</pre> Notice this is the transpose of creating a 2d array by saying <pre class=prettyprint>c = [a,b]</pre></p>
+				<p>But what if your arrays are different sizes? You have to remember that since it is an enumerable, it iterates over each element of the object that CALLS it. So you will never get a shorter or longer array as a result. It will fill in empty spaces with nil or disregard extra values, so use wisely!</p>
+				<h2>In Conclusion...</h2>
+				<p>Enumerables are at the heart of what separates Ruby from other languages and they are really a big part of what makes Ruby, Ruby. There's a lot more methods out there, but I hope these are a little bit clearer now!</p>
+			</article>
+		</div>
+	</div>
+</main>
+{% include about-me.html %}
+	
+

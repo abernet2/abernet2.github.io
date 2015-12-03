@@ -22,6 +22,7 @@ Organized by attribute
 	font-family: 'Asap', Arial, sans-serif;
 }
 
+
 ::selection {
     background-color: #00F982;
     color: #fff;
@@ -72,6 +73,7 @@ footer {
 a:hover {
 	color: #00F982;
 }
+
 
 html {
 	text-align: center;
@@ -219,6 +221,10 @@ a#arrays-hashes {
 	bottom: 10px;
 }
 
+.rec p {
+	text-align: center;
+}
+
 /* About Me */
 
 aside#about-me {
@@ -300,29 +306,31 @@ li a img.twitter {
  */
 
 
-main div#blog-landing {
-	margin-bottom: 25px;
+ul#blog-landing {
+	margin: 25px 0;
 }
 
-div#left, div#right {
+.preview {
 	width: 47%;
 	display: inline-block;
 	position: relative;
 	text-align: left;
-	margin-top: 75px;
-	margin-bottom: 75px;
+	/*margin-top: 75px;*/
+	/*margin-bottom: 30px;*/
 	padding: .5em;
 }
 
-div#left {
+#recent {
 	float: left;
+	overflow: hidden;
+	height: 100%;
 }
 
 
 .preview img {
 	display: inline-block;
 	height: 60px;
-	max-width: 80px;
+	/*max-width: 80px;*/
 	margin: 0px;
 }
 
@@ -335,8 +343,8 @@ div#left {
 }
 
 #recent img {
-	width: 120px;
 	height: 90px;
+	max-width: 120px;
 }
 
 #recent p {
@@ -390,46 +398,16 @@ footer img {
  *	Section for Blog Post CSS
  */
 
-.post main {
+main {
 	text-align: left;
+	padding: 25px 0;
 }
 
-.post h4 {
-	display: inline-block;
-	position: relative;
-	left: 20px;
-	margin: 15px;
-}
-
-.post h2 {
-	margin-left: 0px;
-	margin-bottom: 1.5em;
-	clear: both;
-	font-size: 26px;
-}
-
-.post nav#panel {
-	background: rgba(255,255,255, .5);
-	margin: 0;
-}
-
-.post aside div.container {
-	background: #152430;
-}
-
-.post figure.in-right {
-	display: block;
-	margin: 5px;
-	float: right;
-}
-
-.post figure {
-	text-align: center;
-}
 
 div#blog-text {
 	padding: 5px;
 	margin-top: 25px;
+	text-align: left;
 }
 
 div#blog-text p {
@@ -451,13 +429,9 @@ h4#date {
 	margin-bottom: 15px;
 }
 
-span.code-block {
-	font-family: "Courier New", Courier, monospace;
-	display: block;
-	border: 1px solid #284863;
-	width: 80%;
-	margin: 5px auto;
-	padding: 0 10%;
+pre {
+	padding: 5px 1.5em;
+	margin-bottom: 1.5em;
 }
 
 p#intro-blurb {
@@ -466,6 +440,34 @@ p#intro-blurb {
 	font-weight: 700;
 	font-size: 1.2;
 	line-height: 1.5;
+}
+
+.likes li {
+	display: inline;
+}
+
+.likes img {
+	width: 180px;
+	margin: 10px;
+	/*margin-bottom: 20px;*/
+}
+
+li.quotes {
+	margin: 25px!important;
+	display: block;
+}
+
+#sandburg {
+	position: relative;
+	width: 90%;
+	margin: 45px auto;
+}
+#sandburg p {
+	position: absolute;
+	bottom: 0;
+	width: 60%;
+	right: 20px;
+	background-color: white;
 }
 
 /**

@@ -5,84 +5,34 @@ title: Jabber's Site
 
 <main>
   <div class="container">
-    <section id="rec-projects">
+    <section class="rec projects">
       <h2>Recent Projects</h2>
       <a href="#" class="img"><p>coming soon...</p></a>
       <a href="#" class="img"><p>coming soon...</p></a>
       <a href="#" class="img"><p>coming soon...</p></a>
     </section>
 
-    <section id="rec-blog" class="thumbnail">
-      <h2>Recent Blog Posts</h2>
-      <a href="blog/css-concepts.html" id="css-concepts" class="img">
+  	<h2>Recent Blog Posts</h2>
+    <section class="rec blog" class="thumbnail">
+      {% for post in site.posts limit: 3 %}
+      <!-- Not an ideal way to update background, maybe there's a better thing to do with JS -->
+	      <a href="{{ post.url }}" class="img" style="background-image: url('{{post.imageurl}}');
+	      background-position: center;
+	      -webkit-background-size: cover;
+	      background-size: cover;">
+	      	<p>{{ post.title }}</p>
+	      </a>
+	  {% endfor %}
+
+
+
+<!--       <a href="blog/css-concepts.html" id="css-concepts" class="img">
         <p>CSS Concepts Reflection</p>
       </a>
       <a href="blog/arrays-hashes.html" class="img" id="arrays-hashes"><p>Arrays and Hashes</p></a>
-      <a href="#" class="img"><p>coming soon...</p></a>
+      <a href="#" class="img"><p>coming soon...</p></a> -->
     </section>
-  </div>
+
 </main>
 
 {% include about-me.html %}
-
-
-<!-- <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div> -->
-
-<!--   <main>
-    <div class="container">
-      <section id="rec-projects">
-        <h2>Recent Projects</h2>
-        <a href="#" class="img"><p>coming soon...</p></a>
-        <a href="#" class="img"><p>coming soon...</p></a>
-        <a href="#" class="img"><p>coming soon...</p></a>
-      </section>
-  
-      <section id="rec-blog" class="thumbnail">
-        <h2>Recent Blog Posts</h2>
-        <a href="blog/css-concepts.html" id="css-concepts" class="img">
-          <p>CSS Concepts Reflection</p>
-        </a>
-        <a href="blog/arrays-hashes.html" class="img" id="arrays-hashes"><p>Arrays and Hashes</p></a>
-        <a href="#" class="img"><p>coming soon...</p></a>
-      </section>
-    </div>
-  </main>
-
-
-  <aside id="about-me">
-    <figure id="me">
-      <img src="imgs/me.png" alt="me">
-      <h3>Jack Abernethy</h3>
-    </figure>
-    <ul id="links">
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Resume</a></li>
-        <li>
-        <ul class="social-media">
-          <li><a href="#"><img class="twitter" src="imgs/TwitterLogo_white.png" onmouseover="this.src='imgs/TwitterLogo_blue.png'" onmouseout="this.src='imgs/TwitterLogo_white.png'" alt="twitter"></a></li>
-          <li><a href="#"><img src="imgs/GitHub-Mark-Light-32px.png" onmouseover="src='imgs/GitHub-Mark-32px.png'" onmouseout="src='imgs/GitHub-Mark-Light-32px.png'" alt="github"></a></li>
-          <li><a href="#"><img src="imgs/Medium-light.png" onmouseover="src='imgs/medium-m-color.png'" onmouseout="src='imgs/medium-light.png'" alt="Medium"></a></li>
-          <li><a href="#"><img src="imgs/In-White-34px-TM.png" onmouseover="src='imgs/In-2C-34px-R.png'" onmouseout="src='imgs/In-White-34px-TM.png'" alt="linkedin"></a></li>
-        </ul>
-        </li>
-      </ul>   
-  </aside>
- -->

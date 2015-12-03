@@ -6,9 +6,376 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 20 Nov 2015 11:43:09 -0600</pubDate>
-    <lastBuildDate>Fri, 20 Nov 2015 11:43:09 -0600</lastBuildDate>
+    <pubDate>Thu, 03 Dec 2015 15:59:09 -0600</pubDate>
+    <lastBuildDate>Thu, 03 Dec 2015 15:59:09 -0600</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>Ruby vs Javascript</title>
+        <description>
+</description>
+        <pubDate>Thu, 03 Dec 2015 00:00:00 -0600</pubDate>
+        <link>http://yourdomain.com/technical/blog/2015/12/03/ruby-vs-javascript.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/technical/blog/2015/12/03/ruby-vs-javascript.html</guid>
+        
+        
+        <category>Technical</category>
+        
+        <category>Blog</category>
+        
+      </item>
+    
+      <item>
+        <title>Ruby Classes</title>
+        <description>&lt;main&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;h4 id=&quot;date&quot;&gt;11.30.2015&lt;/h4&gt;	
+		&lt;div id=&quot;blog-text&quot;&gt;
+			&lt;article class=&quot;post&quot;&gt;
+				&lt;p id=&quot;intro-blurb&quot;&gt;
+				Classes are basically blueprints for ruby objects. Classes can be useful to store and manipulate data in a consistent and predictable way. In this example, I create a class to consistently manipulate data about the sides of Quadrilaterals to figure out what kind of Quadrilateral they are.&lt;/p&gt;
+				&lt;p&gt;To begin, real quick, here&#39;s an overview of the class I made. We&#39;re going to refactor this for better use of instance/local variables, but for now here&#39;s a straightforward approach:&lt;/p&gt;
+&lt;pre class=prettyprint&gt;
+
+	class Quadrilateral
+
+		def initialize(side1, side2, side3, side4, right_angle=false)
+			@s1 = side1
+			@s2 = side2
+			@s3 = side3
+			@s4 = side4
+			@ra = right_angle
+	  	end
+
+		def parrellelogram?
+  	   	@s1 == @s3 &amp;&amp; @s2 == @s4
+	  	end
+
+		def rhombus?
+			@s2 == @s3 &amp;&amp; parrellelogram?
+		end
+
+		def kite?
+			@s1 == @s2 &amp;&amp; @s3 == @s4
+		end
+
+		def rectangle?
+			@ra &amp;&amp; parrellelogram?
+		end
+
+		def square?
+			@ra &amp;&amp; rhombus?
+		end
+
+	end
+					&lt;/pre&gt;
+
+				&lt;p&gt;Basically what this object does is take in four sides, in consecutive order, and figures out which subset of a quadrangle it could be. It needs to remember the lengths of these sides so it can compare them later, which is why we create member variables for each.&lt;/p&gt;
+				&lt;p&gt;The upside of using local variables is that you if you perform some computation with them upfront, you can save on space and time later. With this specific class, you can see that there is some overlap between our methods and we have a quite a few repetitive method calls.&lt;/p&gt;
+				&lt;p&gt;Below I created a new method that makes better use of local variables by not saving the sides:&lt;/p&gt;
+				&lt;pre class=prettyprint&gt;
+
+class Quadrilateral
+	
+	attr_reader :parrellelogram, :kite
+
+	def initialize(side1, side2, side3, side4, right_angle=false)
+		@parrellelogram = side1 == side3 &amp;&amp; side2 == side4
+		@kite = side1 == side2 &amp;&amp; side3 == side4
+		@ra = right_angle
+  	end
+
+	def rhombus
+		@kite &amp;&amp; @parrellelogram
+	end
+
+	def rectangle
+		@ra &amp;&amp; @parrellelogram
+	end
+
+	def square
+		@ra &amp;&amp; rhombus
+	end
+
+end
+				&lt;/pre&gt;
+
+				&lt;p&gt;What this does is computes all the important compares upfront and remembers the result, rather than remembering the sides and repeatedly computing them. This not only saves on memory, since now we only have 3 vs 5 variables, but it should also save on time and is a shorter amount of code.&lt;/p&gt;
+				&lt;p&gt;The downside to this approach, however, is that it could prove problematic in the future. For instance, what if I wanted to create a method that returns the perimeter or area of a particular quadrilateral? In that situation, it might be best to go with the original approach. Or what if we want to resize our quadrilateral or morph it into another quadrilateral?&lt;/p&gt;
+				&lt;p&gt;These questions bring out the important distinction between these variables. Local variables get forgotten pretty quickly, which can be mighty useful. The art of choosing between these two is the art of lettting that which truly does not matter slide. That art requires understanding how this class will be used and what changes might need to be made in the future.&lt;/p&gt;
+			&lt;/article&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/main&gt;
+&lt;aside id=&quot;about-me&quot;&gt;
+ &lt;div class=&quot;container&quot;&gt;
+    &lt;figure id=&quot;me&quot;&gt;
+      &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
+      &lt;h3&gt;Jack Abernethy&lt;/h3&gt;
+    &lt;/figure&gt;
+      &lt;ul id=&quot;links&quot;&gt;
+        &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;ul class=&quot;social-media&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/Medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/aside&gt;
+
+
+
+</description>
+        <pubDate>Mon, 30 Nov 2015 00:00:00 -0600</pubDate>
+        <link>http://yourdomain.com/2015/11/30/ruby-classes.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2015/11/30/ruby-classes.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Enumerable Methods</title>
+        <description>&lt;main&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;h4 id=&quot;date&quot;&gt;11.20.2015&lt;/h4&gt;	
+		&lt;div id=&quot;blog-text&quot;&gt;
+			&lt;article class=&quot;post&quot;&gt;
+				&lt;h2&gt;Enumerable#map&lt;/h2&gt;
+				&lt;p&gt;One of the most basic ways to use an enumerable is to simlpy apply an operation to each element. Say you had an array of ints and you wanted to double all of them, #Map would be a great function to help with that!&lt;/p&gt;
+				&lt;p&gt;Map works by applying a block of code to each element that is enumerated over and then putting it in an array to return. It&#39;s important to know that no matter what you call Map on, it always returns an array. This is what makes map great! If you were to do the same operation with each, you would have to declare a new array and push every operated element in.&lt;/p&gt;
+				&lt;p&gt;An alternative way to use map is to pass in the symbol for a method name. If you&#39;re not familiar, all the names of your methods have a symbol associated with them. For instance:&lt;pre class=prettyprint&gt;def sum&lt;/pre&gt; would be &lt;pre class=prettyprint&gt;:sum&lt;/pre&gt;&lt;/p&gt;
+				&lt;h2&gt;Enumerable#group_by&lt;/h2&gt;
+				&lt;p&gt;Where the #map function always returns an array, #group_by always returns a hash. To use #group_by you need to understand that it will turn each element of your enumerable into a VALUE. That means that the block of code that you pass into #group_by calculates the KEY that each element will be hashed to.&lt;/p&gt;
+				&lt;p&gt;This confused me at first, but then I thought about it and it made sense. If you had an array of values and you wanted to hash each of them as a key to a new value, basically anything you could calculate in an enumerator would be redundant. The example given in our book is &lt;pre class=prettyprint&gt;colors.group_by {|color| color.size}&lt;/pre&gt;
+				If you wanted to do the inverse (map color =&gt; size), I would ask why do you need to hash? All you need to do to access the color&#39;s size is to literally code color.size.&lt;/p&gt;
+
+				&lt;h2&gt;Enumerable#cycle&lt;/h2&gt;
+				&lt;p&gt;The #cycle function works basically the same way as .times, just for enumerables. Basically, if you call the cycle function it will &quot;cycle&quot; through your elements as many times as you tell it to.&lt;/p&gt;
+				&lt;h2&gt;Enumerable#zip&lt;/h2&gt;
+				&lt;p&gt;For my last piece, I chose a function I&#39;d never heard of: zip. Zip is a little bit tricky, but basically it merges its arguments into arrays with each other. Some of the behavior gets weird unless you understand how it works.&lt;/p&gt;
+				&lt;figure class=&quot;block&quot;&gt;
+					&lt;img src=&quot;../imgs/zip.PNG&quot; alt=&quot;demo from ruby docs&quot;&gt;
+				&lt;/figure&gt;
+				&lt;p&gt;As seen above, if you zip two arrays together you get an array of arrays paired by index. So &lt;pre class=prettyprint&gt;c[0] = [a[0], b[0]]&lt;/pre&gt; Notice this is the transpose of creating a 2d array by saying &lt;pre class=prettyprint&gt;c = [a,b]&lt;/pre&gt;&lt;/p&gt;
+				&lt;p&gt;But what if your arrays are different sizes? You have to remember that since it is an enumerable, it iterates over each element of the object that CALLS it. So you will never get a shorter or longer array as a result. It will fill in empty spaces with nil or disregard extra values, so use wisely!&lt;/p&gt;
+				&lt;h2&gt;In Conclusion...&lt;/h2&gt;
+				&lt;p&gt;Enumerables are at the heart of what separates Ruby from other languages and they are really a big part of what makes Ruby, Ruby. There&#39;s a lot more methods out there, but I hope these are a little bit clearer now!&lt;/p&gt;
+			&lt;/article&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/main&gt;
+&lt;aside id=&quot;about-me&quot;&gt;
+ &lt;div class=&quot;container&quot;&gt;
+    &lt;figure id=&quot;me&quot;&gt;
+      &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
+      &lt;h3&gt;Jack Abernethy&lt;/h3&gt;
+    &lt;/figure&gt;
+      &lt;ul id=&quot;links&quot;&gt;
+        &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;ul class=&quot;social-media&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/Medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/aside&gt;
+	
+
+</description>
+        <pubDate>Fri, 20 Nov 2015 00:00:00 -0600</pubDate>
+        <link>http://yourdomain.com/2015/11/20/enumerable-methods.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2015/11/20/enumerable-methods.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Arrays and Hashes!</title>
+        <description>	&lt;main&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;h4 id=&quot;date&quot;&gt;11.13.2015&lt;/h4&gt;	
+			&lt;div id=&quot;blog-text&quot;&gt;
+				&lt;article class=&quot;post&quot;&gt;
+					&lt;p id=&quot;intro-blurb&quot;&gt;All variables in programming are stored in blocks of memory. Computers might seem like magic most of the time, but they are manifested in physical space just like everything else. So let&#39;s breakdown how computers &quot;magically&quot; store arrays and hashes in their physical memory.&lt;/p&gt;
+					&lt;h2&gt;All about arrays&lt;/h2&gt;
+					&lt;p&gt;What does this have to do with arrays? When you declare an object in Ruby you&#39;re essentially telling the computer &quot;I need an object&#39;s worth of memory.&quot;  When you declare an array of a certain size you tell the computer you need that much memory plus &quot;I need the obejcts in this array to stay together.&quot;  Then the computer puts in extra work to make sure the array&#39;s variables stay together in memory.&lt;/p&gt;
+					&lt;p&gt; When you ask the computer for array[index], what the computer does with that information is it takes the starting point for the array and adds the necessary distance to get the object you want. So array[index] tells the computer, give me the thing at: &lt;span class=&quot;code-block&quot;&gt;memory address = [array starting address] + [index] * [size of objects in ruby]&lt;/span class=&quot;code&quot;&gt; This is why arrays are indexed at 0. It makes the math for accessing elements simpler since the first item is at the array starting index. If the array were 1-index, using this math it would always get the item 1 larger than what you wanted.
+					&lt;/p&gt;
+					&lt;h2&gt;Hashes are a bit like arrays&lt;/h2&gt;
+					&lt;p&gt;Accessing information in a hash, for the user, is similar to an array, you just put a key in the variable instead of an index, like so: hash[&quot;key&quot;]. If you wanted to access an array as you would a hash, you would have to search the contents of the array. For example, if I had a 100 x 2 array of first and last names and I wanted to find someone&#39;s name, if the array isn&#39;t ordered I would have to iterate through and check every single name until I found the right one. So how does the computer know where to find the information? Why can&#39;t it just include that functionality in arrays?&lt;/p&gt;
+
+					&lt;h3&gt;Hash Functions&lt;/h3&gt;
+					&lt;p&gt;Hashes, you might be interested to know, are essentially stored in arrays. Hashes use something called hash functions to turn a given string/symbol/variable into an integer. Some of these get very complicated, but a basic one works pretty much like the % function, it converts the given string to a value and then gets the remainder of that value divide by the size of the array that the hash is stored in. For (bad/cartoonish example), say that when I give my name the hash function returns the value 26. The array size is 20 so it stores the value associated with my name key at array index 6 (since 26%20 = 6).&lt;/p&gt;
+					&lt;figure class=&#39;block&#39;&gt;
+						&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hash_table_4_1_1_0_0_1_0_LL.svg/240px-Hash_table_4_1_1_0_0_1_0_LL.svg.png&quot; alt=&quot;Hash function diagram&quot;&gt;
+						&lt;h6&gt;a hash function diagram from Wikepedia&lt;/h6&gt;
+					&lt;/figure&gt;
+					
+					&lt;p&gt;A hash function&#39;s purpose is to essentially convert keys into array indices. This is difficult because keys can come in all different sorts of lengths and values and there&#39;s only a limited space to store them in. It is possible, for example, that if you put your name through the hash function, it would return 6, in which case both of our names would want to be stored at index 6. The hash data structure has to have a way to quickly handle all these sorts of issues. I&#39;m not clear enough on Ruby&#39;s implementation, but hashes can get complicated and there are all sorts of trade-offs between memory usage and clashes of these sorts.&lt;/p&gt;
+
+					&lt;h2&gt;In Conclusion...&lt;/h2&gt;
+					&lt;p&gt;...when you think about whether to use an array or a hash, you want to think about how you need to access your information. If your information is going to be sequential, your best bet is likely to use an array. If your information is going to be more scattershot, all over the place or have a lot of unique values, the hash is probably a better idea.&lt;/p&gt;
+				&lt;/article&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/main&gt;
+&lt;aside id=&quot;about-me&quot;&gt;
+ &lt;div class=&quot;container&quot;&gt;
+    &lt;figure id=&quot;me&quot;&gt;
+      &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
+      &lt;h3&gt;Jack Abernethy&lt;/h3&gt;
+    &lt;/figure&gt;
+      &lt;ul id=&quot;links&quot;&gt;
+        &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;ul class=&quot;social-media&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/Medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/aside&gt;
+
+
+
+
+</description>
+        <pubDate>Fri, 13 Nov 2015 00:00:00 -0600</pubDate>
+        <link>http://yourdomain.com/2015/11/13/arrays-hashes.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2015/11/13/arrays-hashes.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>CSS Concepts Reflection</title>
+        <description>&lt;main&gt;
+	&lt;div class=&quot;container&quot;&gt;
+		&lt;h4 id=&quot;date&quot;&gt;11.6.2015&lt;/h4&gt;	
+		&lt;div id=&quot;blog-text&quot;&gt;
+			&lt;section class=&quot;question&quot;&gt;
+				&lt;h2&gt;What is the difference between margin, border, and padding?&lt;/h2&gt;
+				&lt;figure class=&quot;in-right&quot;&gt;&lt;img src=&quot;../imgs/border-margin-padding.png&quot; alt=&quot;demonstration&quot;&gt;&lt;/figure&gt;
+				&lt;h5&gt;Padding&lt;/h5&gt;
+				&lt;p&gt;Spacing that occurs outside of your content. If you change the element&#39;s background, that will affect the padding area.&lt;/p&gt;
+				&lt;h5&gt;Border&lt;/h5&gt;
+				&lt;p&gt;The dividing line between padding space and margin. Borders are optional, they can have many different colors and styles.&lt;/p&gt;
+				&lt;h5&gt;Margin&lt;/h5&gt;
+				&lt;p&gt;Spacing that goes outside of your border. Will not be affected if you change the element&#39;s background. Can also have negative values for positioning purposes.&lt;/p&gt;
+			&lt;/section&gt;
+			
+			&lt;section class=&quot;question&quot;&gt;
+				&lt;h2&gt;What are the best practices associated with using classes vs. ids?&lt;/h2&gt;
+				&lt;p&gt;The basic difference is that classes can occur multiple times, and ids can only occur once. There are several implications of this. IDs basically are used to identify unique objects so you can grab and edit something that is uniqe. &lt;a href=&quot;https://css-tricks.com/the-difference-between-id-and-class/&quot;&gt;CSS Tricks&lt;/a&gt; suggests thinking of classes as barcodes, and IDs as serial numbers.&lt;/p&gt;
+				&lt;p&gt;Classes, on the other hand, are used to condense code so you don&#39;t have to repeat yourself. Objects can have multiple classes, classes can also be applied to multiple elements at the same time. You could, for instance, make an invisible class and add/subtract it from elements using Javascript to hide that object.&lt;/p&gt;
+				&lt;p&gt;Bottome line, in CSS the difference between the two is entirely semantic (use &#39;.&#39; or &#39;#&#39;). Once we get to Javascript, the functionality really changes, and if you reuse and id the code will not pass an HTML validator, which is important.&lt;/p&gt;
+			&lt;/section&gt;
+			&lt;section class=&quot;question&quot;&gt;
+				&lt;h2&gt;What are the differences between relative, absolute, fixed, and static positioning?&lt;/h2&gt;
+				&lt;h5&gt;Static&lt;/h5&gt;
+				&lt;p&gt;HTML elements by defaul have the static positioning element. The static feature places all objects flat on the page relative to other objects. This gives a flow to html elements so that two never, by default, occupy the same position.&lt;/p&gt;
+				&lt;h5&gt;Relative&lt;/h5&gt;
+				&lt;p&gt;Relative positioning, confusingly, places objects relative to &lt;span class=&quot;italics&quot;&gt;their defaul static positioning.&lt;/span&gt; This positioning allows you to treat the static position as a starting point and to use the left, right, top, bottom CSS to position your element around that starting point.&lt;/p&gt;
+				&lt;h5&gt;Absolute&lt;/h5&gt;
+				&lt;p&gt;Absolute positioning allows you to hard-wire the position of your element. Like the relative positioning, you can use left, right, etc to move your element, only the starting point is the parent element. When you use bottom with relative positioning, you move from the &lt;span class=&quot;italics&quot;&gt;relative bottom&lt;/span&gt;, but when you use the bottom attribute in absolute, you move relative to the bottom of the parent element.&lt;/p&gt;
+				&lt;p&gt;Absolute gets this effect by taking your element out of the flow that we spoke of with static positioning. If you think of the page as a grid, absolute instead places your element at the (0,0) position of the first parent element that is not Relatively positioned or Absolutely positioned. In english: it makes it possible to place objects at the top or bottom of divs (or other elements) very easily.&lt;/p&gt;
+				&lt;h5&gt;Fixed&lt;/h5&gt;
+				&lt;p&gt;Maybe the easiest to understand, fixed positioning fixes an element relative to the screen, not the html page. Have you ever been to a website where the nav-bar stays in place no matter how far you scroll? Or a site that has a sidebar that doesn&#39;t react to scrolling? Those are fixed elements.&lt;/p&gt;
+			&lt;/section&gt;
+			&lt;section class=&quot;question&quot;&gt;
+				&lt;h2&gt;What does it mean to display inline vs using inline block?&lt;/h2&gt;
+				&lt;p&gt;When you use the inline display method, you tell the browser to get as much on one line as it can. Usually this means that it will put text and links on a line so that you can read from left to right and so it can adjust the words per line.&lt;/p&gt;
+				&lt;p&gt;A drawback of the inline display method, is that you generally can&#39;t set height or width of that element. The element&#39;s size is always relative to its content. One way to fix this is to use display as a block. BUT, doing so will put your element on its own line.&lt;/p&gt;
+				&lt;figure&gt;
+					&lt;img src=&quot;../imgs/demo.PNG&quot; alt=&quot;demo&quot;&gt;
+					&lt;p class=&quot;descriptor&quot;&gt;A quick demo of the difference. &lt;a href=&quot;http://dustwell.com/div-span-inline-block.html&quot;&gt;source&lt;/a&gt;&lt;/p&gt;
+				&lt;/figure&gt;
+				&lt;p&gt;Inline block utilizes the blockiness of block (setting you own size), and still positions your element in-line with text or other inline elements.&lt;/p&gt;
+			&lt;/section&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/main&gt;
+&lt;aside id=&quot;about-me&quot;&gt;
+ &lt;div class=&quot;container&quot;&gt;
+    &lt;figure id=&quot;me&quot;&gt;
+      &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
+      &lt;h3&gt;Jack Abernethy&lt;/h3&gt;
+    &lt;/figure&gt;
+      &lt;ul id=&quot;links&quot;&gt;
+        &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;ul class=&quot;social-media&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/Medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/aside&gt;
+
+
+
+</description>
+        <pubDate>Fri, 06 Nov 2015 00:00:00 -0600</pubDate>
+        <link>http://yourdomain.com/2015/11/06/css-concepts.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2015/11/06/css-concepts.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Git, Github and Version Control</title>
+        <description>&lt;main&gt;
+  &lt;h1&gt;Git, GitHub and Version Control&lt;/h1&gt;
+  &lt;h4&gt;10/21/15&lt;/h4&gt;
+
+  &lt;section&gt;
+    &lt;h3&gt;
+        What are the benefits of version control?
+    &lt;/h3&gt;
+    &lt;p&gt; 
+        Controlling versions helps to foster collaboration and maintain clean, progressive versions of your code. The basic idea is that you save versions of your code to a big bucket called a repository. There you can manage best feautures and figure out the most productive and best functioning bits of code. If you want to revert to an old version, Github keeps track of all your previous saves. You can also go back and see what changes have been made on a line by line level. All of that happens by managing and merging versions.
+    &lt;/p&gt;
+    &lt;p&gt;
+        When you use version control, you make it easier to make big changes because going back becomes easy and reliable. You also allow a large group of people to work in parallel with minimal human work to cipher through conflicts and overlaps. You can also update your code with changes other people have made without losing your own code.
+    &lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h3&gt;
+        How does git help you keep track of changes?
+    &lt;/h3&gt;
+    &lt;p&gt; 
+        Git helps you keep track of changes by giving you control over versions of your code. That may sound vague, but Git has a feauture called branches. Branches are sort of like when you save a file as file_v1 or file_v2, only better because Git is good and merging and updating files.
+    &lt;/p&gt;
+    &lt;p&gt;
+        With branches each person editing a slice of code can make their own branch. They are free to do whatever they like with that branch, it&#39;s only when you try to merge back with the master copy that those changes affect other people.  
+    &lt;/p&gt;
+    &lt;p&gt;
+        Every time you save to a branch in Git, you commit a version of your code to that branch. Git compares that commit to previous commits. Many people practice pulling and merging from the master branch before pushing their branch online. Doing so allows you see changes that other people have made and change your code accordingly. Git(hub) can show you line for line what has changed and can even point out some conflicts, so you can easily track other people&#39;s changes as well as your own.
+    &lt;/p&gt;
+  &lt;/section&gt;
+  &lt;section&gt;
+    &lt;h3&gt;
+        Why use GitHub to store your code?
+    &lt;/h3&gt;
+    &lt;p&gt;
+        Using Github is a good idea because it makes collaboration easy. It also helps keep your code accessible because it&#39;s online and can be found from any computer. Github allows you to see what you&#39;ve done in previous version, which can be nice if you mess something up or just need to pat yourself on the back.
+    &lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+
+</description>
+        <pubDate>Wed, 21 Oct 2015 00:00:00 -0500</pubDate>
+        <link>http://yourdomain.com/2015/10/21/git.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2015/10/21/git.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Welcome to Jekyll!</title>
@@ -27,9 +394,9 @@
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 19 Nov 2015 23:34:48 -0600</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/11/19/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/11/19/welcome-to-jekyll.html</guid>
+        <pubDate>Tue, 20 Oct 2015 00:34:48 -0500</pubDate>
+        <link>http://yourdomain.com/jekyll/update/2015/10/20/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/10/20/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
