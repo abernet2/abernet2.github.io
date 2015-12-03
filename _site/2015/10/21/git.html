@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- Assigns Base to the correct value -->
+
+
+ 
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Git, Github and Version Control</title>
+  <meta name="description" content="  Git, GitHub and Version Control  10/21/15">
+  <link rel="stylesheet" href="../../../stylesheets/default.css">
+  <link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+  <!-- <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/2015/10/21/git.html">
+  <link rel="alternate" type="application/rss+xml" title="Jack Abernethy's DBC Blog" href="http://yourdomain.com/feed.xml"> -->
+
+</head>
+
+  <body>
+
+    <header>
+    <div class="container">
+      <nav id="bar">
+        <ul>
+          <li><a href="../../../index.html">Home</a></li>
+          <li><a href="../../../blog/index.html">Blog</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="../../../about-me.html">About</a></li>
+          <!-- <li><a href="../../../contact.html">Contact</a></li> -->
+        </ul>
+      </nav> 
+    
+      <h1>Git, Github and Version Control</h1>
+      <ul class="social-media">
+  <li><a href="https://twitter.com/jabber_26"><img class="twitter" src="../../../imgs/Twitter_white_logo.svg" onmouseover="this.src='../../../imgs/Twitter_blue_logo.svg'" onmouseout="this.src='../../../imgs/Twitter_white_logo.svg'" alt="twitter"></a></li>
+  <li><a href="https://github.com/abernet2"><img src="../../../imgs/GitHub-Mark-Light.svg" onmouseover="src='../../../imgs/GitHub-Mark.svg'" onmouseout="src='../../../imgs/GitHub-Mark-Light.svg'"></a></li>
+  <li><a href="https://medium.com/@jackabernethy"><img src="../../../imgs/Medium-light.png" onmouseover="src='../../../imgs/medium-m-color.png'" onmouseout="src='../../../imgs/medium-light.png'" alt="Medium"></a></li>
+  <li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="../../../imgs/In-White-34px-TM.png" onmouseover="src='../../../imgs/In-2C-34px-R.png'" onmouseout="src='../../../imgs/In-White-34px-TM.png'"></a></li>
+</ul>
+    </div>
+  </header>
+
+<!-- <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Jack Abernethy's DBC Blog</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/">Jack's Blog</a>
+          
+        
+          
+          <a class="page-link" href="/">Jabber's Site</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/ruby-classes.html">Ruby Classes</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+ -->
+
+    <!-- <div class="page-content">
+      <div class="wrapper"> -->
+        <main>
+  <h1>Git, GitHub and Version Control</h1>
+  <h4>10/21/15</h4>
+
+  <section>
+    <h3>
+        What are the benefits of version control?
+    </h3>
+    <p> 
+        Controlling versions helps to foster collaboration and maintain clean, progressive versions of your code. The basic idea is that you save versions of your code to a big bucket called a repository. There you can manage best feautures and figure out the most productive and best functioning bits of code. If you want to revert to an old version, Github keeps track of all your previous saves. You can also go back and see what changes have been made on a line by line level. All of that happens by managing and merging versions.
+    </p>
+    <p>
+        When you use version control, you make it easier to make big changes because going back becomes easy and reliable. You also allow a large group of people to work in parallel with minimal human work to cipher through conflicts and overlaps. You can also update your code with changes other people have made without losing your own code.
+    </p>
+  </section>
+  <section>
+    <h3>
+        How does git help you keep track of changes?
+    </h3>
+    <p> 
+        Git helps you keep track of changes by giving you control over versions of your code. That may sound vague, but Git has a feauture called branches. Branches are sort of like when you save a file as file_v1 or file_v2, only better because Git is good and merging and updating files.
+    </p>
+    <p>
+        With branches each person editing a slice of code can make their own branch. They are free to do whatever they like with that branch, it's only when you try to merge back with the master copy that those changes affect other people.  
+    </p>
+    <p>
+        Every time you save to a branch in Git, you commit a version of your code to that branch. Git compares that commit to previous commits. Many people practice pulling and merging from the master branch before pushing their branch online. Doing so allows you see changes that other people have made and change your code accordingly. Git(hub) can show you line for line what has changed and can even point out some conflicts, so you can easily track other people's changes as well as your own.
+    </p>
+  </section>
+  <section>
+    <h3>
+        Why use GitHub to store your code?
+    </h3>
+    <p>
+        Using Github is a good idea because it makes collaboration easy. It also helps keep your code accessible because it's online and can be found from any computer. Github allows you to see what you've done in previous version, which can be nice if you mess something up or just need to pat yourself on the back.
+    </p>
+  </section>
+</main>
+
+
+    <!--   </div>
+    </div> -->
+
+    <footer>
+  <h3>Suggested</h3>
+  <div class="container">
+    <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+    <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+    <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+    <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>

@@ -1,73 +1,166 @@
 <!DOCTYPE html>
 <html>
+
+  <!-- Assigns Base to the correct value -->
+
+
+ 
+
 <head>
-	<title>Blog Landing Site</title>
-	 <link rel="stylesheet" href="../stylesheets/default.css">
-	<link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Jack's Blog</title>
+  <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+  <link rel="stylesheet" href="../stylesheets/default.css">
+  <link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+  <!-- <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/blog/">
+  <link rel="alternate" type="application/rss+xml" title="Jack Abernethy's DBC Blog" href="http://yourdomain.com/feed.xml"> -->
+
 </head>
-<body>
-	<header>
-		<div class="container">
-			<nav id="bar">
-				<ul>
-					<li><a href="../index.html">Home</a></li>
-					<li><a href="blog/index.html">Blog</a></li>
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">Resources</a></li>
-					<li><a href="../about-me.html">About</a></li>
-				</ul>
-			</nav>
-		
-			<h1>Website Title</h1>
-				<nav class="social-media">
-					<ul>
-						<li><a href="https://twitter.com/jabber_26"><img class="twitter" src="../imgs/Twitter_white_logo.svg" alt="twitter" onmouseover="src='../imgs/Twitter_blue_logo.svg'" onmouseout="src='../imgs/Twitter_white_logo.svg'"></a></li>
-						<li><a href="https://github.com/abernet2"><img src="../imgs/GitHub-Mark-Light.svg" onmouseover="src='../imgs/GitHub-Mark.svg'" onmouseout="src='../imgs/GitHub-Mark-Light.svg'"></a></li>
-						<li><a href="https://medium.com/@jackabernethy"><img src="../imgs/Medium-light.png" onmouseover="src='../imgs/medium-m-color.png'" onmouseout="src='../imgs/medium-light.png'" alt="Medium"></a></li>
-						<li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="../imgs/linked-white.svg" onmouseover="src='../imgs/linked.svg'" onmouseout="src='../imgs/linked-white.svg'"></a></li>
-					</ul>
-				</nav>
-		</div>
-	</header>
-<main>
-	<div class="container" id="blog-landing">
-		<div id="left">
-			<section class="preview" id="recent">
-				<a href="css-concepts.html"><img src="../imgs/CSS3.png" alt="article-thumbnail"></a>
-				<h2><a href="css-concepts.html">CSS Concepts</a></h2>
-				<p>Read all about CSS positioning, margins, borders and more!</p>
-			</section>
-		</div>
-		<div id="right">
-			<section class="preview">
-				<a href="arrays-hashes.html"><img src="../imgs/doc.svg" alt="article-thumbnail"></a>
-				<a href="arrays-hashes.html"><h3>Arrays and Hashes</h3></a>
-				<p>Arrays and Hashes: when to use which and why</p>
-			</section>
-			<section class="preview">
-				<img src="../imgs/doc.svg" alt="article-thumbnail">
-				<h3>Blurb</h3>
-				<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
-			</section>
-			<section class="preview">
-				<img src="../imgs/doc.svg" alt="article-thumbnail">
-				<h3>Blurb</h3>
-				<p>Insert little snippet of article here. Just a little teaser so you'll want to read more!</p>
-			</section>
-			<a id="more" href="#">more>></a>
-		</div>
+
+  <body>
+
+    <header>
+    <div class="container">
+      <nav id="bar">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../blog/index.html">Blog</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="../about-me.html">About</a></li>
+          <!-- <li><a href="../contact.html">Contact</a></li> -->
+        </ul>
+      </nav> 
+    
+      <h1>Jack's Blog</h1>
+      <ul class="social-media">
+  <li><a href="https://twitter.com/jabber_26"><img class="twitter" src="../imgs/Twitter_white_logo.svg" onmouseover="this.src='../imgs/Twitter_blue_logo.svg'" onmouseout="this.src='../imgs/Twitter_white_logo.svg'" alt="twitter"></a></li>
+  <li><a href="https://github.com/abernet2"><img src="../imgs/GitHub-Mark-Light.svg" onmouseover="src='../imgs/GitHub-Mark.svg'" onmouseout="src='../imgs/GitHub-Mark-Light.svg'"></a></li>
+  <li><a href="https://medium.com/@jackabernethy"><img src="../imgs/Medium-light.png" onmouseover="src='../imgs/medium-m-color.png'" onmouseout="src='../imgs/medium-light.png'" alt="Medium"></a></li>
+  <li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="../imgs/In-White-34px-TM.png" onmouseover="src='../imgs/In-2C-34px-R.png'" onmouseout="src='../imgs/In-White-34px-TM.png'"></a></li>
+</ul>
+    </div>
+  </header>
+
+<!-- <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Jack Abernethy's DBC Blog</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/">Jack's Blog</a>
+          
+        
+          
+          <a class="page-link" href="/">Jabber's Site</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/ruby-classes.html">Ruby Classes</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+ -->
+
+    <!-- <div class="page-content">
+      <div class="wrapper"> -->
+        <main>
+	<div class="container">
+		<ul id="blog-landing">
+		  
+		    <li class="preview"
+		     id = "recent" 
+		    >
+		      <a href="/technical/blog/2015/12/03/ruby-vs-javascript.html"><img src="../imgs/rubyvsjs.png" alt="ruby vs javascript"></a>
+		      <h2><a href="/technical/blog/2015/12/03/ruby-vs-javascript.html">Ruby vs Javascript</a></h2>
+			   <p>After learning about enumerables in Ruby, figuring out how looping works in Javascript takes some getting used to. Gone are the days of the .each loop. Read more here!</p> 
+		    </li>
+		  
+		    <li class="preview"
+		    
+		    >
+		      <a href="/2015/11/30/ruby-classes.html"><img src="https://www.mathsisfun.com/geometry/images/quadrilateral-class.gif" alt="quadrilateral classes"></a>
+		      <h2><a href="/2015/11/30/ruby-classes.html">Ruby Classes</a></h2>
+			  
+		    </li>
+		  
+		    <li class="preview"
+		    
+		    >
+		      <a href="/2015/11/20/enumerable-methods.html"><img src="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/10/collections_enum.jpg" alt=""></a>
+		      <h2><a href="/2015/11/20/enumerable-methods.html">Enumerable Methods</a></h2>
+			  
+		    </li>
+		  
+		    <li class="preview"
+		    
+		    >
+		      <a href="/2015/11/13/arrays-hashes.html"><img src="http://titanvex.com/wp-content/uploads/2013/04/hashtag400.jpg" alt="Hashtag"></a>
+		      <h2><a href="/2015/11/13/arrays-hashes.html">Arrays and Hashes!</a></h2>
+			  
+		    </li>
+		  
+		    <li class="preview"
+		    
+		    >
+		      <a href="/2015/11/06/css-concepts.html"><img src="../imgs/CSS3.png" alt="article-thumbnail"></a>
+		      <h2><a href="/2015/11/06/css-concepts.html">CSS Concepts Reflection</a></h2>
+			  
+		    </li>
+		  
+		</ul>
+
+		<!-- The more part should come with JS + JQuery -->
 	</div>
 </main>
-<footer>
-	<h3>Suggested</h3>
-	<div class="container">
-		<a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
-		<a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
-		<a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
-		<a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
-	</div>
+
+
+    <!--   </div>
+    </div> -->
+
+    <footer>
+  <h3>Suggested</h3>
+  <div class="container">
+    <a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+    <a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+    <a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+    <a href="#"><img src="../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+  </div>
 </footer>
 
-</body>
-</html> 
+
+  </body>
+
+</html>

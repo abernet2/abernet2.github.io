@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- Assigns Base to the correct value -->
+
+
+ 
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ruby Classes</title>
+  <meta name="description" content="Classes are basically blueprints for ruby objects. Classes can be useful to store and manipulate data in a consistent and predictable way. In this example, I...">
+  <link rel="stylesheet" href="../../../stylesheets/default.css">
+  <link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+  <!-- <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/2015/11/30/ruby-classes.html">
+  <link rel="alternate" type="application/rss+xml" title="Jack Abernethy's DBC Blog" href="http://yourdomain.com/feed.xml"> -->
+
+</head>
+
+  <body>
+
+    <header>
+    <div class="container">
+      <nav id="bar">
+        <ul>
+          <li><a href="../../../index.html">Home</a></li>
+          <li><a href="../../../blog/index.html">Blog</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="../../../about-me.html">About</a></li>
+          <!-- <li><a href="../../../contact.html">Contact</a></li> -->
+        </ul>
+      </nav> 
+    
+      <h1>Ruby Classes</h1>
+      <ul class="social-media">
+  <li><a href="https://twitter.com/jabber_26"><img class="twitter" src="../../../imgs/Twitter_white_logo.svg" onmouseover="this.src='../../../imgs/Twitter_blue_logo.svg'" onmouseout="this.src='../../../imgs/Twitter_white_logo.svg'" alt="twitter"></a></li>
+  <li><a href="https://github.com/abernet2"><img src="../../../imgs/GitHub-Mark-Light.svg" onmouseover="src='../../../imgs/GitHub-Mark.svg'" onmouseout="src='../../../imgs/GitHub-Mark-Light.svg'"></a></li>
+  <li><a href="https://medium.com/@jackabernethy"><img src="../../../imgs/Medium-light.png" onmouseover="src='../../../imgs/medium-m-color.png'" onmouseout="src='../../../imgs/medium-light.png'" alt="Medium"></a></li>
+  <li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="../../../imgs/In-White-34px-TM.png" onmouseover="src='../../../imgs/In-2C-34px-R.png'" onmouseout="src='../../../imgs/In-White-34px-TM.png'"></a></li>
+</ul>
+    </div>
+  </header>
+
+<!-- <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">Jack Abernethy's DBC Blog</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/">Jack's Blog</a>
+          
+        
+          
+          <a class="page-link" href="/">Jabber's Site</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/blog/ruby-classes.html">Ruby Classes</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+ -->
+
+    <!-- <div class="page-content">
+      <div class="wrapper"> -->
+        <main>
+	<div class="container">
+		<h4 id="date">11.30.2015</h4>	
+		<div id="blog-text">
+			<article class="post">
+				<p id="intro-blurb">
+				Classes are basically blueprints for ruby objects. Classes can be useful to store and manipulate data in a consistent and predictable way. In this example, I create a class to consistently manipulate data about the sides of Quadrilaterals to figure out what kind of Quadrilateral they are.</p>
+				<p>To begin, real quick, here's an overview of the class I made. We're going to refactor this for better use of instance/local variables, but for now here's a straightforward approach:</p>
+<pre class=prettyprint>
+
+	class Quadrilateral
+
+		def initialize(side1, side2, side3, side4, right_angle=false)
+			@s1 = side1
+			@s2 = side2
+			@s3 = side3
+			@s4 = side4
+			@ra = right_angle
+	  	end
+
+		def parrellelogram?
+  	   	@s1 == @s3 && @s2 == @s4
+	  	end
+
+		def rhombus?
+			@s2 == @s3 && parrellelogram?
+		end
+
+		def kite?
+			@s1 == @s2 && @s3 == @s4
+		end
+
+		def rectangle?
+			@ra && parrellelogram?
+		end
+
+		def square?
+			@ra && rhombus?
+		end
+
+	end
+					</pre>
+
+				<p>Basically what this object does is take in four sides, in consecutive order, and figures out which subset of a quadrangle it could be. It needs to remember the lengths of these sides so it can compare them later, which is why we create member variables for each.</p>
+				<p>The upside of using local variables is that you if you perform some computation with them upfront, you can save on space and time later. With this specific class, you can see that there is some overlap between our methods and we have a quite a few repetitive method calls.</p>
+				<p>Below I created a new method that makes better use of local variables by not saving the sides:</p>
+				<pre class=prettyprint>
+
+class Quadrilateral
+	
+	attr_reader :parrellelogram, :kite
+
+	def initialize(side1, side2, side3, side4, right_angle=false)
+		@parrellelogram = side1 == side3 && side2 == side4
+		@kite = side1 == side2 && side3 == side4
+		@ra = right_angle
+  	end
+
+	def rhombus
+		@kite && @parrellelogram
+	end
+
+	def rectangle
+		@ra && @parrellelogram
+	end
+
+	def square
+		@ra && rhombus
+	end
+
+end
+				</pre>
+
+				<p>What this does is computes all the important compares upfront and remembers the result, rather than remembering the sides and repeatedly computing them. This not only saves on memory, since now we only have 3 vs 5 variables, but it should also save on time and is a shorter amount of code.</p>
+				<p>The downside to this approach, however, is that it could prove problematic in the future. For instance, what if I wanted to create a method that returns the perimeter or area of a particular quadrilateral? In that situation, it might be best to go with the original approach. Or what if we want to resize our quadrilateral or morph it into another quadrilateral?</p>
+				<p>These questions bring out the important distinction between these variables. Local variables get forgotten pretty quickly, which can be mighty useful. The art of choosing between these two is the art of lettting that which truly does not matter slide. That art requires understanding how this class will be used and what changes might need to be made in the future.</p>
+			</article>
+		</div>
+	</div>
+</main>
+<aside id="about-me">
+ <div class="container">
+    <figure id="me">
+      <img src="/imgs/me.png" alt="me">
+      <h3>Jack Abernethy</h3>
+    </figure>
+      <ul id="links">
+        <li><p style="color:#e0e7e2">My name is Jack and I'm a fledgling Web Developer currently enrolled at Dev Bootcamp!</p></li>
+        <li><ul class="social-media">
+  <li><a href="https://twitter.com/jabber_26"><img class="twitter" src="/imgs/Twitter_white_logo.svg" onmouseover="this.src='/imgs/Twitter_blue_logo.svg'" onmouseout="this.src='/imgs/Twitter_white_logo.svg'" alt="twitter"></a></li>
+  <li><a href="https://github.com/abernet2"><img src="/imgs/GitHub-Mark-Light.svg" onmouseover="src='/imgs/GitHub-Mark.svg'" onmouseout="src='/imgs/GitHub-Mark-Light.svg'"></a></li>
+  <li><a href="https://medium.com/@jackabernethy"><img src="/imgs/Medium-light.png" onmouseover="src='/imgs/medium-m-color.png'" onmouseout="src='/imgs/medium-light.png'" alt="Medium"></a></li>
+  <li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="/imgs/In-White-34px-TM.png" onmouseover="src='/imgs/In-2C-34px-R.png'" onmouseout="src='/imgs/In-White-34px-TM.png'"></a></li>
+</ul></li>
+      </ul>
+ </div>
+</aside>
+
+
+
+
+    <!--   </div>
+    </div> -->
+
+    <footer>
+  <h3>Suggested</h3>
+  <div class="container">
+    <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+    <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+    <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+    <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+  </div>
+</footer>
+
+
+  </body>
+
+</html>
