@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Dec 2015 10:13:46 -0600</pubDate>
-    <lastBuildDate>Fri, 04 Dec 2015 10:13:46 -0600</lastBuildDate>
+    <pubDate>Fri, 04 Dec 2015 15:37:52 -0600</pubDate>
+    <lastBuildDate>Fri, 04 Dec 2015 15:37:52 -0600</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -21,37 +21,37 @@
             &lt;h2&gt;Iterating over Hashes/Objects&lt;/h2&gt;
             &lt;p&gt;While Javascript maintains the ability to perform most of these functions, it can&#39;t do so with the same level of readability. For example, the good ol&#39; #each loop in ruby looks roughly like this:&lt;/p&gt;
             &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;
-               hash = {a; 1,b: 2,c: 3,d: 4}
-               sum = 0
-               hash.each do |key, value|
-                  sum += value
-               end
+hash = {a; 1,b: 2,c: 3,d: 4}
+sum = 0
+hash.each do |key, value|
+   sum += value
+end
             &lt;/pre&gt;
             &lt;p&gt;And as long as we&#39;re working with hashes (objects in Javascript) the each loop should look pretty similar:&lt;/p&gt;
             &lt;pre class=&quot;prettyprint lang-js&quot;&gt;
-               var hash = {a; 1,b: 2,c: 3,d: 4};
-               var sum = 0;
-               for each (value in hash) {
-                  sum += value;
-               }
+var hash = {a; 1,b: 2,c: 3,d: 4};
+var sum = 0;
+for each (value in hash) {
+   sum += value;
+}
             &lt;/pre&gt;  
             &lt;h2&gt;Iterating over Arrays&lt;/h2&gt;
             &lt;p&gt;But the real problems start showing up when we need to iterate over an array. Javascript does not support easy iteration over arrays with the for each loop. To get such functionality you can use this somewhat messy workaround:&lt;/p&gt;
             &lt;pre class=&quot;prettyprint lang-js&quot;&gt;
-               var arr = [1,2,3,4];
-               var sum = 0;
-               arr.forEach( function(num) {
-                  sum += num;
-               });
+var arr = [1,2,3,4];
+var sum = 0;
+arr.forEach( function(num) {
+   sum += num;
+});
             &lt;/pre&gt;
             &lt;p&gt;Notice how this creates a strange nested }); at the end of the loop. The syntax is also inconsistent with the for each loop used for objects. A main reason for using each statements is that it makes the code so much more readable. Notice that to read this new syntax you have to put in extra work. If you didn&#39;t know any better, it would look like you were iterating over an array of functions, and where did this num variable come from!? &lt;/p&gt;
             &lt;p&gt;The better way to iterate over an array is like so:&lt;/p&gt;
             &lt;pre class=&quot;prettyprint lang-js&quot;&gt;
-            var arr = [1,2,3,4];
-            var sum = 0;
-            for (var i = 0; i &lt; arr.length; i++) {
-               sum += arr[i];
-            }
+var arr = [1,2,3,4];
+var sum = 0;
+for (var i = 0; i &lt; arr.length; i++) {
+   sum += arr[i];
+}
             &lt;/pre&gt;
             &lt;p&gt;While this might not look much better, if you step through the code it makes much more sense. First you declare i (traditionally used as an index in for loops). While i &lt; length, you do the following function and then increment by 1. It may not be pretty, but it gets the job done!&lt;/p&gt;
             &lt;h2&gt;Other Javascript Iteration Methods&lt;/h2&gt;
