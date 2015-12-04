@@ -12,25 +12,19 @@ title: Jabber's Site
       <a href="#" class="img"><p>coming soon...</p></a>
     </section>
 
-  	<h2>Recent Blog Posts</h2>
     <section class="rec blog" class="thumbnail">
-      {% for post in site.posts limit: 3 %}
+
+  		<h2>Recent Blog Posts</h2>
+      	{% for post in site.posts limit: 3 %}
       <!-- Not an ideal way to update background, maybe there's a better thing to do with JS -->
-	      <a href="{{ post.url }}" class="img" style="background-image: url('{{post.imageurl}}');
+	      <a href="{{ post.url }}" class="img" style="background: rgba(0,0,0,0); background-image: url('{{post.imageurl}}');
 	      background-position: center;
 	      -webkit-background-size: cover;
 	      background-size: cover;">
 	      	<p>{{ post.title }}</p>
 	      </a>
-	  {% endfor %}
+	  	{% endfor %}
 
-
-
-<!--       <a href="blog/css-concepts.html" id="css-concepts" class="img">
-        <p>CSS Concepts Reflection</p>
-      </a>
-      <a href="blog/arrays-hashes.html" class="img" id="arrays-hashes"><p>Arrays and Hashes</p></a>
-      <a href="#" class="img"><p>coming soon...</p></a> -->
     </section>
 
 </main>

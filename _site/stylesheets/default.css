@@ -179,6 +179,9 @@ main h2 {
 	text-align: left;
 	padding-top: 10px;
 }
+.rec h2 {
+	margin: 10px 10px;
+}
 
 a.img {
 	width: 150px;
@@ -311,20 +314,28 @@ ul#blog-landing {
 }
 
 .preview {
-	width: 47%;
+	width: 35%;
 	display: inline-block;
 	position: relative;
 	text-align: left;
-	/*margin-top: 75px;*/
-	/*margin-bottom: 30px;*/
-	padding: .5em;
+	padding: 0.5em;
+	left: 20px;
+}
+
+.preview h2 {
+	margin: 0;
+	max-width: 80px;
 }
 
 #recent {
 	float: left;
+	min-height: 20em;
 	overflow: hidden;
-	height: 7em;
+	width: 50%;
+	margin-right: 5%;
+	padding-top: 2em;
 }
+
 
 
 .preview img {
@@ -483,6 +494,16 @@ li.quotes {
 	width: 60%;
 	right: 20px;
 	background-color: white;
+}
+
+.project li {
+	display: inline-block;
+	position: relative;
+	width: 110px;
+	height: 100px;
+	background: yellow;
+	margin: 10px 20px;
+	padding: 10px;
 }
 
 /**
