@@ -29,9 +29,9 @@
     <div class="container">
       <nav id="bar">
         <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/blog/index.html">Blog</a></li>
-          <li><a href="/project.html">Projects</a></li>
+          <li><a href="">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/projects">Projects</a></li>
           <li><a href="#">Resources</a></li>
           <li><a href="/about-me.html">About</a></li>
           <!-- <li><a href="/contact.html">Contact</a></li> -->
@@ -59,37 +59,37 @@
             <h2>Iterating over Hashes/Objects</h2>
             <p>While Javascript maintains the ability to perform most of these functions, it can't do so with the same level of readability. For example, the good ol' #each loop in ruby looks roughly like this:</p>
             <pre class="prettyprint lang-rb">
-               hash = {a; 1,b: 2,c: 3,d: 4}
-               sum = 0
-               hash.each do |key, value|
-                  sum += value
-               end
+hash = {a; 1,b: 2,c: 3,d: 4}
+sum = 0
+hash.each do |key, value|
+   sum += value
+end
             </pre>
             <p>And as long as we're working with hashes (objects in Javascript) the each loop should look pretty similar:</p>
             <pre class="prettyprint lang-js">
-               var hash = {a; 1,b: 2,c: 3,d: 4};
-               var sum = 0;
-               for each (value in hash) {
-                  sum += value;
-               }
+var hash = {a; 1,b: 2,c: 3,d: 4};
+var sum = 0;
+for each (value in hash) {
+   sum += value;
+}
             </pre>  
             <h2>Iterating over Arrays</h2>
             <p>But the real problems start showing up when we need to iterate over an array. Javascript does not support easy iteration over arrays with the for each loop. To get such functionality you can use this somewhat messy workaround:</p>
             <pre class="prettyprint lang-js">
-               var arr = [1,2,3,4];
-               var sum = 0;
-               arr.forEach( function(num) {
-                  sum += num;
-               });
+var arr = [1,2,3,4];
+var sum = 0;
+arr.forEach( function(num) {
+   sum += num;
+});
             </pre>
             <p>Notice how this creates a strange nested }); at the end of the loop. The syntax is also inconsistent with the for each loop used for objects. A main reason for using each statements is that it makes the code so much more readable. Notice that to read this new syntax you have to put in extra work. If you didn't know any better, it would look like you were iterating over an array of functions, and where did this num variable come from!? </p>
             <p>The better way to iterate over an array is like so:</p>
             <pre class="prettyprint lang-js">
-            var arr = [1,2,3,4];
-            var sum = 0;
-            for (var i = 0; i < arr.length; i++) {
-               sum += arr[i];
-            }
+var arr = [1,2,3,4];
+var sum = 0;
+for (var i = 0; i < arr.length; i++) {
+   sum += arr[i];
+}
             </pre>
             <p>While this might not look much better, if you step through the code it makes much more sense. First you declare i (traditionally used as an index in for loops). While i < length, you do the following function and then increment by 1. It may not be pretty, but it gets the job done!</p>
             <h2>Other Javascript Iteration Methods</h2>
