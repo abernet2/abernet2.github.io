@@ -18,7 +18,7 @@ Organized by attribute
 	transition: all .2s;
 }
 
-html, body {
+html, body, h1, .rec p, #me h4, footer h3 {
 	margin: 0;
 }
 
@@ -269,7 +269,6 @@ aside#about-me {
 figure#me {
 	display: inline-block;
 	padding: 20px 50px;
-	margin: 20px;
 }
 
 #me img {
@@ -284,7 +283,6 @@ figure#me {
 ul#links {
 	display: inline-block;
 	vertical-align: 50%;
-	padding: 35px 0 10px 5px;
 	line-height: 1.8em;
 	width: 50%;
 	max-width: 250px;
