@@ -194,7 +194,7 @@ header h1 {
 header .social-media {
 	text-align: right;
 	position: absolute;
-	bottom: 20px;
+	bottom: 0px;
 	right: 20px;
 }
 
