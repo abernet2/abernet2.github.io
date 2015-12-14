@@ -15,8 +15,11 @@ Organized by attribute
 
 /*TEXT STUFF*/
 * {
-	margin: 0;
 	transition: all .2s;
+}
+
+html, body {
+	margin: 0;
 }
 
 h2 {
