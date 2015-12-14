@@ -45,10 +45,9 @@ Only works with inline elements (or table cells).
 
 ### Syntax
 
-for each loops:
+####for each loops:
 
-<!-- <pre class="prettprint lang-js">-->
-~~~
+ <pre class="prettprint lang-js">
 for (var in object) { 
 	...
 }
@@ -56,6 +55,4 @@ for (var in object) {
 array.forEach(function(entry) {
 	...
 });
-~~~
-{: .language-javascript}
-<!-- </pre> -->
+</pre>

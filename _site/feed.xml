@@ -6,9 +6,108 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Dec 2015 19:15:16 -0600</pubDate>
-    <lastBuildDate>Sun, 13 Dec 2015 19:15:16 -0600</lastBuildDate>
+    <pubDate>Sun, 13 Dec 2015 23:47:32 -0600</pubDate>
+    <lastBuildDate>Sun, 13 Dec 2015 23:47:32 -0600</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>Computer Memory</title>
+        <description>&lt;h2 id=&quot;starting-out-a-broad-overview&quot;&gt;Starting Out: A Broad Overview&lt;/h2&gt;
+
+&lt;p&gt;A computer works a lot like a person. For the purposes of discussing memory, it has a brain that is very powerful, but only has a tiny amount of room to remember things it needs to focus on. To put it another way, a human might be smart enough to do long division or calculus, but it can be extremely taxing to do so in one’s head. That’s why when you do math you usually use scratch paper.&lt;/p&gt;
+
+&lt;p&gt;Computers work the same way: they need scratch paper. The CPU, and other pieces of hardware, have small bits of working memory that help them to do their work quickly and efficiently. These small bits of memory in layers of memory called caches.&lt;/p&gt;
+
+&lt;p&gt;Caching is a broad term that is important for performance. Every computer has layers of caches between the hardrive and various features of RAM. They come in various sizes with various ease of access. For the purpose of this blog post, just think of cache as the memory in the CPU, but keep in mind there is more to the term!&lt;/p&gt;
+
+&lt;p&gt;There is also the third layer of memory, the harddrive. RAM is downright puny compared to the harddrive. Whereas caches and RAM disappear without power, the hard-drive remembers what you write to it without any power. It also can store much more data in much less space, although these advantages come at a huge speed disadvantage. That’s why harddrives are often compared to file cabinets: they are slow and painful to use, but great for big, longterm storage.&lt;/p&gt;
+
+&lt;p&gt;Each layer of memory serves a distinct purpose. It would be frustrating to constantly have to go in and out of a file cabinent to do a math problem. Likewise it would be very difficult after a while to sort through the big stack of your old pieces of scratch paper for any meaningful data.&lt;/p&gt;
+
+&lt;h2 id=&quot;stacks&quot;&gt;Stacks&lt;/h2&gt;
+
+&lt;p&gt;Stack is a word you’ll hear a lot in conversations about computers. There’s “Stack” Overflow, Full “Stack” Employees, Kernel Stacks, etc. You might be interested to learn that this is simply a basic data type in computer science and it is based (essentially) off a stack of papers on your desk.&lt;/p&gt;
+
+&lt;p&gt;A stack works like a stack of papers on your desk. When you add a paper to the top, we call that a &lt;em&gt;push&lt;/em&gt; and when you take a paper off the top we call that a &lt;em&gt;pop&lt;/em&gt;. Imagine you have 10 pieces of paper with a letter on each one, A-J. Now imagine pushing all 10 pieces to the stack. Now pop the top page off and try to guess what letter it is? The correct answer is the last paper you added, if you went in order that would be J. Pushing items in order reverses the order. This is what is meant by Last In First Out (LIFO), a common phrase associated with stacks.&lt;/p&gt;
+
+&lt;p&gt;Stacking prioritizes the most recent additions. Notice that if you want something in the middle of the stack, this is a pretty inconvenient way of storing stuff. In the case of computers executing complicated sets of instructions, this is actually really helpful.&lt;/p&gt;
+
+&lt;p&gt;Computers are always using stacks. If you hit alt-tab on windows, you can scroll through your most recently used programs, with the most recent first. This is most likely the result of some sort of stack. The back and forward buttons on your browser use a stack, pushd and popd on the command line use a stack and every program you write uses a stack to manage its memory.&lt;/p&gt;
+
+&lt;h3 id=&quot;cool-tell-me-more-about-memory&quot;&gt;Cool, Tell Me More About Memory!&lt;/h3&gt;
+
+&lt;p&gt;Computers are dumb, which is why we need to be smart and help them stay organized. Stacks are a great way for computers to organize their memory because it keeps recent accesses in close reach. You can also make efficient use of space since when you pop something off the stack you free that memory back up.&lt;/p&gt;
+
+&lt;p&gt;Every time you write a program, the computer gives you a piece of scratch paper in the form of a stack. Every variable you declare gets pushed to the stack, although Objects behave a little differently than primitive types (more on that in a little bit).&lt;/p&gt;
+
+&lt;p&gt;Every time you call a method, the computer gives you a new little sub-stack so that method can have its own scoped scratch paper. This process allows scoping and keeps memory manageable. Every time you call a method, it makes a new little piece of scratch paper, when the method finishes it throws that scratch away to keep your stack clean.&lt;/p&gt;
+
+&lt;h3 id=&quot;you-said-something-about-objects-being-different-than-primitive-types&quot;&gt;You said something about Objects Being Different than Primitive Types&lt;/h3&gt;
+
+&lt;p&gt;Stacks have their place in the world, but not all data is stored in that way. Arrays, hashes, and other types of objects are  often referred to as &lt;em&gt;Dynamic Variables&lt;/em&gt;. Dynamic Variables get their “dynamism” from being stored in something called the &lt;em&gt;Heap&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;While stacks are fast and manage memory well, they have a limited amount of space to work with. This is a tradeoff you make in order to use the organizational structure of a stack.&lt;/p&gt;
+
+&lt;p&gt;Remember that everything stored on a computer has a specific memory address, usually shown in hexadecimal notation (0x08FAD…). Whenever you deal with an object you have to call it by its address. If you wanted to insert something sequentially between two addresses in memory, you would have to move literally every memory address that follows after to achieve that result. It would be like trying to add a lot to a highly developed city block. The Heap has features that make dynamically changing the size of variables possible.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-heap&quot;&gt;THE HEAP&lt;/h2&gt;
+
+&lt;p&gt;Heaps can do this because they are allowed to ask the operating system for more memory. Stacks cannot do this because the stack is always growing and retracting, you have to limit its size when you make it to avoid having to move huge chunks of memory.Since every program gets its own stack, it’s not completely off base to think of memory as just a bunch of stacks of stacks. If you made every stack gigantic, you would very quickly run out of space in RAM and your computer would run a lot slower. So the size of the stack is about balancing these two colliding issues.&lt;/p&gt;
+
+&lt;p&gt;The Heap gets around this issue by not caring about sequencing. If you choose to double the size of an array, for example, the Heap will actually move it to a spot where there is plenty of memory and free up where the array used to be.&lt;/p&gt;
+
+&lt;p&gt;Basically any time you use the ‘new’ keyword in any language, you are allocating something to the heap. Unlike the stack, memory allocated to the heap is &lt;strong&gt;NOT&lt;/strong&gt; automatically deleted. In high level languages such as Ruby, Python and Java, this fact is concealed from the program because those languages have a garbage collector. A garbage collector keeps track of all your heap allocations and deletes them automatically. In lower level languages like C/C++ this has to be done manually, which saves in computation time, but can cause errors if programmers forget to free their variables.&lt;/p&gt;
+
+&lt;p&gt;Further it can cause memory to become fragmented. Whereas a stack deletes everything in sequential chunks, the Heap may have to go to many different address to delete all of your objects. Since the Heap keeps track of free memory, if you have many random deletions you have a bunch of tiny free spots in your memory.&lt;/p&gt;
+
+&lt;h3 id=&quot;cache-hits-pointers-and-examples&quot;&gt;Cache Hits, Pointers and Examples&lt;/h3&gt;
+
+&lt;p&gt;CPUs at their lowest level can basically only save, store, add and subtract. The process of saving and storing requires basically three arguments: from_where, to_where and how_much. Since a CPU can only load in specific chunk sizes, it helps to have all your data stored in a row.&lt;/p&gt;
+
+&lt;h4 id=&quot;quick-example-of-a-stack-call&quot;&gt;Quick Example of a Stack Call&lt;/h4&gt;
+
+&lt;p&gt;Say you have ints for height and width, and lets say they each take up 8 bytes. Keep in mind I’m completely making up these numbers, but now let’s say the CPU loads 32 bytes at a time. When the CPU loads height it gets 8 bytes it wants and 24 it doesn’t, but it still has all 32 bytes stored in its cache.&lt;/p&gt;
+
+&lt;p&gt;Now if you go to load width (and they were declared and stored near each other), the CPU can see that it already has those 8 bytes and it doesn’t actually need to load anything off the stack.&lt;/p&gt;
+
+&lt;p&gt;Integers in many languages (not Ruby) will be stored on the stack. Since they are relatively small, other variables often get loaded with them. If you happen to be using something in that pack of memory, you get a speed up from the system, this is called a cache hit. Further, the system remembers how big an int is and so you don’t have store its size anywhere, just a little bit of code indicating its type.&lt;/p&gt;
+
+&lt;h4 id=&quot;a-quick-example-of-a-heap-call&quot;&gt;A Quick Example of a Heap Call&lt;/h4&gt;
+
+&lt;p&gt;Variables stored on the heap are a different story. Basically the CPU starts out the same way as it would load an int: it gets a memory address and a length to load off the stack.&lt;/p&gt;
+
+&lt;p&gt;The difference is that with the int we were loading that variable’s value: some number. With dynamically located variables (stuff on the heap), the values we load here are for ANOTHER SET OF INSTRUCTIONS FOR A LOAD.&lt;/p&gt;
+
+&lt;p&gt;This is called a pointer, and if you ever have any interest in doing system’s programming you will be using them explicitly a lot. Pointers are how programs interact with the Heap and also how the system interacts with hardware. Hence the systems programming comment.&lt;/p&gt;
+
+&lt;p&gt;Loading from pointers basically means the system has at least 1 extra load to perform, although it can also be quite a few more if you are loading something big.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Most modern languages have features that prevent programmers from interacting directly with this complicated process. Which can be a great thing since there are a lot of tough to detect errors that can occure from working with pointers directly. Still it’s important to understand if you ever have performance concerns.&lt;/p&gt;
+
+&lt;h2 id=&quot;references-and-what-i-read&quot;&gt;References and What I Read&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.learncpp.com/cpp-tutorial/79-the-stack-and-the-heap/&quot;&gt;Stack and Heap overview from LearnCpp.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.learncpp.com/cpp-tutorial/79-the-stack-and-the-heap/&quot;&gt;Stack vs Heap from C Bootcamp&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.programmerinterview.com/index.php/data-structures/difference-between-stack-and-heap/&quot;&gt;Stack vs Heap Interview Questions&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap&quot;&gt;This great Stack Overflow Post&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://duartes.org/gustavo/blog/post/anatomy-of-a-program-in-memory/&quot;&gt;Anatomy of a Program in Memory by Gustavo Duarte&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://homepage.cs.uri.edu/faculty/wolfe/book/Readings/Reading04.htm&quot;&gt;How Computers Work: The CPU and Memory&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://computer.howstuffworks.com/computer-memory.htm&quot;&gt;How Computer Memory Works&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 13 Dec 2015 00:00:00 -0600</pubDate>
+        <link>http://yourdomain.com/2015/12/13/memory.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2015/12/13/memory.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Ruby vs Javascript</title>
@@ -82,90 +181,90 @@ for (var i = 0; i &lt; arr.length; i++) {
       <item>
         <title>Ruby Classes</title>
         <description>&lt;main&gt;
-	&lt;div class=&quot;container&quot;&gt;
-		&lt;h4 id=&quot;date&quot;&gt;11.30.2015&lt;/h4&gt;	
-		&lt;div id=&quot;blog-text&quot;&gt;
-			&lt;article class=&quot;post&quot;&gt;
-				&lt;p id=&quot;intro-blurb&quot;&gt;
-				Classes are basically blueprints for ruby objects. Classes can be useful to store and manipulate data in a consistent and predictable way. In this example, I create a class to consistently manipulate data about the sides of Quadrilaterals to figure out what kind of Quadrilateral they are.&lt;/p&gt;
-				&lt;p&gt;To begin, real quick, here&#39;s an overview of the class I made. We&#39;re going to refactor this for better use of instance/local variables, but for now here&#39;s a straightforward approach:&lt;/p&gt;
+   &lt;div class=&quot;container&quot;&gt;
+      &lt;h4 id=&quot;date&quot;&gt;11.30.2015&lt;/h4&gt; 
+      &lt;div id=&quot;blog-text&quot;&gt;
+         &lt;article class=&quot;post&quot;&gt;
+            &lt;p id=&quot;intro-blurb&quot;&gt;
+            Classes are basically blueprints for ruby objects. Classes can be useful to store and manipulate data in a consistent and predictable way. In this example, I create a class to consistently manipulate data about the sides of Quadrilaterals to figure out what kind of Quadrilateral they are.&lt;/p&gt;
+            &lt;p&gt;To begin, real quick, here&#39;s an overview of the class I made. We&#39;re going to refactor this for better use of instance/local variables, but for now here&#39;s a straightforward approach:&lt;/p&gt;
 &lt;pre class=prettyprint&gt;
 
-	class Quadrilateral
-
-		def initialize(side1, side2, side3, side4, right_angle=false)
-			@s1 = side1
-			@s2 = side2
-			@s3 = side3
-			@s4 = side4
-			@ra = right_angle
-	  	end
-
-		def parrellelogram?
-  	   	@s1 == @s3 &amp;&amp; @s2 == @s4
-	  	end
-
-		def rhombus?
-			@s2 == @s3 &amp;&amp; parrellelogram?
-		end
-
-		def kite?
-			@s1 == @s2 &amp;&amp; @s3 == @s4
-		end
-
-		def rectangle?
-			@ra &amp;&amp; parrellelogram?
-		end
-
-		def square?
-			@ra &amp;&amp; rhombus?
-		end
-
-	end
-					&lt;/pre&gt;
-
-				&lt;p&gt;Basically what this object does is take in four sides, in consecutive order, and figures out which subset of a quadrangle it could be. It needs to remember the lengths of these sides so it can compare them later, which is why we create member variables for each.&lt;/p&gt;
-				&lt;p&gt;The upside of using local variables is that you if you perform some computation with them upfront, you can save on space and time later. With this specific class, you can see that there is some overlap between our methods and we have a quite a few repetitive method calls.&lt;/p&gt;
-				&lt;p&gt;Below I created a new method that makes better use of local variables by not saving the sides:&lt;/p&gt;
-				&lt;pre class=prettyprint&gt;
-
 class Quadrilateral
-	
-	attr_reader :parrellelogram, :kite
 
-	def initialize(side1, side2, side3, side4, right_angle=false)
-		@parrellelogram = side1 == side3 &amp;&amp; side2 == side4
-		@kite = side1 == side2 &amp;&amp; side3 == side4
-		@ra = right_angle
-  	end
+   def initialize(side1, side2, side3, side4, right_angle=false)
+      @s1 = side1
+      @s2 = side2
+      @s3 = side3
+      @s4 = side4
+      @ra = right_angle
+   end
 
-	def rhombus
-		@kite &amp;&amp; @parrellelogram
-	end
+   def parrellelogram?
+         @s1 == @s3 &amp;&amp; @s2 == @s4
+   end
 
-	def rectangle
-		@ra &amp;&amp; @parrellelogram
-	end
+   def rhombus?
+      @s2 == @s3 &amp;&amp; parrellelogram?
+   end
 
-	def square
-		@ra &amp;&amp; rhombus
-	end
+   def kite?
+      @s1 == @s2 &amp;&amp; @s3 == @s4
+   end
+
+   def rectangle?
+      @ra &amp;&amp; parrellelogram?
+   end
+
+   def square?
+      @ra &amp;&amp; rhombus?
+   end
 
 end
-				&lt;/pre&gt;
+               &lt;/pre&gt;
 
-				&lt;p&gt;What this does is computes all the important compares upfront and remembers the result, rather than remembering the sides and repeatedly computing them. This not only saves on memory, since now we only have 3 vs 5 variables, but it should also save on time and is a shorter amount of code.&lt;/p&gt;
-				&lt;p&gt;The downside to this approach, however, is that it could prove problematic in the future. For instance, what if I wanted to create a method that returns the perimeter or area of a particular quadrilateral? In that situation, it might be best to go with the original approach. Or what if we want to resize our quadrilateral or morph it into another quadrilateral?&lt;/p&gt;
-				&lt;p&gt;These questions bring out the important distinction between these variables. Local variables get forgotten pretty quickly, which can be mighty useful. The art of choosing between these two is the art of lettting that which truly does not matter slide. That art requires understanding how this class will be used and what changes might need to be made in the future.&lt;/p&gt;
-			&lt;/article&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+            &lt;p&gt;Basically what this object does is take in four sides, in consecutive order, and figures out which subset of a quadrangle it could be. It needs to remember the lengths of these sides so it can compare them later, which is why we create member variables for each.&lt;/p&gt;
+            &lt;p&gt;The upside of using local variables is that you if you perform some computation with them upfront, you can save on space and time later. With this specific class, you can see that there is some overlap between our methods and we have a quite a few repetitive method calls.&lt;/p&gt;
+            &lt;p&gt;Below I created a new method that makes better use of local variables by not saving the sides:&lt;/p&gt;
+            &lt;pre class=prettyprint&gt;
+
+class Quadrilateral
+   
+   attr_reader :parrellelogram, :kite
+
+   def initialize(side1, side2, side3, side4, right_angle=false)
+      @parrellelogram = side1 == side3 &amp;&amp; side2 == side4
+      @kite = side1 == side2 &amp;&amp; side3 == side4
+      @ra = right_angle
+   end
+
+   def rhombus
+      @kite &amp;&amp; @parrellelogram
+   end
+
+   def rectangle
+      @ra &amp;&amp; @parrellelogram
+   end
+
+   def square
+      @ra &amp;&amp; rhombus
+   end
+
+end
+            &lt;/pre&gt;
+
+            &lt;p&gt;What this does is computes all the important compares upfront and remembers the result, rather than remembering the sides and repeatedly computing them. This not only saves on memory, since now we only have 3 vs 5 variables, but it should also save on time and is a shorter amount of code.&lt;/p&gt;
+            &lt;p&gt;The downside to this approach, however, is that it could prove problematic in the future. For instance, what if I wanted to create a method that returns the perimeter or area of a particular quadrilateral? In that situation, it might be best to go with the original approach. Or what if we want to resize our quadrilateral or morph it into another quadrilateral?&lt;/p&gt;
+            &lt;p&gt;These questions bring out the important distinction between these variables. Local variables get forgotten pretty quickly, which can be mighty useful. The art of choosing between these two is the art of lettting that which truly does not matter slide. That art requires understanding how this class will be used and what changes might need to be made in the future.&lt;/p&gt;
+         &lt;/article&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
 &lt;/main&gt;
 &lt;aside id=&quot;about-me&quot;&gt;
  &lt;div class=&quot;container&quot;&gt;
     &lt;figure id=&quot;me&quot;&gt;
       &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
-      &lt;h3&gt;Jack Abernethy&lt;/h3&gt;
+      &lt;h4&gt;Jack Abernethy&lt;/h4&gt;
     &lt;/figure&gt;
       &lt;ul id=&quot;links&quot;&gt;
         &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
@@ -210,7 +309,7 @@ end
 				&lt;h2&gt;Enumerable#zip&lt;/h2&gt;
 				&lt;p&gt;For my last piece, I chose a function I&#39;d never heard of: zip. Zip is a little bit tricky, but basically it merges its arguments into arrays with each other. Some of the behavior gets weird unless you understand how it works.&lt;/p&gt;
 				&lt;figure class=&quot;block&quot;&gt;
-					&lt;img src=&quot;../imgs/zip.PNG&quot; alt=&quot;demo from ruby docs&quot;&gt;
+					&lt;img src=&quot;/imgs/zip.PNG&quot; alt=&quot;demo from ruby docs&quot;&gt;
 				&lt;/figure&gt;
 				&lt;p&gt;As seen above, if you zip two arrays together you get an array of arrays paired by index. So &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;c[0] = [a[0], b[0]]&lt;/pre&gt; Notice this is the transpose of creating a 2d array by saying &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;c = [a,b]&lt;/pre&gt;&lt;/p&gt;
 				&lt;p&gt;But what if your arrays are different sizes? You have to remember that since it is an enumerable, it iterates over each element of the object that CALLS it. So you will never get a shorter or longer array as a result. It will fill in empty spaces with nil or disregard extra values, so use wisely!&lt;/p&gt;
@@ -224,7 +323,7 @@ end
  &lt;div class=&quot;container&quot;&gt;
     &lt;figure id=&quot;me&quot;&gt;
       &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
-      &lt;h3&gt;Jack Abernethy&lt;/h3&gt;
+      &lt;h4&gt;Jack Abernethy&lt;/h4&gt;
     &lt;/figure&gt;
       &lt;ul id=&quot;links&quot;&gt;
         &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
@@ -281,7 +380,7 @@ end
  &lt;div class=&quot;container&quot;&gt;
     &lt;figure id=&quot;me&quot;&gt;
       &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
-      &lt;h3&gt;Jack Abernethy&lt;/h3&gt;
+      &lt;h4&gt;Jack Abernethy&lt;/h4&gt;
     &lt;/figure&gt;
       &lt;ul id=&quot;links&quot;&gt;
         &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
@@ -358,7 +457,7 @@ end
  &lt;div class=&quot;container&quot;&gt;
     &lt;figure id=&quot;me&quot;&gt;
       &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
-      &lt;h3&gt;Jack Abernethy&lt;/h3&gt;
+      &lt;h4&gt;Jack Abernethy&lt;/h4&gt;
     &lt;/figure&gt;
       &lt;ul id=&quot;links&quot;&gt;
         &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
