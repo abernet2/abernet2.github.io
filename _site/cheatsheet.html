@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Projects Page</title>
+  <title>Cheat Sheet</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
   <link rel="stylesheet" href="../stylesheets/default.css">
@@ -19,7 +19,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
   <!-- <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/projects/">
+  <link rel="canonical" href="http://yourdomain.com/cheatsheet.html">
   <link rel="alternate" type="application/rss+xml" title="Jack Abernethy's DBC Blog" href="http://yourdomain.com/feed.xml"> -->
 
 </head>
@@ -39,7 +39,7 @@
         </ul>
       </nav> 
     
-      <h1>Projects Page</h1>
+      <h1>Cheat Sheet</h1>
       <ul class="social-media">
   <li><a href="https://twitter.com/jabber_26"><img class="twitter" src="../imgs/Twitter_white_logo.svg" onmouseover="this.src='../imgs/Twitter_blue_logo.svg'" onmouseout="this.src='../imgs/Twitter_white_logo.svg'" alt="twitter"></a></li>
   <li><a href="https://github.com/abernet2"><img src="../imgs/GitHub-Mark-Light.svg" onmouseover="src='../imgs/GitHub-Mark.svg'" onmouseout="src='../imgs/GitHub-Mark-Light.svg'"></a></li>
@@ -49,24 +49,67 @@
     </div>
   </header>
 
-    <!-- <div class="page-content">
-      <div class="wrapper"> -->
-        <main>
-	<div class="container">
-		<div class="featured project">
-			<h2>Project Title</h2>
-			<p>Description will go here................</p>
-		</div>
-		<ul class="project">
-			<li>A</li>
-			<li>B</li>
-			<li>C</li>
-		</ul>
-	</div>
-</main>
+    <main>
+      <div class="container" id="blog-text">
+        <h2 id="css">CSS</h2>
 
-    <!--   </div>
-    </div> -->
+<h3 id="margin-auto">Margin Auto</h3>
+
+<p>Remember to set the width first and to display as block. Auto sets half of remaining width to margin-left and the other half to margin-right.</p>
+
+<h3 id="display-inlines-and-blocks">Display: Inlines and Blocks</h3>
+
+<p><strong>Inline</strong> makes an element resist any vertical (top-bottom) padding or margin. Further, setting the height or width will do nothing. Elements with inline simply go with the flow and take up as much room as they need, nothing more nothing less.</p>
+
+<p><strong>Inline-Block</strong> allows you to set vertical settings and height/width while still displaying the element in-line with everything else.</p>
+
+<p><strong>Block</strong> gives an element its own line and defaults to taking up 100% width. You can play around with height/width, you name it.</p>
+
+<h3 id="vertical-align">Vertical-Align</h3>
+
+<p>Only works with inline elements (or table cells).</p>
+
+<h2 id="ruby">Ruby</h2>
+
+<h3 id="enumerators-and-enumerables">Enumerators and Enumerables</h3>
+
+<h4 id="why-use-an-enumerator">Why use an Enumerator?</h4>
+<ol>
+  <li>For chaining multiple enumerable operations.</li>
+  <li>For returning collections without computing data. Great if you don’t want to pass around huge collections.</li>
+  <li>Check out this great <a href="http://blog.arkency.com/2014/01/ruby-to-enum-for-enumerator/">blog post</a></li>
+</ol>
+
+<h4 id="some-useful-enumerable-methods">Some Useful Enumerable Methods</h4>
+<ul>
+  <li>Collect</li>
+  <li>Count</li>
+  <li>Group_By</li>
+  <li>Reduce</li>
+  <li>Map</li>
+  <li>Select</li>
+  <li><a href="http://ruby-doc.org/core-2.2.3/Enumerable.html">RUBY DOCS!!!</a></li>
+</ul>
+
+<h2 id="javascript">Javascript</h2>
+
+<h3 id="syntax">Syntax</h3>
+
+<p>for each loops:</p>
+
+<!-- <pre class="prettprint lang-js">-->
+<pre><code class="language-javascript">for (var in object) { 
+	...
+}
+
+array.forEach(function(entry) {
+	...
+});
+</code></pre>
+<!-- </pre> -->
+
+      </div>
+    </main> 
 
     <footer>
   <h3>Suggested</h3>
