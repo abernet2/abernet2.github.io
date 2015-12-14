@@ -32,7 +32,7 @@
           <li><a href="../../..">Home</a></li>
           <li><a href="../../../blog">Blog</a></li>
           <li><a href="../../../projects">Projects</a></li>
-          <li><a href="#">Resources</a></li>
+          <!-- <li><a href="#">Resources</a></li> -->
           <li><a href="../../../about-me.html">About</a></li>
           <!-- <li><a href="../../../contact.html">Contact</a></li> -->
         </ul>
@@ -69,7 +69,7 @@
 				<h2>Enumerable#zip</h2>
 				<p>For my last piece, I chose a function I'd never heard of: zip. Zip is a little bit tricky, but basically it merges its arguments into arrays with each other. Some of the behavior gets weird unless you understand how it works.</p>
 				<figure class="block">
-					<img src="../imgs/zip.PNG" alt="demo from ruby docs">
+					<img src="/imgs/zip.PNG" alt="demo from ruby docs">
 				</figure>
 				<p>As seen above, if you zip two arrays together you get an array of arrays paired by index. So <pre class="prettyprint lang-rb">c[0] = [a[0], b[0]]</pre> Notice this is the transpose of creating a 2d array by saying <pre class="prettyprint lang-rb">c = [a,b]</pre></p>
 				<p>But what if your arrays are different sizes? You have to remember that since it is an enumerable, it iterates over each element of the object that CALLS it. So you will never get a shorter or longer array as a result. It will fill in empty spaces with nil or disregard extra values, so use wisely!</p>
@@ -83,7 +83,7 @@
  <div class="container">
     <figure id="me">
       <img src="/imgs/me.png" alt="me">
-      <h3>Jack Abernethy</h3>
+      <h4>Jack Abernethy</h4>
     </figure>
       <ul id="links">
         <li><p style="color:#e0e7e2">My name is Jack and I'm a fledgling Web Developer currently enrolled at Dev Bootcamp!</p></li>
@@ -105,7 +105,7 @@
     <footer>
   <h3>Suggested</h3>
   <div class="container">
-    <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
+    <a href="../../../cheatsheet.html"><img src="../../../imgs/doc.svg" alt="Cheat Sheet"></a>
     <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
     <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
     <a href="#"><img src="../../../imgs/thumbsup-outline.svg" alt="Suggestion"></a>
