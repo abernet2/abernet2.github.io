@@ -1,7 +1,7 @@
 /*
 green: 425851;
 light-green: 00F982;
-grey: e0e7e2;
+grey: dee3e5;
 dark blue: 284863;
 light blue: 2b7bb1;
  */
@@ -13,52 +13,56 @@ Organized by attribute
 
 **/
 
+/*TEXT STUFF*/
 * {
 	margin: 0;
 	transition: all .2s;
 }
+
+h2 {
+	font-size: 3em;
+}
+
+h3 {
+	font-size: 2.2em;
+}
+
+h4 {
+	font-size: 1.5em;
+	margin-bottom: .5em;
+}
+
 /* sans-serif */
 * {
 	font-family: 'Asap', Arial, sans-serif;
 }
 
-::selection {
-    background-color: #00F982;
-    color: #fff;
-}
-
+/* Serif */
 h1, h2, h3, #links a, .img p, p#intro-blurb {
 	font-family: Crete Round, Georgia, serif;
 }
+/* Monospace */
+pre, pre span {
+	font-family: "Lucida Console", Monaco, monospace!important;
+}
 
+html, .rec p, figure#me, .featured,
+ul.project, main h2 {
+	text-align: center;
+}
+
+header h1, ul#links, ul#blog-links,
+.preview, div#blog-text, pre span {
+	text-align: left;
+}
+
+
+/* Dark Blue */
 h1 {
 	color: #fff;
 	text-shadow: 3px 3px 2px #284863;
- 	font-size: 3em;
+ 	font-size: 4em;
  	max-width: 60%;
-}
-
-/* color 1 */ 
- h2, .preview a, a#more, *  {
-	color: #232b30;
-}
-aside#about-me, .post aside div.container  {
-	background-color: #232b30;
-}
-
-/* color 2 */
-a, a:visited, nav#bar li a:hover {
-	color: #2b7bb1;
-	text-decoration: none;
-}
-
-/* color 3 */
-main, figure#me, html { 
-	background: #e0e7e2;
-}
-
-.img p, footer p, footer h3 {
-	color: #e0e7e2;
 }
 
 nav#bar a {
@@ -69,19 +73,56 @@ footer {
 	background: #284863;
 }
 
+/* dark grey */ 
+ h2, .preview a, a#more, *  {
+	color: #232b30;
+}
+aside#about-me, .post aside div.container  {
+	background-color: #232b30;
+}
+
+/* light blue */
+a, a:visited, nav#bar li a:hover {
+	color: #2b7bb1;
+	text-decoration: none;
+}
+a#css-concepts {
+	background-color: #2b7bb1;
+}
+
+/* light grey */
+main, figure#me, html { 
+	background: #dee3e5;
+}
+
+.img p, footer p, footer h3,
+ .featured p {
+	color: #dee3e5;
+}
+
+
+/* Light Green */
+
 a:hover {
 	color: #00F982;
 }
 
-html {
-	text-align: center;
+::selection {
+    background-color: #00F982;
+    color: #fff;
 }
+
+/* Dark Green */
+a.img, .featured p, .project li {
+ 	background-color: #425851;
+ }
 
 ul {
 	list-style: none;
 	display: inline;
+	padding: 0;
+	line-height: 2em;
 }
-
 
 /** 
  * everything here organized by tag
@@ -111,27 +152,23 @@ div.container {
 
 /** Nav Panel/Bars */
 
-nav#panel li {
-	display: inline;
-}
-
-nav#bar {
-	text-align: left;
-	max-width: 820px;
+nav#bar ul {
 	margin: auto;
 }
 
 nav#bar li {
 	display: inline-block;
+}
+nav#bar li a {
 	line-height: 1.5em;
-	padding: 0 5px 0 5px;
+	padding: 5px 10px;
 	text-transform: uppercase;
 	font-size: .8em;
 	font-weight: bold;
 	background-color: rgba(255,255,255, .7);
 }
 
-nav#bar li:hover {
+nav#bar li a:hover {
 	background-color: rgba(255,255,255, 1);
 }
 
@@ -146,11 +183,9 @@ header {
 }
 
 header h1 {
-	text-align: left;
 	position: absolute;
-	bottom: 0;
-	margin: 25px;
 	letter-spacing: .1em;
+	bottom: 10px;
 }
 
 header .social-media {
@@ -173,9 +208,10 @@ header .social-media {
 /* Main */
 
 main h2 {
-	margin: 0px 0px 10px 40px;
-	text-align: left;
-	padding-top: 10px;
+	margin: 1em 0px 1.2em 0;
+}
+.rec h2 {
+	margin: 10px 10px;
 }
 
 a.img {
@@ -184,7 +220,6 @@ a.img {
 	display: inline-block;
 	position: relative;
 	margin: 10px 15px;
-	background: #425851;
 	overflow: hidden;
 }
 
@@ -193,7 +228,6 @@ a.img:hover {
 }
 
 a#css-concepts {
-	background-color: #2b7bb1;
 	background: url("../imgs/CSS3.png");
 	background-position: center;
 	-webkit-background-size: cover;
@@ -219,6 +253,10 @@ a#arrays-hashes {
 	bottom: 10px;
 }
 
+.rec {
+	margin-bottom: 2em;
+}
+
 /* About Me */
 
 aside#about-me {
@@ -227,7 +265,6 @@ aside#about-me {
 
 figure#me {
 	display: inline-block;
-	text-align: center;
 	padding: 20px 50px;
 	margin: 20px;
 }
@@ -244,15 +281,10 @@ figure#me {
 ul#links {
 	display: inline-block;
 	vertical-align: 50%;
-	text-align: left;
 	padding: 35px 0 10px 5px;
 	line-height: 1.8em;
 	width: 50%;
 	max-width: 250px;
-}
-
-#about-me ul.social-media {
-	padding: 0;
 }
 
 #links li a {
@@ -277,7 +309,6 @@ nav#panel a {
 ul#blog-links {
 	display: inline-block;
 	padding: 10px;
-	text-align: left;
 	position: static;
 }
 
@@ -291,38 +322,43 @@ li a img.twitter {
 	/*height: 28px;*/
 	margin-right: -3px;
 }
-.twitt {
-	fill: #ffffff;
-}
 
 /* 
 	Main Body of Blog-Index
  */
 
 
-main div#blog-landing {
-	margin-bottom: 25px;
+ul#blog-landing {
+	margin: 25px 0;
 }
 
-div#left, div#right {
-	width: 47%;
+.preview {
+	width: 35%;
 	display: inline-block;
 	position: relative;
-	text-align: left;
-	margin-top: 75px;
-	margin-bottom: 75px;
-	padding: .5em;
+	padding: 0.5em;
+	left: 20px;
 }
 
-div#left {
-	float: left;
+.preview h3 {
+	margin: 0;
+	max-width: 80px;
 }
+
+#recent {
+	float: left;
+	min-height: 20em;
+	overflow: hidden;
+	width: 50%;
+	margin-right: 5%;
+	padding-top: 2em;
+}
+
 
 
 .preview img {
 	display: inline-block;
 	height: 60px;
-	max-width: 80px;
 	margin: 0px;
 }
 
@@ -335,8 +371,8 @@ div#left {
 }
 
 #recent img {
-	width: 120px;
 	height: 90px;
+	max-width: 120px;
 }
 
 #recent p {
@@ -390,42 +426,19 @@ footer img {
  *	Section for Blog Post CSS
  */
 
-.post main {
-	text-align: left;
-}
-.post h4 {
-	display: inline-block;
-	position: relative;
-	left: 20px;
-	margin: 15px;
+main {
+	padding: 25px 0;
 }
 
-.post h2 {
-	margin-left: 0px;
-	margin-bottom: 1.5em;
-	clear: both;
-	font-size: 26px;
-}
-
-.post nav#panel {
-	background: rgba(255,255,255, .5);
+article.post ul {
 	margin: 0;
 }
 
-.post aside div.container {
-	background: #152430;
-}
-
-.post figure.in-right {
-	display: block;
+article.post ul li {
+	padding-left: 1em;
 	margin: 5px;
-	float: right;
 }
 
-.post figure.block {
-	text-align: center;
-	margin-bottom: 1.4em;
-}
 
 div#blog-text {
 	padding: 5px;
@@ -433,9 +446,9 @@ div#blog-text {
 }
 
 div#blog-text p {
-	line-height: 1.5em;
+	line-height: 25px;
 	margin-bottom: 1.5em;
-	font-size: 18px;
+	font-size: 20px;
 }
 
 div#blog-text h5 {
@@ -451,37 +464,26 @@ h4#date {
 	margin-bottom: 15px;
 }
 
-span.code-block {
-	font-family: "Courier New", Courier, monospace;
-	display: block;
-	border: 1px solid #284863;
-	width: 80%;
-	margin: 5px auto;
-	padding: 0 10%;
-}
-
-code {
-	font-family: "Courier New", Courier, monospace;
-	display: block;
-	color: #00F982;
-	background: #232b30;
-	text-indent: 40px;
-	margin: 10px auto;
-	width: 80%;
+h3 {
+	margin-bottom: .5em;
 }
 
 pre {
+	padding: 1em 1.5em;
 	margin-bottom: 1.5em;
 }
 
+
 p#intro-blurb {
-	text-transform: uppercase;
-	font-style: italic;
-	font-weight: 700;
-	font-size: 1.2;
-	line-height: 1.5;
+	font-size: 1.375em !important;
+	line-height: 1.5 !important;
 }
 
+.likes li {
+	display: inline;
+}
+
+<<<<<<< HEAD
 .likes li {
 	display: inline;
 }
@@ -489,7 +491,6 @@ p#intro-blurb {
 .likes img {
 	width: 180px;
 	margin: 10px;
-	/*margin-bottom: 20px;*/
 }
 
 li.quotes {
@@ -509,6 +510,43 @@ li.quotes {
 	right: 20px;
 	background-color: white;
 }
+
+/**
+ *	The Project Portion
+ */
+.featured {
+	width: 400px;
+	height: 300px;
+	background: url('http://vector.me/files/images/1/5/156638/under_construction_clip_art.jpg');
+	background-size: cover;
+	background-position: center;
+	margin: 0px auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.featured p {
+	position: absolute;
+	width: 100%;
+	bottom: 0px;
+	padding: 5px 0;
+	margin: 0 auto;
+}
+
+ul.project {
+	display: block;
+	margin: 20px auto; 
+}
+
+.project li {
+	display: inline-block;
+	position: relative;
+	width: 110px;
+	height: 100px;
+	margin: 10px 20px;
+	padding: 10px;
+}
+
 
 /**
  * The Responsive section of CSS
@@ -531,12 +569,48 @@ li.quotes {
 		width: 350px;
 	}
 }
+@media (max-width: 500px) {
+	header h1 {
+		position: static;
+		max-width: 100%;
+		font-style: 30px;
+		text-align: center;
+		margin: 40px 0;
+	}
+	header .social-media {
+		text-align: center;
+		position: relative;
+		top: 30px;
+	}
 
+	.social-media li {
+		margin: 10px 10px;
+	}
+
+	.social-media li a img {
+		height: 30px;
+	}
+	pre {
+		font-size: .7em;
+	}
+	h2 {
+		margin-left: 0!important;
+	}
+	
+}
 @media (max-width: 400px) {
 	.post figure {
 		float: none;
 	}
 	.post figure img {
 		width: 200px;
+	}
+
+	nav#bar li, nav#bar li a{
+		padding: 10px 5px;
+		margin: 2px;
+ 	}
+		header h1 {
+		margin: 20px 0;
 	}
 }
