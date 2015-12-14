@@ -1,7 +1,9 @@
 ---
 layout: markdown
 title: Cheat Sheet
-image: <img src="https://www.google.com/search?safe=off&espv=2&biw=944&bih=951&tbm=isch&q=computer+brain+clipart&revid=1266079999&sa=X&ved=0ahUKEwiHxIXq1tvJAhWEeD4KHa97Aq4Q1QIIHA#imgrc=OzXEgfFF_f7yDM%3A" alt="computer memory">
+imageurl: http://photos.gograph.com/thumbs/CSP/CSP634/k6344552.jpg
+imagealt: Computer Memory
+image: <img src="http://photos.gograph.com/thumbs/CSP/CSP634/k6344552.jpg" alt="computer memory">
 ---
 
 ##CSS
