@@ -149,6 +149,9 @@ div.container {
 	position: relative;
 	height: 100%;
 }
+div.container img {
+	max-width: 700px;
+}
 
 /** Nav Panel/Bars */
 
@@ -445,6 +448,10 @@ div#blog-text {
 	margin-top: 25px;
 }
 
+div#blog-text img {
+	margin-bottom: 1em;
+}
+
 div#blog-text p {
 	line-height: 25px;
 	margin-bottom: 1.5em;
@@ -543,6 +550,10 @@ ul.project {
 	padding: 10px;
 }
 
+code {
+	display: inline-block;
+	background-color: #ccc;
+}
 
 /**
  * The Responsive section of CSS
@@ -551,6 +562,9 @@ ul.project {
 	div.container {
 		width: 100%;
 	}
+	div.container img {
+	max-width: 95%;
+}
 	div#left, div#right {
 		display: block;
 		width: 100%;
