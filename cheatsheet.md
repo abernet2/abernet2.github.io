@@ -1,7 +1,9 @@
 ---
 layout: markdown
 title: Cheat Sheet
-image: <img src="../imgs/doc.svg" alt="article-thumbnail">
+imageurl: http://photos.gograph.com/thumbs/CSP/CSP634/k6344552.jpg
+imagealt: Computer Memory
+image: <img src="http://photos.gograph.com/thumbs/CSP/CSP634/k6344552.jpg" alt="computer memory">
 ---
 
 ##CSS
@@ -32,12 +34,11 @@ Only works with inline elements (or table cells).
 3. Check out this great [blog post](http://blog.arkency.com/2014/01/ruby-to-enum-for-enumerator/)
 
 #### Some Useful Enumerable Methods
-* Collect 
-* Count
-* Group_By
-* Reduce
-* Map
-* Select
+* Count - counts the number of given input in a collection
+* Group_By - groups selection by result of given block
+* Reduce -  reduces collection to one value using the given symbol or block
+* Map - returns a new array from given block
+* Select - returns an array of elements passing select criteria
 * [RUBY DOCS!!!](http://ruby-doc.org/core-2.2.3/Enumerable.html)
 
 
