@@ -38,12 +38,13 @@ h4 {
 }
 
 /* Serif */
-h1, h2, h3, #links a, .img p, p#intro-blurb {
+h1, h2, h3, #links a, .img p, p#intro-blurb,
+#blog-text a,#blog-text  a:visited b {
 	font-family: Crete Round, Georgia, serif;
 }
 /* Monospace */
-pre, pre span {
-	font-family: "Lucida Console", Monaco, monospace!important;
+pre, pre span, code {
+	font-family: Ubuntu Mono,Lucida Console, Monaco, monospace!important;
 }
 
 html, .rec p, figure#me, .featured,
@@ -85,9 +86,14 @@ aside#about-me, .post aside div.container  {
 a, a:visited, nav#bar li a:hover {
 	color: #2b7bb1;
 	text-decoration: none;
+	font-weight: bold;
 }
 a#css-concepts {
 	background-color: #2b7bb1;
+}
+
+code {
+	border: 1px solid #2b7bb1;
 }
 
 /* light grey */
@@ -148,6 +154,9 @@ div.container {
 	margin: auto;
 	position: relative;
 	height: 100%;
+}
+div.container img {
+	max-width: 700px;
 }
 
 /** Nav Panel/Bars */
@@ -445,6 +454,10 @@ div#blog-text {
 	margin-top: 25px;
 }
 
+div#blog-text img {
+	margin-bottom: 1em;
+}
+
 div#blog-text p {
 	line-height: 25px;
 	margin-bottom: 1.5em;
@@ -543,6 +556,10 @@ ul.project {
 	padding: 10px;
 }
 
+code {
+	display: inline-block;
+	padding: 0 1em;
+}
 
 /**
  * The Responsive section of CSS
@@ -551,6 +568,9 @@ ul.project {
 	div.container {
 		width: 100%;
 	}
+	div.container img {
+	max-width: 95%;
+}
 	div#left, div#right {
 		display: block;
 		width: 100%;

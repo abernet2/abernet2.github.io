@@ -1,0 +1,78 @@
+---
+layout: markdown
+title: How to Migrate to Jekyll
+imageurl: ../imgs/octojekyll.png
+imagealt: Github and Jekyll
+excerpt: Here's how I moved my existing Github.io site to jekyll. If you're having trouble, maybe this will help!
+---
+
+<h2>A Quick Overview</h2>
+<p>Before we get started, let me just mention a few things. The first is that I will not go over how to install Jekyll onto your system. Jekyll comes in the form of a ruby gem, while that should make it easy, if you run into problems there should be ample resources to help you out.</p>
+<p>The second thing I wanna mention is that <a href="http://jekyllrb.com/docs/quickstart/">here's</a> a quickstart guide that Jekyll provides. I'm going to follow along with it (roughly) and basically just change steps for users with an existing site. You should also check out the site just to learn a little about jekyll, I will mention some broad overviews here, but the documentation is really quite good and I found it  helpful.</p>
+<p>Thirdly (and lastly), this is a bit of a hacky approach. This is just how I did it and not the only (or best) way.</p>
+<h2>Getting Started</h2>
+<p>If you follow the jekyll tutorial on getting starter, the first thing they are going to have you do is make a new site. This tutorial at its simplest is making that site and then copying all of the files into our github.io site. So follow the commands they give below to make the default site:</p>
+<img src={{base}}"/imgs/quick-start.png" alt="Quick Start">
+<p>Doing so should give you a directory whose contents look roughly like this:</p>
+<img src={{base}}"/imgs/myblog-contents.png" alt="screenshot of content">
+<h3>What all those files do</h3>
+<p>When Jekyll builds a site it scans through this whole file directory and turns the code you've written into valid HTML and CSS. Jekyll then puts these generated files into the "_site" folder and uses that to display your site.</p>
+<p>Whenever you type the command <code>jekyll build</code> you are essentially telling jekyll to update the contents of that folder. When you see your site on github.io, that will be where jekyll gets the html files to display.</p>
+<h4>But how does it know how to do this?</h4>
+<p>The first step is Jekyll detecting your _config.yml file. This file is written in <a href="http://www.wikiwand.com/en/YAML">yaml</a>, a language for storing simple data. Yaml is  how Jekyll stores and shares data between pages. <a href="http://jekyllrb.com/docs/frontmatter/">Yaml Front matter</a> is also what tells Jekyll to process a page.</p>
+<p> Much like the Yaml in the _config file, this is  your way of declaring basic variables. This helps to minimize the amount of rewriting you have to do, but there are also other features it helps with.</p>
+<p>Before I get any further into Jekyll's layout, let's move these files to your existing github.io site. When I migrated to Jekyll, I stored a branch with my non-jekyll site just in case. That might be something you want to do, although I never used it until writing this post! Here's my non-jekyll site before moving the files:</p>
+<img src={{base}}"/imgs/prejekyll.png" alt="pre-jekyll files">
+<p>Now all I did was copy and paste the files from myblog into github.io. Note that you're likely to get a conflict over which index.html file to keep, I'd recommend renaming the jekyll file so that you can keep it to learn from for a little while. Here's what mine looks like:</p>
+<img src={{base}}"/imgs/post-jekyll.png" alt="">
+<p>Now open a terminal in this directory and type <code>jekyll build</code> then <code>jekyll serve</code>. You can see your generated site in browser at <b>http://localhost:4000</b>. </p>
+<p>If the index.html file is from your original site, you should see your site as it stands. If the index.html file is the default from jekyll, you should see that. At any rate, if you treat localhost as your baseurl, you should be able to find all the different parts of your site by treating localhost:4000 as your baseurl/</p>
+<h2>Changing your Existing HTML to Fit Jekyll</h2>
+<p>Let's take a look real quick at the contents of Jekyll's default index.html file. If you deleted yours that's alright I'll provide mine.</p>
+<img src={{base}}"/imgs/jekyll-index.png" alt="">
+<p>As you can see, this probably looks nothing like your index.html file. For one there's no doctype declaration, no links to stylesheets and very little html in general. Instead, this is simply the content you want to put on your page. All the parts that are common to other pages are covered by the layout attribute.</p>
+<h3>Things to consider before moving forward</h3>
+<p> You'll also notice some curly bracket notation. This is the markup of the <a href="https://docs.shopify.com/themes/liquid-documentation/basics">Liquid Templating language</a>. Liquid consists of tags, objects and filters, feel free to take a second to look over the examples liquid provides. Liquid is how we are going to access variables we declared in yaml and also how we'll do things like loop over blog posts and imgs.</p>
+<h4>Relative Paths</h4>
+<p>It's important to remember that when you start linking files, you have to make good use of absolute paths. If some piece of code is going to be used by every part of your site, and requires a path this is a MUST!</p>
+<p>This can be a particularly big problem if you are using GitHub's project pages vs Github.io, in that case it's better to follow the process outlined in the <a href="http://ricostacruz.com/til/relative-paths-in-jekyll.html">blog post here</a>. Otherwise, starting all your paths with a '/' should get the job done.</p>
+<h3>Let's Get this Show on the Road!</h3>
+<p>Now going over Jekyll's index.html, the first thing you'll notice is at the top of the page you'll see <b>"layout: defualt"</b> with three dashes above and below. This is yaml frontmatter, and all it is doing is specifying the layout for your page. Layouts are taken from the _layouts folder. If you navigate to that folder to see what the default layout looks like you'll see something like this:</p>
+<img src={{base}}"/imgs/default-layout.png" alt="default layout pic">
+<p>All that is happening here is basic DRY, don't repeat yourself. Instead of copying and pasting the head file, your header, your footer or anything else you need, Jekyll takes them from the _includes folder. The one exception is the content variable. Think of the content variable as a stand-in for the file who calls your layout. It's where your "content" goes.</p>
+<p>All you need to do to set up your layout is copy and paste the different parts of your site into the correct files in the_includes folder. You'll save each piece as an html file, and feel free to use the existing files. Let's walk through this:</p>
+<h4>My Starter index.html file:</h4>
+<img src="/imgs/before-index.png" alt="">
+<p>The fine details aren't too important, but you can see it looks pretty thick. We're going to start by cutting out the head tags and the text between them. Open the <b>head.html</b> file in the _includes folder and paste your content in. You might want to keep some of what is already in the head file:</p>
+<img src="/imgs/head.png" alt="my head file">
+<p>Personally, I just replaced their stylesheet with my own and added the links to my fonts. Notice that their code will automatically load the title for your page.</p>
+<h4>Next, repeat for the header section:</h4>
+<img src="/imgs/header.png" alt="my header file">
+<p>Now as you can (hopefully) see, the title of my page is hardcoded between the h1 tags. Not very reusable! I also have a pretty clunky looking social-media nav bar. I'm going to cut both of those out and replace them with something better.</p> 
+<p>First I copy jekyll's title code from the head file and put it between the h1 tags:</p>
+<img src="/imgs/title-media.png" alt="my updated header code">
+<p> Since I include the social media buttons at other places, I cut that code out and put it into a <b>social-media.html</b> file in my includes folder. </p> 
+<img src="/imgs/social-include.png" alt="my updated header code">
+<p>My final result looks like this:</p>
+<img src="/imgs/header-include.png" alt="my updated header code">
+<h4>The rest of your index code</h4>
+<p>You can follow this procedure for the rest of your index.html code. Note that you can also change the way the layout works pretty easily.</p>
+<p>I have an about-me section on my site, so I made an _includes file for that and added it to the layout.</p>
+<img src="/imgs/layout-default.png" alt="My Final Layout">
+<p>Also note that you can create different layouts for different types of pages. Jekyll can render markdown, so maybe you want a different layout for markdown or perhaps you want a project layout or a blog post layout. The choice is yours!</p>
+<h4>Eventually your files can start looking like:</h4>
+<img src="/imgs/final-index.png" alt="my index file">
+
+<h2>Moving Jekyll to the rest of your site</h2>
+
+<p>Let me re-iterate real quick the importance of using the right path names. That is the biggest problem I ran into moving Jekyll beyond my index page.</p>
+<p>Another problem was CSS conflicts. You might find some strange behavior around your site once you start reusing code. Personally I found solving this challenges informative for good html/css structure, but it's something to keep in mind going forward.</p>
+<h3>Posts, pages and collections</h3>
+<p>If you ever want to automatically loop over the content of your site, you can use the built-in pages and posts collections to do so.</p>
+<p>To create new pages, all you need to do is add folders and files like you would on your normal web site. Jekyll will automatically detect them and add them to the <b>pages</b> colelction which you can access using <code>site.pages</code></p>
+<p>Posts work a little differently. Posts are ordered by date and you must name them accordingly: <i>YYYY-MM-DD-name.extension</i>. Jekyll parses out the date from each post and creates a new directory for each one. This allows you to arrange posts by month or just in chronological order. You can also specify a different path if you so choose, but the default is to organize by date. Posts are accessed via <code>site.posts</code></p>
+<p>For anything else you might need to iterate over there are collections. In all honesty I haven't used collections yet, but <a href="http://ben.balter.com/2015/02/20/jekyll-collections/">this blog post</a> is pretty helpful to get a feel for what they do if you are interested. Hope this helps!</p>
+
+
+
+

@@ -4,11 +4,91 @@
     <title>Jack Abernethy&#39;s DBC Blog</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Dec 2015 23:47:32 -0600</pubDate>
-    <lastBuildDate>Sun, 13 Dec 2015 23:47:32 -0600</lastBuildDate>
+    <link>http://abernet2.github.io/</link>
+    <atom:link href="http://abernet2.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 16 Dec 2015 15:27:21 -0600</pubDate>
+    <lastBuildDate>Wed, 16 Dec 2015 15:27:21 -0600</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
+    
+      <item>
+        <title>How to Migrate to Jekyll</title>
+        <description>&lt;h2&gt;A Quick Overview&lt;/h2&gt;
+&lt;p&gt;Before we get started, let me just mention a few things. The first is that I will not go over how to install Jekyll onto your system. Jekyll comes in the form of a ruby gem, while that should make it easy, if you run into problems there should be ample resources to help you out.&lt;/p&gt;
+&lt;p&gt;The second thing I wanna mention is that &lt;a href=&quot;http://jekyllrb.com/docs/quickstart/&quot;&gt;here&#39;s&lt;/a&gt; a quickstart guide that Jekyll provides. I&#39;m going to follow along with it (roughly) and basically just change steps for users with an existing site. You should also check out the site just to learn a little about jekyll, I will mention some broad overviews here, but the documentation is really quite good and I found it  helpful.&lt;/p&gt;
+&lt;p&gt;Thirdly (and lastly), this is a bit of a hacky approach. This is just how I did it and not the only (or best) way.&lt;/p&gt;
+&lt;h2&gt;Getting Started&lt;/h2&gt;
+&lt;p&gt;If you follow the jekyll tutorial on getting starter, the first thing they are going to have you do is make a new site. This tutorial at its simplest is making that site and then copying all of the files into our github.io site. So follow the commands they give below to make the default site:&lt;/p&gt;
+&lt;img src=&quot;/imgs/quick-start.png&quot; alt=&quot;Quick Start&quot;&gt;
+&lt;p&gt;Doing so should give you a directory whose contents look roughly like this:&lt;/p&gt;
+&lt;img src=&quot;/imgs/myblog-contents.png&quot; alt=&quot;screenshot of content&quot;&gt;
+&lt;h3&gt;What all those files do&lt;/h3&gt;
+&lt;p&gt;When Jekyll builds a site it scans through this whole file directory and turns the code you&#39;ve written into valid HTML and CSS. Jekyll then puts these generated files into the &quot;_site&quot; folder and uses that to display your site.&lt;/p&gt;
+&lt;p&gt;Whenever you type the command &lt;code&gt;jekyll build&lt;/code&gt; you are essentially telling jekyll to update the contents of that folder. When you see your site on github.io, that will be where jekyll gets the html files to display.&lt;/p&gt;
+&lt;h4&gt;But how does it know how to do this?&lt;/h4&gt;
+&lt;p&gt;The first step is Jekyll detecting your _config.yml file. This file is written in &lt;a href=&quot;http://www.wikiwand.com/en/YAML&quot;&gt;yaml&lt;/a&gt;, a language for storing simple data. Yaml is  how Jekyll stores and shares data between pages. &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;Yaml Front matter&lt;/a&gt; is also what tells Jekyll to process a page.&lt;/p&gt;
+&lt;p&gt; Much like the Yaml in the _config file, this is  your way of declaring basic variables. This helps to minimize the amount of rewriting you have to do, but there are also other features it helps with.&lt;/p&gt;
+&lt;p&gt;Before I get any further into Jekyll&#39;s layout, let&#39;s move these files to your existing github.io site. When I migrated to Jekyll, I stored a branch with my non-jekyll site just in case. That might be something you want to do, although I never used it until writing this post! Here&#39;s my non-jekyll site before moving the files:&lt;/p&gt;
+&lt;img src=&quot;/imgs/prejekyll.png&quot; alt=&quot;pre-jekyll files&quot;&gt;
+&lt;p&gt;Now all I did was copy and paste the files from myblog into github.io. Note that you&#39;re likely to get a conflict over which index.html file to keep, I&#39;d recommend renaming the jekyll file so that you can keep it to learn from for a little while. Here&#39;s what mine looks like:&lt;/p&gt;
+&lt;img src=&quot;/imgs/post-jekyll.png&quot; alt=&quot;&quot;&gt;
+&lt;p&gt;Now open a terminal in this directory and type &lt;code&gt;jekyll build&lt;/code&gt; then &lt;code&gt;jekyll serve&lt;/code&gt;. You can see your generated site in browser at &lt;b&gt;http://localhost:4000&lt;/b&gt;. &lt;/p&gt;
+&lt;p&gt;If the index.html file is from your original site, you should see your site as it stands. If the index.html file is the default from jekyll, you should see that. At any rate, if you treat localhost as your baseurl, you should be able to find all the different parts of your site by treating localhost:4000 as your baseurl/&lt;/p&gt;
+&lt;h2&gt;Changing your Existing HTML to Fit Jekyll&lt;/h2&gt;
+&lt;p&gt;Let&#39;s take a look real quick at the contents of Jekyll&#39;s default index.html file. If you deleted yours that&#39;s alright I&#39;ll provide mine.&lt;/p&gt;
+&lt;img src=&quot;/imgs/jekyll-index.png&quot; alt=&quot;&quot;&gt;
+&lt;p&gt;As you can see, this probably looks nothing like your index.html file. For one there&#39;s no doctype declaration, no links to stylesheets and very little html in general. Instead, this is simply the content you want to put on your page. All the parts that are common to other pages are covered by the layout attribute.&lt;/p&gt;
+&lt;h3&gt;Things to consider before moving forward&lt;/h3&gt;
+&lt;p&gt; You&#39;ll also notice some curly bracket notation. This is the markup of the &lt;a href=&quot;https://docs.shopify.com/themes/liquid-documentation/basics&quot;&gt;Liquid Templating language&lt;/a&gt;. Liquid consists of tags, objects and filters, feel free to take a second to look over the examples liquid provides. Liquid is how we are going to access variables we declared in yaml and also how we&#39;ll do things like loop over blog posts and imgs.&lt;/p&gt;
+&lt;h4&gt;Relative Paths&lt;/h4&gt;
+&lt;p&gt;It&#39;s important to remember that when you start linking files, you have to make good use of absolute paths. If some piece of code is going to be used by every part of your site, and requires a path this is a MUST!&lt;/p&gt;
+&lt;p&gt;This can be a particularly big problem if you are using GitHub&#39;s project pages vs Github.io, in that case it&#39;s better to follow the process outlined in the &lt;a href=&quot;http://ricostacruz.com/til/relative-paths-in-jekyll.html&quot;&gt;blog post here&lt;/a&gt;. Otherwise, starting all your paths with a &#39;/&#39; should get the job done.&lt;/p&gt;
+&lt;h3&gt;Let&#39;s Get this Show on the Road!&lt;/h3&gt;
+&lt;p&gt;Now going over Jekyll&#39;s index.html, the first thing you&#39;ll notice is at the top of the page you&#39;ll see &lt;b&gt;&quot;layout: defualt&quot;&lt;/b&gt; with three dashes above and below. This is yaml frontmatter, and all it is doing is specifying the layout for your page. Layouts are taken from the _layouts folder. If you navigate to that folder to see what the default layout looks like you&#39;ll see something like this:&lt;/p&gt;
+&lt;img src=&quot;/imgs/default-layout.png&quot; alt=&quot;default layout pic&quot;&gt;
+&lt;p&gt;All that is happening here is basic DRY, don&#39;t repeat yourself. Instead of copying and pasting the head file, your header, your footer or anything else you need, Jekyll takes them from the _includes folder. The one exception is the content variable. Think of the content variable as a stand-in for the file who calls your layout. It&#39;s where your &quot;content&quot; goes.&lt;/p&gt;
+&lt;p&gt;All you need to do to set up your layout is copy and paste the different parts of your site into the correct files in the_includes folder. You&#39;ll save each piece as an html file, and feel free to use the existing files. Let&#39;s walk through this:&lt;/p&gt;
+&lt;h4&gt;My Starter index.html file:&lt;/h4&gt;
+&lt;img src=&quot;/imgs/before-index.png&quot; alt=&quot;&quot;&gt;
+&lt;p&gt;The fine details aren&#39;t too important, but you can see it looks pretty thick. We&#39;re going to start by cutting out the head tags and the text between them. Open the &lt;b&gt;head.html&lt;/b&gt; file in the _includes folder and paste your content in. You might want to keep some of what is already in the head file:&lt;/p&gt;
+&lt;img src=&quot;/imgs/head.png&quot; alt=&quot;my head file&quot;&gt;
+&lt;p&gt;Personally, I just replaced their stylesheet with my own and added the links to my fonts. Notice that their code will automatically load the title for your page.&lt;/p&gt;
+&lt;h4&gt;Next, repeat for the header section:&lt;/h4&gt;
+&lt;img src=&quot;/imgs/header.png&quot; alt=&quot;my header file&quot;&gt;
+&lt;p&gt;Now as you can (hopefully) see, the title of my page is hardcoded between the h1 tags. Not very reusable! I also have a pretty clunky looking social-media nav bar. I&#39;m going to cut both of those out and replace them with something better.&lt;/p&gt; 
+&lt;p&gt;First I copy jekyll&#39;s title code from the head file and put it between the h1 tags:&lt;/p&gt;
+&lt;img src=&quot;/imgs/title-media.png&quot; alt=&quot;my updated header code&quot;&gt;
+&lt;p&gt; Since I include the social media buttons at other places, I cut that code out and put it into a &lt;b&gt;social-media.html&lt;/b&gt; file in my includes folder. &lt;/p&gt; 
+&lt;img src=&quot;/imgs/social-include.png&quot; alt=&quot;my updated header code&quot;&gt;
+&lt;p&gt;My final result looks like this:&lt;/p&gt;
+&lt;img src=&quot;/imgs/header-include.png&quot; alt=&quot;my updated header code&quot;&gt;
+&lt;h4&gt;The rest of your index code&lt;/h4&gt;
+&lt;p&gt;You can follow this procedure for the rest of your index.html code. Note that you can also change the way the layout works pretty easily.&lt;/p&gt;
+&lt;p&gt;I have an about-me section on my site, so I made an _includes file for that and added it to the layout.&lt;/p&gt;
+&lt;img src=&quot;/imgs/layout-default.png&quot; alt=&quot;My Final Layout&quot;&gt;
+&lt;p&gt;Also note that you can create different layouts for different types of pages. Jekyll can render markdown, so maybe you want a different layout for markdown or perhaps you want a project layout or a blog post layout. The choice is yours!&lt;/p&gt;
+&lt;h4&gt;Eventually your files can start looking like:&lt;/h4&gt;
+&lt;img src=&quot;/imgs/final-index.png&quot; alt=&quot;my index file&quot;&gt;
+
+&lt;h2&gt;Moving Jekyll to the rest of your site&lt;/h2&gt;
+
+&lt;p&gt;Let me re-iterate real quick the importance of using the right path names. That is the biggest problem I ran into moving Jekyll beyond my index page.&lt;/p&gt;
+&lt;p&gt;Another problem was CSS conflicts. You might find some strange behavior around your site once you start reusing code. Personally I found solving this challenges informative for good html/css structure, but it&#39;s something to keep in mind going forward.&lt;/p&gt;
+&lt;h3&gt;Posts, pages and collections&lt;/h3&gt;
+&lt;p&gt;If you ever want to automatically loop over the content of your site, you can use the built-in pages and posts collections to do so.&lt;/p&gt;
+&lt;p&gt;To create new pages, all you need to do is add folders and files like you would on your normal web site. Jekyll will automatically detect them and add them to the &lt;b&gt;pages&lt;/b&gt; colelction which you can access using &lt;code&gt;site.pages&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Posts work a little differently. Posts are ordered by date and you must name them accordingly: &lt;i&gt;YYYY-MM-DD-name.extension&lt;/i&gt;. Jekyll parses out the date from each post and creates a new directory for each one. This allows you to arrange posts by month or just in chronological order. You can also specify a different path if you so choose, but the default is to organize by date. Posts are accessed via &lt;code&gt;site.posts&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;For anything else you might need to iterate over there are collections. In all honesty I haven&#39;t used collections yet, but &lt;a href=&quot;http://ben.balter.com/2015/02/20/jekyll-collections/&quot;&gt;this blog post&lt;/a&gt; is pretty helpful to get a feel for what they do if you are interested. Hope this helps!&lt;/p&gt;
+
+
+
+
+</description>
+        <pubDate>Wed, 16 Dec 2015 00:00:00 -0600</pubDate>
+        <link>http://abernet2.github.io/2015/12/16/jekyll.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/2015/12/16/jekyll.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Computer Memory</title>
@@ -103,8 +183,8 @@
 &lt;p&gt;&lt;a href=&quot;http://computer.howstuffworks.com/computer-memory.htm&quot;&gt;How Computer Memory Works&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 13 Dec 2015 00:00:00 -0600</pubDate>
-        <link>http://yourdomain.com/2015/12/13/memory.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/12/13/memory.html</guid>
+        <link>http://abernet2.github.io/2015/12/13/memory.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/2015/12/13/memory.html</guid>
         
         
       </item>
@@ -168,8 +248,8 @@ for (var i = 0; i &lt; arr.length; i++) {
 	&lt;/div&gt;
 &lt;/main&gt;</description>
         <pubDate>Thu, 03 Dec 2015 00:00:00 -0600</pubDate>
-        <link>http://yourdomain.com/technical/blog/2015/12/03/ruby-vs-javascript.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/technical/blog/2015/12/03/ruby-vs-javascript.html</guid>
+        <link>http://abernet2.github.io/technical/blog/2015/12/03/ruby-vs-javascript.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/technical/blog/2015/12/03/ruby-vs-javascript.html</guid>
         
         
         <category>Technical</category>
@@ -282,8 +362,8 @@ end
 
 </description>
         <pubDate>Mon, 30 Nov 2015 00:00:00 -0600</pubDate>
-        <link>http://yourdomain.com/2015/11/30/ruby-classes.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/11/30/ruby-classes.html</guid>
+        <link>http://abernet2.github.io/2015/11/30/ruby-classes.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/2015/11/30/ruby-classes.html</guid>
         
         
       </item>
@@ -340,8 +420,8 @@ end
 
 </description>
         <pubDate>Fri, 20 Nov 2015 00:00:00 -0600</pubDate>
-        <link>http://yourdomain.com/2015/11/20/enumerable-methods.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/11/20/enumerable-methods.html</guid>
+        <link>http://abernet2.github.io/2015/11/20/enumerable-methods.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/2015/11/20/enumerable-methods.html</guid>
         
         
       </item>
@@ -399,8 +479,8 @@ end
 
 </description>
         <pubDate>Fri, 13 Nov 2015 00:00:00 -0600</pubDate>
-        <link>http://yourdomain.com/2015/11/13/arrays-hashes.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/11/13/arrays-hashes.html</guid>
+        <link>http://abernet2.github.io/2015/11/13/arrays-hashes.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/2015/11/13/arrays-hashes.html</guid>
         
         
       </item>
@@ -475,8 +555,8 @@ end
 
 </description>
         <pubDate>Fri, 06 Nov 2015 00:00:00 -0600</pubDate>
-        <link>http://yourdomain.com/2015/11/06/css-concepts.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/11/06/css-concepts.html</guid>
+        <link>http://abernet2.github.io/2015/11/06/css-concepts.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/2015/11/06/css-concepts.html</guid>
         
         
       </item>
@@ -524,8 +604,8 @@ end
 
 </description>
         <pubDate>Wed, 21 Oct 2015 00:00:00 -0500</pubDate>
-        <link>http://yourdomain.com/2015/10/21/git.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/10/21/git.html</guid>
+        <link>http://abernet2.github.io/2015/10/21/git.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/2015/10/21/git.html</guid>
         
         
       </item>
@@ -548,8 +628,8 @@ end
 
 </description>
         <pubDate>Tue, 20 Oct 2015 00:34:48 -0500</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/10/20/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/10/20/welcome-to-jekyll.html</guid>
+        <link>http://abernet2.github.io/jekyll/update/2015/10/20/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/jekyll/update/2015/10/20/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
