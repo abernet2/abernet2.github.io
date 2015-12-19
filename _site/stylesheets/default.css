@@ -15,8 +15,11 @@ Organized by attribute
 
 /*TEXT STUFF*/
 * {
-	margin: 0;
 	transition: all .2s;
+}
+
+html, body, h1, .rec p, #me h4, footer h3, header .social-media {
+	margin: 0;
 }
 
 h2 {
@@ -200,7 +203,7 @@ header h1 {
 header .social-media {
 	text-align: right;
 	position: absolute;
-	bottom: 20px;
+	bottom: 0px;
 	right: 20px;
 }
 
@@ -275,7 +278,6 @@ aside#about-me {
 figure#me {
 	display: inline-block;
 	padding: 20px 50px;
-	margin: 20px;
 }
 
 #me img {
@@ -290,7 +292,6 @@ figure#me {
 ul#links {
 	display: inline-block;
 	vertical-align: 50%;
-	padding: 35px 0 10px 5px;
 	line-height: 1.8em;
 	width: 50%;
 	max-width: 250px;
@@ -496,6 +497,11 @@ p#intro-blurb {
 	display: inline;
 }
 
+<<<<<<< HEAD
+.likes li {
+	display: inline;
+}
+
 .likes img {
 	width: 180px;
 	margin: 10px;
@@ -518,7 +524,6 @@ li.quotes {
 	right: 20px;
 	background-color: white;
 }
-
 
 /**
  *	The Project Portion

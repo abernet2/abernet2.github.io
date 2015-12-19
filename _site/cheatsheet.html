@@ -14,7 +14,8 @@
   <title>Cheat Sheet</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
-  <link rel="stylesheet" href="../stylesheets/default.css">
+  <!-- <link rel="stylesheet" href="../stylesheets/default.css"> -->
+  <link rel="stylesheet" href="../css/default.css">
   <link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
@@ -31,12 +32,11 @@
     <div class="container">
       <nav id="bar">
         <ul>
-          <li><a href="..">Home</a></li>
+          <li><a href="../">Home</a></li>
           <li><a href="../blog">Blog</a></li>
           <li><a href="../projects">Projects</a></li>
           <!-- <li><a href="#">Resources</a></li> -->
           <li><a href="../about-me.html">About</a></li>
-          <!-- <li><a href="../contact.html">Contact</a></li> -->
         </ul>
       </nav> 
     
@@ -44,7 +44,7 @@
       <ul class="social-media">
   <li><a href="https://twitter.com/jabber_26"><img class="twitter" src="../imgs/Twitter_white_logo.svg" onmouseover="this.src='../imgs/Twitter_blue_logo.svg'" onmouseout="this.src='../imgs/Twitter_white_logo.svg'" alt="twitter"></a></li>
   <li><a href="https://github.com/abernet2"><img src="../imgs/GitHub-Mark-Light.svg" onmouseover="src='../imgs/GitHub-Mark.svg'" onmouseout="src='../imgs/GitHub-Mark-Light.svg'"></a></li>
-  <li><a href="https://medium.com/@jackabernethy"><img src="../imgs/Medium-light.png" onmouseover="src='../imgs/medium-m-color.png'" onmouseout="src='../imgs/medium-light.png'" alt="Medium"></a></li>
+  <li><a href="https://medium.com/@jackabernethy"><img src="../imgs/medium-light.png" onmouseover="src='../imgs/medium-m-color.png'" onmouseout="src='../imgs/medium-light.png'" alt="Medium"></a></li>
   <li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="../imgs/In-White-34px-TM.png" onmouseover="src='../imgs/In-2C-34px-R.png'" onmouseout="src='../imgs/In-White-34px-TM.png'"></a></li>
 </ul>
     </div>
@@ -52,7 +52,8 @@
 
     <main>
       <div class="container" id="blog-text">
-        <h2 id="css">CSS</h2>
+        <h4></h4>
+        <article class="post"><h2 id="css">CSS</h2>
 
 <h3 id="margin-auto">Margin Auto</h3>
 
@@ -83,12 +84,11 @@
 
 <h4 id="some-useful-enumerable-methods">Some Useful Enumerable Methods</h4>
 <ul>
-  <li>Collect</li>
-  <li>Count</li>
-  <li>Group_By</li>
-  <li>Reduce</li>
-  <li>Map</li>
-  <li>Select</li>
+  <li>Count - counts the number of given input in a collection</li>
+  <li>Group_By - groups selection by result of given block</li>
+  <li>Reduce -  reduces collection to one value using the given symbol or block</li>
+  <li>Map - returns a new array from given block</li>
+  <li>Select - returns an array of elements passing select criteria</li>
   <li><a href="http://ruby-doc.org/core-2.2.3/Enumerable.html">RUBY DOCS!!!</a></li>
 </ul>
 
@@ -107,7 +107,7 @@ array.forEach(function(entry) {
 	...
 });
 </pre>
-
+</article>
       </div>
     </main> 
 

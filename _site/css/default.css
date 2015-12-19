@@ -1,0 +1,436 @@
+/*** 
+
+Everything in this section
+Organized by attribute 
+
+**/
+/*TEXT STUFF*/
+* {
+  transition: all .2s; }
+
+html, body, h1,
+.rec p, #me h4,
+footer h3, header .social-media,
+.preview h3, article.post ul,
+footer {
+  margin: 0; }
+
+h2 {
+  font-size: 3em; }
+
+h3 {
+  font-size: 2.2em; }
+
+h4 {
+  font-size: 1.5em;
+  margin-bottom: .5em; }
+
+/* sans-serif */
+* {
+  font-family: "Asap", Helvetica, Arial, sans-serif; }
+
+/* Serif */
+h1, h2, h3,
+#links a, .img p,
+p#intro-blurb {
+  font-family: Crete Round, Georgia, serif; }
+
+#blog-text a {
+  font-family: Crete Round, Georgia, serif; }
+  #blog-text a:visited b {
+    font-family: Crete Round, Georgia, serif; }
+
+/* Monospace */
+pre, code, pre span {
+  font-family: Ubuntu Mono, Lucida Console, Monaco, monospace !important; }
+
+/* Text Align */
+html, .rec p, figure#me,
+.featured, ul.project, main h2 {
+  text-align: center; }
+
+ul#links, ul#blog-links {
+  text-align: left; }
+
+.preview, div#blog-text, pre span {
+  text-align: left; }
+
+/* Dark Blue */
+h1 {
+  color: #fff;
+  text-shadow: 3px 3px 2px #284863;
+  font-size: 4em;
+  max-width: 60%; }
+
+footer {
+  background: #284863;
+  padding: 2em 0; }
+  footer img {
+    height: 100px;
+    margin: 30px; }
+
+/* dark grey */
+* {
+  color: #232b30; }
+
+aside#about-me,
+.post aside div.container {
+  background-color: #232b30; }
+
+/* light blue */
+a {
+  color: #2b7bb1;
+  text-decoration: none;
+  font-weight: bold; }
+  a:visited {
+    color: #2b7bb1;
+    text-decoration: none;
+    font-weight: bold; }
+
+a#css-concepts {
+  background-color: #2b7bb1; }
+
+code {
+  border: 1px solid #2b7bb1; }
+
+/* light grey */
+main, figure#me, html {
+  background: #dee3e5; }
+
+.img p {
+  color: #dee3e5; }
+
+footer p, footer h3 {
+  color: #dee3e5; }
+
+.featured p {
+  color: #dee3e5; }
+
+/* Light Green */
+a:hover {
+  color: #00F982; }
+
+::selection {
+  background-color: #00F982;
+  color: #fff; }
+
+/* Dark Green */
+a.img, .featured p, .project li {
+  background-color: #425851; }
+
+ul {
+  list-style: none;
+  display: inline;
+  padding: 0;
+  line-height: 2em; }
+
+/** 
+ * everything here organized by tag
+ */
+/* Html and Body modifiers */
+html {
+  width: 100%; }
+
+footer {
+  clear: both; }
+
+a:hover {
+  border-bottom: 3px solid yellow; }
+
+div.container {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  height: 100%; }
+  div.container img {
+    max-width: 800px; }
+
+/** Nav Panel/Bars */
+nav#bar {
+  display: table-header-group;
+  width: 100%;
+  height: 3em; }
+  nav#bar ul {
+    margin: auto;
+    display: block;
+    width: 100%; }
+  nav#bar li {
+    display: inline-block; }
+    nav#bar li a {
+      color: #dee3e5;
+      padding: 5px 10px;
+      text-transform: uppercase;
+      font-size: .8em;
+      letter-spacing: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.3); }
+      nav#bar li a:hover {
+        border: 1px solid yellow;
+        background: rgba(0, 0, 0, 0.3); }
+
+header {
+  background-image: url("../imgs/mountain-valley.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  width: 100%; }
+  header div.container {
+    display: table; }
+    header div.container h1 {
+      letter-spacing: .1em;
+      vertical-align: middle;
+      display: table-cell; }
+    header div.container .social-media {
+      display: table-footer-group;
+      position: relative;
+      bottom: 0;
+      height: 3em; }
+
+/* Social Media Specific */
+.social-media li {
+  display: inline;
+  margin: 0 5px 0 5px; }
+  .social-media li a img {
+    height: 30px; }
+
+/* Main */
+main {
+  padding: 25px 0; }
+
+.rec {
+  margin-bottom: 2.5em; }
+
+/* Index.html */
+.projects figure {
+  background: #425851; }
+
+.img {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 175px;
+  height: 150px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden; }
+  .img:hover {
+    box-shadow: 0px 0px 20px rgba(44, 44, 44, 0.5);
+    transform: scale(1.1);
+    z-index: 4; }
+    .img:hover p {
+      bottom: 10px; }
+    .img:hover img {
+      transform: scale(1.1);
+      transition: 1s ease; }
+  .img a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0; }
+    .img a:hover {
+      border-bottom: 0; }
+  .img img {
+    width: 100%; }
+  .img p {
+    position: absolute;
+    bottom: 0;
+    background: #2b7bb1;
+    padding: 5px 0;
+    width: 100%;
+    font-weight: 400; }
+
+div#left {
+  left: 0; }
+
+div#right {
+  right: 0; }
+
+/* About Me */
+#about-me {
+  padding: 2em 0; }
+  #about-me div div {
+    max-width: 250px;
+    display: inline-block; }
+    #about-me div div p {
+      font-size: 1.1em; }
+  #about-me figure#me {
+    display: inline-block;
+    padding: 20px 50px; }
+    #about-me figure#me img {
+      width: 125px;
+      display: inline-block;
+      padding: 0 10px;
+      position: relative;
+      border-radius: 100%; }
+
+/** 
+Blog Index
+
+	Main Body of Blog-Index
+ */
+.preview {
+  width: 40%;
+  display: inline-block;
+  position: relative;
+  padding: 0.5em;
+  left: 20px;
+  margin: 0;
+  box-sizing: border-box; }
+  .preview h3 {
+    line-height: 1.2em;
+    display: inline;
+    margin-left: 5px;
+    position: relative; }
+  .preview img {
+    height: 60px;
+    float: left; }
+  .preview p {
+    line-height: 1.4em; }
+
+#recent {
+  width: 100%;
+  padding: 30px; }
+  #recent img {
+    height: 90px; }
+  #recent p {
+    font-size: 1.2em;
+    line-height: 1.7em;
+    height: 60%;
+    top: 0;
+    vertical-align: top;
+    display: block; }
+
+/**
+ *	Section for Blog Post CSS
+ */
+article.post ul {
+  margin: 0; }
+  article.post ul li {
+    padding-left: 1em;
+    margin: 5px; }
+
+div#blog-text {
+  padding: 5px;
+  margin-top: 25px; }
+  div#blog-text img {
+    margin-bottom: 1em; }
+  div#blog-text p {
+    line-height: 25px;
+    margin-bottom: 1.5em;
+    font-size: 20px; }
+  div#blog-text h5 {
+    font-size: 22px;
+    margin-bottom: 1em; }
+
+figure p.descriptor {
+  font-size: 14px !important; }
+
+h4#date {
+  margin-bottom: 15px; }
+
+h3 {
+  margin-bottom: .5em; }
+
+pre {
+  padding: 1em 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 25px; }
+
+p#intro-blurb {
+  font-size: 1.375em !important;
+  line-height: 1.5 !important; }
+
+.likes li {
+  display: inline; }
+.likes img {
+  width: 180px;
+  margin: 10px; }
+
+li.quotes {
+  margin: 25px !important;
+  display: block; }
+
+#sandburg {
+  position: relative;
+  width: 90%;
+  margin: 45px auto; }
+  #sandburg p {
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    right: 20px;
+    background-color: white; }
+
+/**
+ *	The Project Portion
+ */
+.featured {
+  width: 400px;
+  height: 300px;
+  background: url("http://vector.me/files/images/1/5/156638/under_construction_clip_art.jpg");
+  background-size: cover;
+  background-position: center;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden; }
+  .featured p {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 5px 0;
+    margin: 0 auto; }
+
+ul.project {
+  display: block;
+  margin: 20px auto; }
+
+.project li {
+  display: inline-block;
+  position: relative;
+  width: 110px;
+  height: 100px;
+  margin: 10px 20px;
+  padding: 10px; }
+
+code {
+  display: inline-block;
+  padding: 0 1em; }
+
+/**
+ * The Responsive section of CSS
+ */
+@media (max-width: 710px) {
+  div.container {
+    width: 100%; }
+    div.container img {
+      max-width: 95%; }
+
+  figure img {
+    width: 350px; } }
+@media (max-width: 500px) {
+  header {
+    height: 100vh; }
+    header h1 {
+      vertical-align: top; }
+
+  .social-media li {
+    margin: 10px 10px; }
+    .social-media li a img {
+      height: 30px; }
+
+  pre {
+    font-size: .7em; }
+
+  h2 {
+    margin-left: 0 !important; } }
+@media (max-width: 400px) {
+  .post figure {
+    float: none; }
+    .post figure img {
+      width: 200px; }
+
+  nav#bar li {
+    padding: 10px 5px;
+    margin: 2px; }
+    nav#bar li a {
+      padding: 10px 5px;
+      margin: 2px; } }

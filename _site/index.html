@@ -14,7 +14,8 @@
   <title>Jabber's Site</title>
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
-  <link rel="stylesheet" href="/stylesheets/default.css">
+  <!-- <link rel="stylesheet" href="/stylesheets/default.css"> -->
+  <link rel="stylesheet" href="/css/default.css">
   <link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
@@ -31,12 +32,11 @@
     <div class="container">
       <nav id="bar">
         <ul>
-          <li><a href="">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="/blog">Blog</a></li>
           <li><a href="/projects">Projects</a></li>
           <!-- <li><a href="#">Resources</a></li> -->
           <li><a href="/about-me.html">About</a></li>
-          <!-- <li><a href="/contact.html">Contact</a></li> -->
         </ul>
       </nav> 
     
@@ -44,7 +44,7 @@
       <ul class="social-media">
   <li><a href="https://twitter.com/jabber_26"><img class="twitter" src="/imgs/Twitter_white_logo.svg" onmouseover="this.src='/imgs/Twitter_blue_logo.svg'" onmouseout="this.src='/imgs/Twitter_white_logo.svg'" alt="twitter"></a></li>
   <li><a href="https://github.com/abernet2"><img src="/imgs/GitHub-Mark-Light.svg" onmouseover="src='/imgs/GitHub-Mark.svg'" onmouseout="src='/imgs/GitHub-Mark-Light.svg'"></a></li>
-  <li><a href="https://medium.com/@jackabernethy"><img src="/imgs/Medium-light.png" onmouseover="src='/imgs/medium-m-color.png'" onmouseout="src='/imgs/medium-light.png'" alt="Medium"></a></li>
+  <li><a href="https://medium.com/@jackabernethy"><img src="/imgs/medium-light.png" onmouseover="src='/imgs/medium-m-color.png'" onmouseout="src='/imgs/medium-light.png'" alt="Medium"></a></li>
   <li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="/imgs/In-White-34px-TM.png" onmouseover="src='/imgs/In-2C-34px-R.png'" onmouseout="src='/imgs/In-White-34px-TM.png'"></a></li>
 </ul>
     </div>
@@ -56,39 +56,108 @@
   <div class="container">
     <section class="rec projects">
       <h2>Recent Projects</h2>
+<!--       <a href="#" class="img"><p>coming soon...</p></a>
       <a href="#" class="img"><p>coming soon...</p></a>
-      <a href="#" class="img"><p>coming soon...</p></a>
-      <a href="#" class="img"><p>coming soon...</p></a>
+      <a href="#" class="img"><p>coming soon...</p></a> -->
+      <figure class="img">
+        <img src="#" alt="">
+        <figcaption>
+          <p>coming soon...</p>
+        </figcaption>
+        <a href=""></a>
+      </figure>
+      <figure class="img">
+        <img src="#" alt="">
+        <figcaption>
+          <p>coming soon...</p>
+        </figcaption>
+        <a href=""></a>
+      </figure>
+      <figure class="img">
+        <img src="#" alt="">
+        <figcaption>
+          <p>coming soon...</p>
+        </figcaption>
+        <a href=""></a>
+      </figure>
     </section>
 
     <section class="rec blog" class="thumbnail">
-
   		<h2>Recent Blog Posts</h2>
-      	
-      <!-- Not an ideal way to update background, maybe there's a better thing to do with JS -->
-	      <a href="/2015/12/16/jekyll.html" class="img" style="background: rgba(0,0,0,0); background-image: url('../imgs/octojekyll.png');
-	      background-position: center;
-	      -webkit-background-size: cover;
-	      background-size: cover;">
-	      	<p>How to Migrate to Jekyll</p>
-	      </a>
-	  	
-      <!-- Not an ideal way to update background, maybe there's a better thing to do with JS -->
-	      <a href="/2015/12/13/memory.html" class="img" style="background: rgba(0,0,0,0); background-image: url('');
-	      background-position: center;
-	      -webkit-background-size: cover;
-	      background-size: cover;">
-	      	<p>Computer Memory</p>
-	      </a>
-	  	
-      <!-- Not an ideal way to update background, maybe there's a better thing to do with JS -->
-	      <a href="/technical/blog/2015/12/03/ruby-vs-javascript.html" class="img" style="background: rgba(0,0,0,0); background-image: url('../imgs/rubyvsjs.png');
-	      background-position: center;
-	      -webkit-background-size: cover;
-	      background-size: cover;">
-	      	<p>Ruby vs Javascript</p>
-	      </a>
-	  	
+
+    	
+      <figure class="img">
+        <img src=../imgs/octojekyll.png alt=post.imagealt>
+        <figcaption>
+          <p>How to Migrate to Jekyll</p>
+        </figcaption>
+    	 <a href=/2015/12/16/jekyll.html></a>
+      </figure>
+  	  
+      <figure class="img">
+        <img src=../imgs/computer-memory.png alt=post.imagealt>
+        <figcaption>
+          <p>Computer Memory</p>
+        </figcaption>
+    	 <a href=/2015/12/13/memory.html></a>
+      </figure>
+  	  
+      <figure class="img">
+        <img src=../imgs/rubyvsjs.png alt=post.imagealt>
+        <figcaption>
+          <p>Ruby vs Javascript</p>
+        </figcaption>
+    	 <a href=/technical/blog/2015/12/03/ruby-vs-javascript.html></a>
+      </figure>
+  	  
+      <figure class="img">
+        <img src=https://www.mathsisfun.com/geometry/images/quadrilateral-class.gif alt=post.imagealt>
+        <figcaption>
+          <p>Ruby Classes</p>
+        </figcaption>
+    	 <a href=/2015/11/30/ruby-classes.html></a>
+      </figure>
+  	  
+      <figure class="img">
+        <img src=http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/10/collections_enum.jpg alt=post.imagealt>
+        <figcaption>
+          <p>Enumerable Methods</p>
+        </figcaption>
+    	 <a href=/2015/11/20/enumerable-methods.html></a>
+      </figure>
+  	  
+      <figure class="img">
+        <img src=http://titanvex.com/wp-content/uploads/2013/04/hashtag400.jpg alt=post.imagealt>
+        <figcaption>
+          <p>Arrays and Hashes!</p>
+        </figcaption>
+    	 <a href=/2015/11/13/arrays-hashes.html></a>
+      </figure>
+  	  
+      <figure class="img">
+        <img src=../imgs/CSS3.png alt=post.imagealt>
+        <figcaption>
+          <p>CSS Concepts Reflection</p>
+        </figcaption>
+    	 <a href=/2015/11/06/css-concepts.html></a>
+      </figure>
+  	  
+      <figure class="img">
+        <img src=../imgs/doc.svg alt=post.imagealt>
+        <figcaption>
+          <p>Git, Github and Version Control</p>
+        </figcaption>
+    	 <a href=/2015/10/21/git.html></a>
+      </figure>
+  	  
+      <figure class="img">
+        <img src= alt=post.imagealt>
+        <figcaption>
+          <p>Welcome to Jekyll!</p>
+        </figcaption>
+    	 <a href=/jekyll/update/2015/10/20/welcome-to-jekyll.html></a>
+      </figure>
+  	  
 
     </section>
 
@@ -100,15 +169,15 @@
       <img src="/imgs/me.png" alt="me">
       <h4>Jack Abernethy</h4>
     </figure>
-      <ul id="links">
-        <li><p style="color:#e0e7e2">My name is Jack and I'm a fledgling Web Developer currently enrolled at Dev Bootcamp!</p></li>
-        <li><ul class="social-media">
+	<div>
+		<p style="color:#e0e7e2">My name is Jack and I'm a fledgling Web Developer currently enrolled at Dev Bootcamp!</p>
+        <ul class="social-media">
   <li><a href="https://twitter.com/jabber_26"><img class="twitter" src="/imgs/Twitter_white_logo.svg" onmouseover="this.src='/imgs/Twitter_blue_logo.svg'" onmouseout="this.src='/imgs/Twitter_white_logo.svg'" alt="twitter"></a></li>
   <li><a href="https://github.com/abernet2"><img src="/imgs/GitHub-Mark-Light.svg" onmouseover="src='/imgs/GitHub-Mark.svg'" onmouseout="src='/imgs/GitHub-Mark-Light.svg'"></a></li>
-  <li><a href="https://medium.com/@jackabernethy"><img src="/imgs/Medium-light.png" onmouseover="src='/imgs/medium-m-color.png'" onmouseout="src='/imgs/medium-light.png'" alt="Medium"></a></li>
+  <li><a href="https://medium.com/@jackabernethy"><img src="/imgs/medium-light.png" onmouseover="src='/imgs/medium-m-color.png'" onmouseout="src='/imgs/medium-light.png'" alt="Medium"></a></li>
   <li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="/imgs/In-White-34px-TM.png" onmouseover="src='/imgs/In-2C-34px-R.png'" onmouseout="src='/imgs/In-White-34px-TM.png'"></a></li>
-</ul></li>
-      </ul>
+</ul>
+    </div>
  </div>
 </aside>
 

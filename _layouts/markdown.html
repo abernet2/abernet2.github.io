@@ -9,7 +9,8 @@
 
     <main>
       <div class="container" id="blog-text">
-        {{ content }}
+        <h4>{{ page.date | date: '%B %d, %Y' }}</h4>
+        <article class="post">{{ content }}</article>
       </div>
     </main> 
 
