@@ -386,15 +386,20 @@ Blog Index
 	Main Body of Blog-Index
  */
 
-
 .preview {
-  width: 40%;
+  width: 45%;
   display: inline-block;
   position: relative;
   padding: 0.5em;
-  left: 20px;
-  margin: 0;
+  margin: 10px;
   box-sizing: border-box;
+  background: rgba(0,0,0,.2);
+  height: 230px;
+  border-radius: $spacing-unit;
+  overflow: hidden;
+  &:hover {
+    background: yellow;
+  }
   h3 {
     line-height: 1.2em;
     display: inline;
@@ -404,9 +409,21 @@ Blog Index
   img {
     height: 60px;
     float: left;
+    margin-right: 15px;
   }
   p {
     line-height: 1.4em;
+  }
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    &::hover {
+      border: none;
+    }
   }
 }
 
@@ -583,6 +600,22 @@ code {
   }
   h2 {
     margin-left: 0 !important;
+  }
+
+  .rec figure {
+    width: 95vw;
+    margin: 1em 0;
+  }
+
+  .preview {
+    width: 90vw;
+    padding: 1em;
+    margin: 0;
+    height: auto;
+  }
+  
+  #recent {
+    width: 90vw;
   }
 }
 

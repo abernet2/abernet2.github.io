@@ -1,42 +1,15 @@
 ---
 layout: default
-title: Jabber's Site
+title: Jack's DBC Website
 ---
 
 <main>
   <div class="container">
-    <section class="rec projects">
-      <h2>Recent Projects</h2>
-<!--       <a href="#" class="img"><p>coming soon...</p></a>
-      <a href="#" class="img"><p>coming soon...</p></a>
-      <a href="#" class="img"><p>coming soon...</p></a> -->
-      <figure class="img">
-        <img src="#" alt="">
-        <figcaption>
-          <p>coming soon...</p>
-        </figcaption>
-        <a href=""></a>
-      </figure>
-      <figure class="img">
-        <img src="#" alt="">
-        <figcaption>
-          <p>coming soon...</p>
-        </figcaption>
-        <a href=""></a>
-      </figure>
-      <figure class="img">
-        <img src="#" alt="">
-        <figcaption>
-          <p>coming soon...</p>
-        </figcaption>
-        <a href=""></a>
-      </figure>
-    </section>
 
     <section class="rec blog" class="thumbnail">
   		<h2>Recent Blog Posts</h2>
 
-    	{% for post in site.posts %}
+    	{% for post in site.posts limit: 3 %}
       <figure class="img">
         <img src={{post.imageurl}} alt=post.imagealt>
         <figcaption>
@@ -46,6 +19,31 @@ title: Jabber's Site
       </figure>
   	  {% endfor %}
 
+    </section>
+
+    <section class="rec projects">
+      <h2>Recent Projects</h2>
+      <figure class="img">
+        <img src="#" alt="">
+        <figcaption>
+          <p>coming soon...</p>
+        </figcaption>
+        <a href=""></a>
+      </figure>
+      <figure class="img">
+        <img src="#" alt="">
+        <figcaption>
+          <p>coming soon...</p>
+        </figcaption>
+        <a href=""></a>
+      </figure>
+      <figure class="img">
+        <img src="#" alt="">
+        <figcaption>
+          <p>coming soon...</p>
+        </figcaption>
+        <a href=""></a>
+      </figure>
     </section>
 
 </main>
