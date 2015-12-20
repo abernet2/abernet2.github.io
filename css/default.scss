@@ -305,6 +305,10 @@ main {
   background: $dark-green;
 }
 
+.projects figure img {
+  display: none;
+}
+
 .img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
