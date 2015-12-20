@@ -1,8 +1,8 @@
 ---
 layout: markdown
 title: Making A Website: A Reflection
-image: <img src="../imgs/blog-template.PNG" alt="Wireframe">
-imageurl: ../imgs/blog-template.PNG
+image: <img src="../imgs/blog-template.png" alt="Wireframe">
+imageurl: "../imgs/blog-template.PNG"
 imagealt: Wireframe
 excerpt: A quick reflection on making a website.
 ---
