@@ -7,23 +7,44 @@ title: Jabber's Site
   <div class="container">
     <section class="rec projects">
       <h2>Recent Projects</h2>
+<!--       <a href="#" class="img"><p>coming soon...</p></a>
       <a href="#" class="img"><p>coming soon...</p></a>
-      <a href="#" class="img"><p>coming soon...</p></a>
-      <a href="#" class="img"><p>coming soon...</p></a>
+      <a href="#" class="img"><p>coming soon...</p></a> -->
+      <figure class="img">
+        <img src="#" alt="">
+        <figcaption>
+          <p>coming soon...</p>
+        </figcaption>
+        <a href=""></a>
+      </figure>
+      <figure class="img">
+        <img src="#" alt="">
+        <figcaption>
+          <p>coming soon...</p>
+        </figcaption>
+        <a href=""></a>
+      </figure>
+      <figure class="img">
+        <img src="#" alt="">
+        <figcaption>
+          <p>coming soon...</p>
+        </figcaption>
+        <a href=""></a>
+      </figure>
     </section>
 
     <section class="rec blog" class="thumbnail">
-
   		<h2>Recent Blog Posts</h2>
-      	{% for post in site.posts limit: 3 %}
-      <!-- Not an ideal way to update background, maybe there's a better thing to do with JS -->
-	      <a href="{{ post.url }}" class="img" style="background: rgba(0,0,0,0); background-image: url('{{post.imageurl}}');
-	      background-position: center;
-	      -webkit-background-size: cover;
-	      background-size: cover;">
-	      	<p>{{ post.title }}</p>
-	      </a>
-	  	{% endfor %}
+
+    	{% for post in site.posts %}
+      <figure class="img">
+        <img src={{post.imageurl}} alt=post.imagealt>
+        <figcaption>
+          <p>{{ post.title }}</p>
+        </figcaption>
+    	 <a href={{ post.url }}></a>
+      </figure>
+  	  {% endfor %}
 
     </section>
 

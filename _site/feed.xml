@@ -6,8 +6,8 @@
 </description>
     <link>http://abernet2.github.io/</link>
     <atom:link href="http://abernet2.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Dec 2015 15:27:21 -0600</pubDate>
-    <lastBuildDate>Wed, 16 Dec 2015 15:27:21 -0600</lastBuildDate>
+    <pubDate>Sat, 19 Dec 2015 17:58:21 -0600</pubDate>
+    <lastBuildDate>Sat, 19 Dec 2015 17:58:21 -0600</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
@@ -191,62 +191,54 @@
     
       <item>
         <title>Ruby vs Javascript</title>
-        <description>&lt;main&gt;
-	&lt;div class=&quot;container&quot;&gt;
-		&lt;h4&gt;December 03, 2015&lt;/h4&gt;
-		&lt;div id=&quot;blog-text&quot;&gt;
-			&lt;article class=&quot;post&quot;&gt;
-			   &lt;p id=&quot;intro-blurb&quot;&gt;One of the biggest advantages of Ruby, and for many its defining feature, is its ability to easily iterate over objects. It accomplishes this feat by coming pre-packaged with all sorts of easy to use and intuitive methods for manipulate arrays, hashes and other types of data.&lt;/p&gt;
-            &lt;h2&gt;Iterating over Hashes/Objects&lt;/h2&gt;
-            &lt;p&gt;While Javascript maintains the ability to perform most of these functions, it can&#39;t do so with the same level of readability. For example, the good ol&#39; #each loop in ruby looks roughly like this:&lt;/p&gt;
-            &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;
+        <description>&lt;p id=&quot;intro-blurb&quot;&gt;One of the biggest advantages of Ruby, and for many its defining feature, is its ability to easily iterate over objects. It accomplishes this feat by coming pre-packaged with all sorts of easy to use and intuitive methods for manipulate arrays, hashes and other types of data.&lt;/p&gt;
+&lt;h2&gt;Iterating over Hashes/Objects&lt;/h2&gt;
+&lt;p&gt;While Javascript maintains the ability to perform most of these functions, it can&#39;t do so with the same level of readability. For example, the good ol&#39; #each loop in ruby looks roughly like this:&lt;/p&gt;
+&lt;pre class=&quot;prettyprint lang-rb&quot;&gt;
 hash = {a; 1,b: 2,c: 3,d: 4}
 sum = 0
 hash.each do |key, value|
-   sum += value
+sum += value
 end
-            &lt;/pre&gt;
-            &lt;p&gt;And as long as we&#39;re working with hashes (objects in Javascript) the each loop should look pretty similar:&lt;/p&gt;
-            &lt;pre class=&quot;prettyprint lang-js&quot;&gt;
+&lt;/pre&gt;
+&lt;p&gt;And as long as we&#39;re working with hashes (objects in Javascript) the each loop should look pretty similar:&lt;/p&gt;
+&lt;pre class=&quot;prettyprint lang-js&quot;&gt;
 var hash = {a; 1,b: 2,c: 3,d: 4};
 var sum = 0;
 for each (value in hash) {
-   sum += value;
+sum += value;
 }
-            &lt;/pre&gt;  
-            &lt;h2&gt;Iterating over Arrays&lt;/h2&gt;
-            &lt;p&gt;But the real problems start showing up when we need to iterate over an array. Javascript does not support easy iteration over arrays with the for each loop. To get such functionality you can use this somewhat messy workaround:&lt;/p&gt;
-            &lt;pre class=&quot;prettyprint lang-js&quot;&gt;
+&lt;/pre&gt;  
+&lt;h2&gt;Iterating over Arrays&lt;/h2&gt;
+&lt;p&gt;But the real problems start showing up when we need to iterate over an array. Javascript does not support easy iteration over arrays with the for each loop. To get such functionality you can use this somewhat messy workaround:&lt;/p&gt;
+&lt;pre class=&quot;prettyprint lang-js&quot;&gt;
 var arr = [1,2,3,4];
 var sum = 0;
 arr.forEach( function(num) {
-   sum += num;
+sum += num;
 });
-            &lt;/pre&gt;
-            &lt;p&gt;Notice how this creates a strange nested }); at the end of the loop. The syntax is also inconsistent with the for each loop used for objects. A main reason for using each statements is that it makes the code so much more readable. Notice that to read this new syntax you have to put in extra work. If you didn&#39;t know any better, it would look like you were iterating over an array of functions, and where did this num variable come from!? &lt;/p&gt;
-            &lt;p&gt;The better way to iterate over an array is like so:&lt;/p&gt;
-            &lt;pre class=&quot;prettyprint lang-js&quot;&gt;
+&lt;/pre&gt;
+&lt;p&gt;Notice how this creates a strange nested }); at the end of the loop. The syntax is also inconsistent with the for each loop used for objects. A main reason for using each statements is that it makes the code so much more readable. Notice that to read this new syntax you have to put in extra work. If you didn&#39;t know any better, it would look like you were iterating over an array of functions, and where did this num variable come from!? &lt;/p&gt;
+&lt;p&gt;The better way to iterate over an array is like so:&lt;/p&gt;
+&lt;pre class=&quot;prettyprint lang-js&quot;&gt;
 var arr = [1,2,3,4];
 var sum = 0;
 for (var i = 0; i &lt; arr.length; i++) {
-   sum += arr[i];
+sum += arr[i];
 }
-            &lt;/pre&gt;
-            &lt;p&gt;While this might not look much better, if you step through the code it makes much more sense. First you declare i (traditionally used as an index in for loops). While i &lt; length, you do the following function and then increment by 1. It may not be pretty, but it gets the job done!&lt;/p&gt;
-            &lt;h2&gt;Other Javascript Iteration Methods&lt;/h2&gt;
-            &lt;p&gt;None of this is to say that Javascript is completely without builtin methods, they are just much more limited and much more verbose. Here&#39;s a quick list of other Enumerable-&lt;i&gt;ish&lt;/i&gt; methods in Javascript:&lt;/p&gt;
-            &lt;ul&gt;
-               &lt;li&gt;&lt;b&gt;#reduce&lt;/b&gt;: &amp;nbsp; acts like an accumulator, great for summing/flattening arrays&lt;/li&gt;
-               &lt;li&gt;&lt;b&gt;#includes&lt;/b&gt;: &amp;nbsp; Checks if an array/object &lt;i&gt;includes&lt;/i&gt; the argument&lt;/li&gt;
-               &lt;li&gt;&lt;b&gt;#map&lt;/b&gt;: &amp;nbsp; Like map in Ruby, performs a function on every object and returns a new array.&lt;/li&gt;
-               &lt;li&gt;&lt;b&gt;#reverse&lt;/b&gt;: &amp;nbsp; Reverses the object/array you call this on&lt;/li&gt;
-               &lt;li&gt;&lt;b&gt;#sort&lt;/b&gt;: &amp;nbsp; Sorts stuff!&lt;/li&gt;
-               &lt;li&gt;&lt;b&gt;#every&lt;/b&gt;: &amp;nbsp; Checks if every element passes a certain condition&lt;/li&gt;
-            &lt;/ul&gt;
-			&lt;/article&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/main&gt;</description>
+&lt;/pre&gt;
+&lt;p&gt;While this might not look much better, if you step through the code it makes much more sense. First you declare i (traditionally used as an index in for loops). While i &lt; length, you do the following function and then increment by 1. It may not be pretty, but it gets the job done!&lt;/p&gt;
+&lt;h2&gt;Other Javascript Iteration Methods&lt;/h2&gt;
+&lt;p&gt;None of this is to say that Javascript is completely without builtin methods, they are just much more limited and much more verbose. Here&#39;s a quick list of other Enumerable-&lt;i&gt;ish&lt;/i&gt; methods in Javascript:&lt;/p&gt;
+&lt;ul&gt;
+   &lt;li&gt;&lt;b&gt;#reduce&lt;/b&gt;: &amp;nbsp; acts like an accumulator, great for summing/flattening arrays&lt;/li&gt;
+   &lt;li&gt;&lt;b&gt;#includes&lt;/b&gt;: &amp;nbsp; Checks if an array/object &lt;i&gt;includes&lt;/i&gt; the argument&lt;/li&gt;
+   &lt;li&gt;&lt;b&gt;#map&lt;/b&gt;: &amp;nbsp; Like map in Ruby, performs a function on every object and returns a new array.&lt;/li&gt;
+   &lt;li&gt;&lt;b&gt;#reverse&lt;/b&gt;: &amp;nbsp; Reverses the object/array you call this on&lt;/li&gt;
+   &lt;li&gt;&lt;b&gt;#sort&lt;/b&gt;: &amp;nbsp; Sorts stuff!&lt;/li&gt;
+   &lt;li&gt;&lt;b&gt;#every&lt;/b&gt;: &amp;nbsp; Checks if every element passes a certain condition&lt;/li&gt;
+&lt;/ul&gt;
+</description>
         <pubDate>Thu, 03 Dec 2015 00:00:00 -0600</pubDate>
         <link>http://abernet2.github.io/technical/blog/2015/12/03/ruby-vs-javascript.html</link>
         <guid isPermaLink="true">http://abernet2.github.io/technical/blog/2015/12/03/ruby-vs-javascript.html</guid>
@@ -269,7 +261,6 @@ for (var i = 0; i &lt; arr.length; i++) {
             Classes are basically blueprints for ruby objects. Classes can be useful to store and manipulate data in a consistent and predictable way. In this example, I create a class to consistently manipulate data about the sides of Quadrilaterals to figure out what kind of Quadrilateral they are.&lt;/p&gt;
             &lt;p&gt;To begin, real quick, here&#39;s an overview of the class I made. We&#39;re going to refactor this for better use of instance/local variables, but for now here&#39;s a straightforward approach:&lt;/p&gt;
 &lt;pre class=prettyprint&gt;
-
 class Quadrilateral
 
    def initialize(side1, side2, side3, side4, right_angle=false)
@@ -301,7 +292,7 @@ class Quadrilateral
    end
 
 end
-               &lt;/pre&gt;
+&lt;/pre&gt;
 
             &lt;p&gt;Basically what this object does is take in four sides, in consecutive order, and figures out which subset of a quadrangle it could be. It needs to remember the lengths of these sides so it can compare them later, which is why we create member variables for each.&lt;/p&gt;
             &lt;p&gt;The upside of using local variables is that you if you perform some computation with them upfront, you can save on space and time later. With this specific class, you can see that there is some overlap between our methods and we have a quite a few repetitive method calls.&lt;/p&gt;
@@ -346,15 +337,15 @@ end
       &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
       &lt;h4&gt;Jack Abernethy&lt;/h4&gt;
     &lt;/figure&gt;
-      &lt;ul id=&quot;links&quot;&gt;
-        &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;ul class=&quot;social-media&quot;&gt;
+	&lt;div&gt;
+		&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;
+        &lt;ul class=&quot;social-media&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/Medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-      &lt;/ul&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;
  &lt;/div&gt;
 &lt;/aside&gt;
 
@@ -405,15 +396,15 @@ end
       &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
       &lt;h4&gt;Jack Abernethy&lt;/h4&gt;
     &lt;/figure&gt;
-      &lt;ul id=&quot;links&quot;&gt;
-        &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;ul class=&quot;social-media&quot;&gt;
+	&lt;div&gt;
+		&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;
+        &lt;ul class=&quot;social-media&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/Medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-      &lt;/ul&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;
  &lt;/div&gt;
 &lt;/aside&gt;
 	
@@ -462,15 +453,15 @@ end
       &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
       &lt;h4&gt;Jack Abernethy&lt;/h4&gt;
     &lt;/figure&gt;
-      &lt;ul id=&quot;links&quot;&gt;
-        &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;ul class=&quot;social-media&quot;&gt;
+	&lt;div&gt;
+		&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;
+        &lt;ul class=&quot;social-media&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/Medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-      &lt;/ul&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;
  &lt;/div&gt;
 &lt;/aside&gt;
 
@@ -539,15 +530,15 @@ end
       &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
       &lt;h4&gt;Jack Abernethy&lt;/h4&gt;
     &lt;/figure&gt;
-      &lt;ul id=&quot;links&quot;&gt;
-        &lt;li&gt;&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;ul class=&quot;social-media&quot;&gt;
+	&lt;div&gt;
+		&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;
+        &lt;ul class=&quot;social-media&quot;&gt;
   &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/Medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-      &lt;/ul&gt;
+&lt;/ul&gt;
+    &lt;/div&gt;
  &lt;/div&gt;
 &lt;/aside&gt;
 

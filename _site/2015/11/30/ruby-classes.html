@@ -13,7 +13,8 @@
 
   <title>Ruby Classes</title>
   <meta name="description" content="Classes are basically blueprints for ruby objects. Classes can be useful to store and manipulate data in a consistent and predictable way. In this example, I...">
-  <link rel="stylesheet" href="../../../stylesheets/default.css">
+  <!-- <link rel="stylesheet" href="../../../stylesheets/default.css"> -->
+  <link rel="stylesheet" href="../../../css/default.css">
   <link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Asap' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
@@ -30,12 +31,11 @@
     <div class="container">
       <nav id="bar">
         <ul>
-          <li><a href="../../..">Home</a></li>
+          <li><a href="../../../">Home</a></li>
           <li><a href="../../../blog">Blog</a></li>
           <li><a href="../../../projects">Projects</a></li>
           <!-- <li><a href="#">Resources</a></li> -->
           <li><a href="../../../about-me.html">About</a></li>
-          <!-- <li><a href="../../../contact.html">Contact</a></li> -->
         </ul>
       </nav> 
     
@@ -43,7 +43,7 @@
       <ul class="social-media">
   <li><a href="https://twitter.com/jabber_26"><img class="twitter" src="../../../imgs/Twitter_white_logo.svg" onmouseover="this.src='../../../imgs/Twitter_blue_logo.svg'" onmouseout="this.src='../../../imgs/Twitter_white_logo.svg'" alt="twitter"></a></li>
   <li><a href="https://github.com/abernet2"><img src="../../../imgs/GitHub-Mark-Light.svg" onmouseover="src='../../../imgs/GitHub-Mark.svg'" onmouseout="src='../../../imgs/GitHub-Mark-Light.svg'"></a></li>
-  <li><a href="https://medium.com/@jackabernethy"><img src="../../../imgs/Medium-light.png" onmouseover="src='../../../imgs/medium-m-color.png'" onmouseout="src='../../../imgs/medium-light.png'" alt="Medium"></a></li>
+  <li><a href="https://medium.com/@jackabernethy"><img src="../../../imgs/medium-light.png" onmouseover="src='../../../imgs/medium-m-color.png'" onmouseout="src='../../../imgs/medium-light.png'" alt="Medium"></a></li>
   <li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="../../../imgs/In-White-34px-TM.png" onmouseover="src='../../../imgs/In-2C-34px-R.png'" onmouseout="src='../../../imgs/In-White-34px-TM.png'"></a></li>
 </ul>
     </div>
@@ -60,7 +60,6 @@
             Classes are basically blueprints for ruby objects. Classes can be useful to store and manipulate data in a consistent and predictable way. In this example, I create a class to consistently manipulate data about the sides of Quadrilaterals to figure out what kind of Quadrilateral they are.</p>
             <p>To begin, real quick, here's an overview of the class I made. We're going to refactor this for better use of instance/local variables, but for now here's a straightforward approach:</p>
 <pre class=prettyprint>
-
 class Quadrilateral
 
    def initialize(side1, side2, side3, side4, right_angle=false)
@@ -92,7 +91,7 @@ class Quadrilateral
    end
 
 end
-               </pre>
+</pre>
 
             <p>Basically what this object does is take in four sides, in consecutive order, and figures out which subset of a quadrangle it could be. It needs to remember the lengths of these sides so it can compare them later, which is why we create member variables for each.</p>
             <p>The upside of using local variables is that you if you perform some computation with them upfront, you can save on space and time later. With this specific class, you can see that there is some overlap between our methods and we have a quite a few repetitive method calls.</p>
@@ -137,15 +136,15 @@ end
       <img src="/imgs/me.png" alt="me">
       <h4>Jack Abernethy</h4>
     </figure>
-      <ul id="links">
-        <li><p style="color:#e0e7e2">My name is Jack and I'm a fledgling Web Developer currently enrolled at Dev Bootcamp!</p></li>
-        <li><ul class="social-media">
+	<div>
+		<p style="color:#e0e7e2">My name is Jack and I'm a fledgling Web Developer currently enrolled at Dev Bootcamp!</p>
+        <ul class="social-media">
   <li><a href="https://twitter.com/jabber_26"><img class="twitter" src="/imgs/Twitter_white_logo.svg" onmouseover="this.src='/imgs/Twitter_blue_logo.svg'" onmouseout="this.src='/imgs/Twitter_white_logo.svg'" alt="twitter"></a></li>
   <li><a href="https://github.com/abernet2"><img src="/imgs/GitHub-Mark-Light.svg" onmouseover="src='/imgs/GitHub-Mark.svg'" onmouseout="src='/imgs/GitHub-Mark-Light.svg'"></a></li>
-  <li><a href="https://medium.com/@jackabernethy"><img src="/imgs/Medium-light.png" onmouseover="src='/imgs/medium-m-color.png'" onmouseout="src='/imgs/medium-light.png'" alt="Medium"></a></li>
+  <li><a href="https://medium.com/@jackabernethy"><img src="/imgs/medium-light.png" onmouseover="src='/imgs/medium-m-color.png'" onmouseout="src='/imgs/medium-light.png'" alt="Medium"></a></li>
   <li><a href="https://www.linkedin.com/in/jack-abernethy-ab257b9b"><img src="/imgs/In-White-34px-TM.png" onmouseover="src='/imgs/In-2C-34px-R.png'" onmouseout="src='/imgs/In-White-34px-TM.png'"></a></li>
-</ul></li>
-      </ul>
+</ul>
+    </div>
  </div>
 </aside>
 

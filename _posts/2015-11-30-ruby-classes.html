@@ -14,7 +14,6 @@ imagealt: quadrilateral classes
             Classes are basically blueprints for ruby objects. Classes can be useful to store and manipulate data in a consistent and predictable way. In this example, I create a class to consistently manipulate data about the sides of Quadrilaterals to figure out what kind of Quadrilateral they are.</p>
             <p>To begin, real quick, here's an overview of the class I made. We're going to refactor this for better use of instance/local variables, but for now here's a straightforward approach:</p>
 <pre class=prettyprint>
-
 class Quadrilateral
 
    def initialize(side1, side2, side3, side4, right_angle=false)
@@ -46,7 +45,7 @@ class Quadrilateral
    end
 
 end
-               </pre>
+</pre>
 
             <p>Basically what this object does is take in four sides, in consecutive order, and figures out which subset of a quadrangle it could be. It needs to remember the lengths of these sides so it can compare them later, which is why we create member variables for each.</p>
             <p>The upside of using local variables is that you if you perform some computation with them upfront, you can save on space and time later. With this specific class, you can see that there is some overlap between our methods and we have a quite a few repetitive method calls.</p>
