@@ -203,6 +203,9 @@ main {
 .projects figure {
   background: #425851; }
 
+.projects figure img {
+  display: none; }
+
 .img {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
