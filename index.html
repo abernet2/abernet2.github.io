@@ -11,7 +11,7 @@ title: Jack's DBC Website
 
     	{% for post in site.posts limit: 3 %}
       <figure class="img">
-        <img src={{post.imageurl}} alt=post.imagealt>
+        <img src={{post.imageurl}} alt={{post.imagealt}}>
         <figcaption>
           <p>{{ post.title }}</p>
         </figcaption>
@@ -23,27 +23,16 @@ title: Jack's DBC Website
 
     <section class="rec projects">
       <h2>Recent Projects</h2>
-      <figure class="img">
-        <img src="#" alt="">
-        <figcaption>
-          <p>coming soon...</p>
-        </figcaption>
-        <a href=""></a>
-      </figure>
-      <figure class="img">
-        <img src="#" alt="">
-        <figcaption>
-          <p>coming soon...</p>
-        </figcaption>
-        <a href=""></a>
-      </figure>
-      <figure class="img">
-        <img src="#" alt="">
-        <figcaption>
-          <p>coming soon...</p>
-        </figcaption>
-        <a href=""></a>
-      </figure>
+
+      {% for project in site.projects limit: 3 %}
+        <figure class="img">
+          <img src="{{project.imageurl}}" alt="{{project.imagealt}}">
+          <figcaption>
+            <p>{{project.title}}</p>
+          </figcaption>
+          <a href="{{project.repo}}"></a>
+        </figure>
+      {% endfor %}
     </section>
 
 </main>
