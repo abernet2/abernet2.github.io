@@ -230,6 +230,18 @@ div.container {
 
 /** Nav Panel/Bars */
 
+nav#blog-bar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: $light-grey;
+  li {
+    display: inline;
+    margin: 0 2em;
+  }
+}
+
 nav#bar {
   display: table-header-group;
   width: 100%;
@@ -452,6 +464,10 @@ Blog Index
  *	Section for Blog Post CSS
  */
 
+#blog-header {
+  max-width: initial;
+}
+
 article.post ul {
   margin: 0;
   li {
@@ -461,13 +477,15 @@ article.post ul {
 }
 
 div#blog-text {
+  max-width: 600px;
   padding: 5px;
   margin-top: 25px;
+  font-family: 'Helvetica';
   img {
     margin-bottom: 1em;
   }
   p {
-    line-height: 25px;
+    line-height: 1.5;
     margin-bottom: 1.5em;
     font-size: 20px;
   }
@@ -533,20 +551,17 @@ li.quotes {
  */
 
 .featured {
-  width: 400px;
-  height: 300px;
-  background: url('http://vector.me/files/images/1/5/156638/under_construction_clip_art.jpg');
-  background-size: cover;
   background-position: center;
   margin: 0px auto;
   position: relative;
   overflow: hidden;
   p {
-    position: absolute;
     width: 100%;
-    bottom: 0px;
     padding: 5px 0;
+  }
+  table {
     margin: 0 auto;
+    font-size: 2em;
   }
 }
 

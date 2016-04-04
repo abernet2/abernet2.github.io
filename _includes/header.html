@@ -1,12 +1,6 @@
 <header>
     <div class="container">
-      <nav id="bar">
-        <ul>
-          <li><a href="{{ base }}/">Home</a></li>
-          <li><a href="{{ base }}/blog">Blog</a></li>
-          <li><a href="{{ base }}/projects">Projects</a></li>
-        </ul>
-      </nav> 
+      {% include navbar.html %}
     
       <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
       {% include social-media.html %}

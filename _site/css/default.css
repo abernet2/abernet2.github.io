@@ -146,6 +146,16 @@ div.container {
     max-width: 800px; }
 
 /** Nav Panel/Bars */
+nav#blog-bar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: #dee3e5; }
+  nav#blog-bar li {
+    display: inline;
+    margin: 0 2em; }
+
 nav#bar {
   display: table-header-group;
   width: 100%;
@@ -202,6 +212,9 @@ main {
 /* Index.html */
 .projects figure {
   background: #425851; }
+
+.projects figure img {
+  display: none; }
 
 .img {
   -webkit-box-sizing: border-box;
@@ -317,6 +330,9 @@ Blog Index
 /**
  *	Section for Blog Post CSS
  */
+#blog-header {
+  max-width: initial; }
+
 article.post ul {
   margin: 0; }
   article.post ul li {
@@ -324,12 +340,14 @@ article.post ul {
     margin: 5px; }
 
 div#blog-text {
+  max-width: 600px;
   padding: 5px;
-  margin-top: 25px; }
+  margin-top: 25px;
+  font-family: 'Helvetica'; }
   div#blog-text img {
     margin-bottom: 1em; }
   div#blog-text p {
-    line-height: 25px;
+    line-height: 1.5;
     margin-bottom: 1.5em;
     font-size: 20px; }
   div#blog-text h5 {
@@ -379,20 +397,16 @@ li.quotes {
  *	The Project Portion
  */
 .featured {
-  width: 400px;
-  height: 300px;
-  background: url("http://vector.me/files/images/1/5/156638/under_construction_clip_art.jpg");
-  background-size: cover;
   background-position: center;
   margin: 0px auto;
   position: relative;
   overflow: hidden; }
   .featured p {
-    position: absolute;
     width: 100%;
-    bottom: 0px;
-    padding: 5px 0;
-    margin: 0 auto; }
+    padding: 5px 0; }
+  .featured table {
+    margin: 0 auto;
+    font-size: 2em; }
 
 ul.project {
   display: block;

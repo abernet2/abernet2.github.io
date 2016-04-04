@@ -6,9 +6,42 @@
 </description>
     <link>http://abernet2.github.io/</link>
     <atom:link href="http://abernet2.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 Dec 2015 20:44:06 -0600</pubDate>
-    <lastBuildDate>Sat, 19 Dec 2015 20:44:06 -0600</lastBuildDate>
-    <generator>Jekyll v3.0.0</generator>
+    <pubDate>Sun, 03 Apr 2016 14:52:08 -0500</pubDate>
+    <lastBuildDate>Sun, 03 Apr 2016 14:52:08 -0500</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Making A Website</title>
+        <description>&lt;p&gt;This week I have definitely put in more time working on the site than any other week. That was in part because of laxed workload, but also because I wanted to get it nice and spiffy before camp starts!&lt;/p&gt;
+
+&lt;p&gt;My overall reaction to making websites has been that I enjoy it, perhaps too much. I’ve found I very easily fall into rabbit holes and lose a lot of time working on the site. For now, I feel like I’m learning new things the whole time, but in the future I definitely want to timebox better.&lt;/p&gt;
+
+&lt;h3 id=&quot;updates&quot;&gt;Updates&lt;/h3&gt;
+
+&lt;p&gt;Making the html and css for a website is one thing, continually updating that site is another. Some layout or class-naming decision might make sense at the time, but then seem silly when you go back to look at it. Tiny details such as the ordering and scope of your CSS, as well as its overall organization have a big impact on your ability to change the site.&lt;/p&gt;
+
+&lt;p&gt;This week I finally switched my css to sass and went through all the css to fix glaring issues. From there I started working on a few things for the site.&lt;/p&gt;
+
+&lt;h3 id=&quot;carousel&quot;&gt;Carousel&lt;/h3&gt;
+
+&lt;p&gt;My biggest error to note this week was in making a carousel. On my homepage I display three buttons for blog posts, and I wanted to make a carousel so that you could slyly see more blog posts.&lt;/p&gt;
+
+&lt;p&gt;It took me forever to get working the way I wanted it, and I never got the hover and scroll working, you had to click on the arrow to scroll the carousel. Then I read of bunch of articles explaining how they are one of the most consistenetly disliked features according to UX researchers. I guess it just seems challenging and spiffy from a creator’s stand-point, but not very usable from a surfer standpoint.&lt;/p&gt;
+
+&lt;p&gt;I decided to scrap it, and instead reformatted my blog landing page so you could see all my blog posts.&lt;/p&gt;
+
+&lt;h3 id=&quot;closing-thoughts&quot;&gt;Closing Thoughts&lt;/h3&gt;
+
+&lt;p&gt;Making the site has been a joy so far. The javascript I’ve had to implement so far has been minimal, but useful. Hopefully when I know more I can have a creative way to upload my projects to the project page using some javascript to make it fun and interactive.&lt;/p&gt;
+
+&lt;p&gt;I look forward to starting rails and also learning how having a database can really open up the possibilities! See everyone in phase 1!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 19 Dec 2015 00:00:00 -0600</pubDate>
+        <link>http://abernet2.github.io/2015/12/19/making-a-website.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/2015/12/19/making-a-website.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>How to Migrate to Jekyll</title>
@@ -240,8 +273,8 @@ sum += arr[i];
 &lt;/ul&gt;
 </description>
         <pubDate>Thu, 03 Dec 2015 00:00:00 -0600</pubDate>
-        <link>http://abernet2.github.io/technical/blog/2015/12/03/ruby-vs-javascript.html</link>
-        <guid isPermaLink="true">http://abernet2.github.io/technical/blog/2015/12/03/ruby-vs-javascript.html</guid>
+        <link>http://abernet2.github.io/technical/blog/2015/12/03/Ruby-vs-Javascript.html</link>
+        <guid isPermaLink="true">http://abernet2.github.io/technical/blog/2015/12/03/Ruby-vs-Javascript.html</guid>
         
         
         <category>Technical</category>
@@ -603,9 +636,9 @@ end
     
       <item>
         <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
 &lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
 
