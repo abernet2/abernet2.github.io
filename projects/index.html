@@ -9,7 +9,7 @@ title: Projects Page
 			{% for project in site.projects %}
 				<h2>{{project.title}}</h2>
 				<div id='{{project.title}}'>
-					<script type="text/javascript">{{project}}</script>
+					<script type="text/javascript">{{project.output}}</script>
 				</div>
 				<p>{{project.description}}</p>
 			{% endfor %}
