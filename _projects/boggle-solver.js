@@ -4,7 +4,7 @@ description: Eventually will be a fully functional game of boggle. Right now, it
 repo: https://github.com/abernet2/boggle-solver
 ---
 
-<script 
-    data-main="https://raw.githubusercontent.com/abernet2/boggle-solver/master/web/scripts/app.js" 
-    src="https://raw.githubusercontent.com/abernet2/boggle-solver/master/web/scripts/require.js">
+<script
+    data-main="https://rawgit.com/abernet2/boggle-solver/master/web/scripts/app" 
+    src="https://rawgit.com/abernet2/boggle-solver/master/web/scripts/require.js">
 </script>
