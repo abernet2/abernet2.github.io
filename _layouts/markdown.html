@@ -13,6 +13,27 @@
       </div>
     </main> 
 
+  
+{% capture the_collection %}{{page.collection}}{% endcapture %}
+  {% if page.collection %}
+    {% assign  document = site[the_collection]  %}
+  {% endif %}
+{% for links in document  %}
+  {% if links.title == page.title %}
+    {% unless forloop.first %}
+      {% assign next_url = prev.url %}
+    {% endunless %}
+    {% unless forloop.last %}
+      {% assign next = document[forloop.index] %}
+      {% assign prev_url = next.url %}
+    {% endunless %}
+  {% endif %}
+  {% assign prev = links %}
+{% endfor %}
+
+{% if next_url %}<a href="{{next_url}}" class="nxt">Next</a>{% endif %}<br />
+
+{% if prev_url %}<a href="{{prev_url}}" class="prev">Prev</a>{% endif %}
   </body>
 
 </html>

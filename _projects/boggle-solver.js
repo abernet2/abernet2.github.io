@@ -3,7 +3,7 @@ title: boggle
 description: Eventually will be a fully functional game of boggle. Right now, it simply highlights a word if it exists in the board.
 repo: https://github.com/abernet2/boggle-solver
 ---
-
+<div class='boggle-container'></div>
 <script
     data-main="https://rawgit.com/abernet2/boggle-solver/master/web/scripts/app" 
     src="https://rawgit.com/abernet2/boggle-solver/master/web/scripts/require.js">

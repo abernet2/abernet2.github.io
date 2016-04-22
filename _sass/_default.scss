@@ -1,6 +1,4 @@
----
----
-// Our variables
+
 $dark-green: #425851;
 $light-green: #00F982;
 $light-grey: #dee3e5;
@@ -8,7 +6,9 @@ $dark-blue: #284863;
 $light-blue: #2b7bb1;
 $dark-grey: #232b30;
  
-$base-font-family: "Asap", Helvetica, Arial, sans-serif;
+$sans-serif: "Metrophobic", serif;
+$slab-serif: "Arbutus Slab", Helvetica, Arial, sans-serif;
+
 $base-font-size:   16px;
 $base-font-weight: 400;
 $small-font-size:  $base-font-size * 0.875;
@@ -66,7 +66,7 @@ h4 {
 /* sans-serif */
 
 * {
-  font-family: $base-font-family;
+  font-family: $sans-serif;
 }
 
 /* Serif */
@@ -74,13 +74,13 @@ h4 {
 h1, h2, h3, 
 #links a, .img p,
 p#intro-blurb {
-  font-family: Crete Round, Georgia, serif;
+  font-family: $slab-serif;
 }
 
 #blog-text a {
-  font-family: Crete Round, Georgia, serif;
+  font-family: $slab-serif;
   &:visited b {
-    font-family: Crete Round, Georgia, serif;
+    font-family: $slab-serif;
   }
 }
 
@@ -224,82 +224,11 @@ div.container {
   position: relative;
   height: 100%;
   img {
-    max-width: $content-width;
+    max-width: 100%;
   }
 }
 
-/** Nav Panel/Bars */
 
-nav#blog-bar {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 2;
-  background-color: $light-grey;
-  li {
-    display: inline;
-    margin: 0 2em;
-  }
-}
-
-nav#bar {
-  display: table-header-group;
-  width: 100%;
-  height: 3em;
-  ul {
-    margin: auto;
-    display: block;
-    width: 100%;
-  }
-  li {
-    display: inline-block;
-    a {
-      color: $light-grey;
-      padding: 5px 10px;
-      text-transform: uppercase;
-      font-size: .8em;
-      letter-spacing: 2px;
-      border: 1px solid rgba(255,255,255,.3);
-      &:hover {
-        border: 1px solid yellow;
-        background: rgba(0,0,0,.3);
-      }
-    }
-  }
-}
-
-header {
-  background-image: url("../imgs/mountain-valley.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 550px;
-  width: 100%;
-  div.container {
-    display: table;
-    h1 {
-      letter-spacing: .1em;
-      vertical-align: middle;
-      display: table-cell;
-    }
-    .social-media {
-      display: table-footer-group;
-      position: relative;
-      bottom: 0;
-      height: 3em;
-    }
-  }
-}
-
-/* Social Media Specific */
-.social-media {
-  li {
-    display: inline;
-    margin: 0 5px 0 5px;
-    a img {
-      height: $spacing-unit;
-    }
-  }
-}
 
 /* Main */
 
@@ -370,181 +299,9 @@ div#left{
 div#right{
   right:0;}
 
-/* About Me */
-
-#about-me  {
-  padding: 2em 0;
-  div div {
-  max-width: 250px;
-  display: inline-block;
-  p {
-    font-size: 1.1em;
-    }
-  }
-  figure#me {
-    display: inline-block;
-    padding: 20px 50px;
-    img {
-      width: 125px;
-      display: inline-block;
-      padding: 0 10px;
-      position: relative;
-      border-radius: 100%;
-    }
-  }
-}
 
 
 
-/** 
-Blog Index
-
-	Main Body of Blog-Index
- */
-
-.preview {
-  width: 45%;
-  display: inline-block;
-  position: relative;
-  padding: 0.5em;
-  margin: 10px;
-  box-sizing: border-box;
-  background: rgba(0,0,0,.2);
-  height: 230px;
-  border-radius: $spacing-unit;
-  overflow: hidden;
-  &:hover {
-    background: yellow;
-  }
-  h3 {
-    line-height: 1.2em;
-    display: inline;
-    margin-left: 5px;
-    position: relative;
-  }
-  img {
-    height: 60px;
-    float: left;
-    margin-right: 15px;
-  }
-  p {
-    line-height: 1.4em;
-  }
-  a {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    z-index: 2;
-    &::hover {
-      border: none;
-    }
-  }
-}
-
-#recent {
-  width: 100%;
-  padding: $spacing-unit;
-  img {
-    height: 90px;
-  }
-  p {
-    font-size: 1.2em;
-    line-height: 1.7em;
-    height: 60%;
-    top: 0;
-    vertical-align: top;
-    display: block;
-  }
-}
-
-
-/**
- *	Section for Blog Post CSS
- */
-
-#blog-header {
-  max-width: initial;
-}
-
-article.post ul {
-  margin: 0;
-  li {
-    padding-left: 1em;
-    margin: 5px;
-  }
-}
-
-div#blog-text {
-  max-width: 600px;
-  padding: 5px;
-  margin-top: 25px;
-  font-family: 'Helvetica';
-  img {
-    margin-bottom: 1em;
-  }
-  p {
-    line-height: 1.5;
-    margin-bottom: 1.5em;
-    font-size: 20px;
-  }
-  h5 {
-    font-size: 22px;
-    margin-bottom: 1em;
-  }
-}
-
-figure p.descriptor {
-  font-size: 14px !important;
-}
-
-h4#date {
-  margin-bottom: 15px;
-}
-
-h3 {
-  margin-bottom: .5em;
-}
-
-pre {
-  padding: 1em 1.5em;
-  margin-bottom: 1.5em;
-  border-radius: 25px;
-}
-
-p#intro-blurb {
-  font-size: 1.375em !important;
-  line-height: 1.5 !important;
-}
-
-.likes {
-  li {
-    display: inline;
-  }
-  img {
-    width: 180px;
-    margin: 10px;
-  }
-}
-
-li.quotes {
-  margin: 25px !important;
-  display: block;
-}
-
-#sandburg {
-  position: relative;
-  width: 90%;
-  margin: 45px auto;
-  p {
-    position: absolute;
-    bottom: 0;
-    width: 60%;
-    right: 20px;
-    background-color: white;
-  }
-}
 
 /**
  *	The Project Portion
@@ -587,10 +344,11 @@ code {
 /**
  * The Responsive section of CSS
  */
-@media (max-width: 710px) {
+
+@media (max-width: $on-laptop) and (min-width: $on-palm) {
   div {
     &.container {
-      width: 100%;
+      max-width: 600px;
       img {
         max-width: 95%;
       }

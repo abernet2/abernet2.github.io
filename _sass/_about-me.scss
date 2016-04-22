@@ -1,0 +1,23 @@
+/* About Me */
+
+#about-me  {
+  padding: 2em 0;
+  div div {
+  max-width: 250px;
+  display: inline-block;
+  p {
+    font-size: 1.1em;
+    }
+  }
+  figure#me {
+    display: inline-block;
+    padding: 20px 50px;
+    img {
+      width: 125px;
+      display: inline-block;
+      padding: 0 10px;
+      position: relative;
+      border-radius: 100%;
+    }
+  }
+}

@@ -1,0 +1,159 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+@import "default", "header", "about-me";
+
+nav#blog-bar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: $light-grey;
+  li {
+    display: inline;
+    margin: 0 2em;
+  }
+}
+
+/** 
+Blog Index
+
+  Main Body of Blog-Index
+ */
+
+.preview {
+  width: 250px;
+  display: inline-block;
+  position: relative;
+  margin: 15px;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.2);
+  height: 300px;
+  overflow: hidden;
+  box-shadow: 2px 4px 5px black;
+  &:hover {
+    background: yellow;
+  }
+  div.blog-tag-image {
+    width: 100%;
+    height: 175px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      margin-right: 15px;
+    }
+  }
+  .blog-tag-text {
+    text-align: center;
+    padding: 8px;
+  }
+  h3 {
+    line-height: 1.2em;
+    display: inline;
+    margin-left: 5px;
+    position: relative;
+  }
+  p {
+    line-height: 1.4em;
+  }
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    &::hover {
+      border: none;
+    }
+  }
+}
+
+
+
+/**
+ *  Section for Blog Post CSS
+ */
+
+#blog-header {
+  max-width: initial;
+}
+
+article.post ul {
+  margin: 0;
+  li {
+    padding-left: 1em;
+    margin: 5px;
+  }
+}
+
+div#blog-text {
+  padding: 5px;
+  margin-top: 25px;
+  img {
+    margin-bottom: 1em;
+  }
+  p {
+    /*line-height: 1.5;*/
+    margin-bottom: 1.5em;
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 22px;
+    margin-bottom: 1em;
+  }
+}
+
+figure p.descriptor {
+  font-size: 14px !important;
+}
+
+h4#date {
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-bottom: .5em;
+}
+
+pre {
+  padding: 1em 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 25px;
+}
+
+p#intro-blurb {
+  font-size: 1.375em !important;
+  line-height: 1.5 !important;
+}
+
+
+@media (max-width: $on-palm) {
+  html {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-wrap: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  .container {
+    max-width: 100%;
+  }
+  nav#blog-bar {
+    width: 100vw;
+    li {
+      padding: 10px 5px;
+      margin: 2px;
+      a {
+        padding: 10px 5px;
+        margin: 2px;
+      }
+    }
+  }
+}
