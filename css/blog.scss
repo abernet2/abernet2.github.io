@@ -3,16 +3,47 @@
 ---
 @import "default", "header", "about-me";
 
+main {
+  padding: 0;
+}
+
 nav#blog-bar {
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 2;
-  background-color: $light-grey;
-  li {
-    display: inline;
-    margin: 0 2em;
+  z-index: auto;dex: 2;
+  padding: 10px;
+
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+
+  &.scrolled {
+    background-color: $dark-blue;
+    padding: 0;
   }
+  a {
+    color: $light-green;
+  }
+
+  ul {
+    float: right;
+    padding: 0 1.5em;
+    margin: 0;
+    li {
+      display: inline;
+      padding: 1em;
+    }
+  }
+}
+
+h1#blog-header {
+  background-image: url("../imgs/mountain-valley.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 2em;
 }
 
 /** 
@@ -27,16 +58,18 @@ Blog Index
   position: relative;
   margin: 15px;
   box-sizing: border-box;
-  background: rgba(0,0,0,.2);
   height: 300px;
   overflow: hidden;
-  box-shadow: 2px 4px 5px black;
-  &:hover {
-    background: yellow;
+  a:hover {
+    border: 0;
+  }
+  &:hover{
+    box-shadow: 0px 0px 20px black;
+    transform: scale(1.1);
   }
   div.blog-tag-image {
     width: 100%;
-    height: 175px;
+    height: calc(100% - 4.5em);
     overflow: hidden;
     img {
       width: 100%;
@@ -52,6 +85,7 @@ Blog Index
     display: inline;
     margin-left: 5px;
     position: relative;
+    font-size: 1.5em;
   }
   p {
     line-height: 1.4em;
@@ -88,13 +122,15 @@ article.post ul {
 }
 
 div#blog-text {
-  padding: 5px;
-  margin-top: 25px;
+  padding: 1em;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: $light-grey;
   img {
     margin-bottom: 1em;
+    width: 100%;
   }
   p {
-    /*line-height: 1.5;*/
     margin-bottom: 1.5em;
     font-size: 20px;
   }
@@ -127,6 +163,20 @@ p#intro-blurb {
   line-height: 1.5 !important;
 }
 
+#blog-footer {
+  padding: 2em 7em;
+  a {
+    color: $light-green;
+  }
+  .nxt {
+    float: right;
+  }
+  .prev {
+    float: left;
+  }
+}
+
+
 
 @media (max-width: $on-palm) {
   html {
@@ -148,12 +198,20 @@ p#intro-blurb {
   nav#blog-bar {
     width: 100vw;
     li {
-      padding: 10px 5px;
+      padding: 0!important;
       margin: 2px;
       a {
         padding: 10px 5px;
         margin: 2px;
       }
     }
+  }
+  h1#blog-header {
+    padding: 10px;
+  }
+}
+@media (max-width: 2400px) and (min-width: 800px) {
+  div.container {
+    max-width: 1200px;
   }
 }

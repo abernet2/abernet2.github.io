@@ -22,6 +22,7 @@
   <link href='https://fonts.googleapis.com/css?family=Arbutus+Slab' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
   <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert"></script>
+  <script src="/js/jquery-2.2.3.min.js"></script>
   <!-- <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://abernet2.github.io/projects/">
   <link rel="alternate" type="application/rss+xml" title="Jack Abernethy's DBC Blog" href="http://abernet2.github.io/feed.xml"> -->
@@ -58,14 +59,55 @@
 			
 				<h2>boggle</h2>
 				<div id='boggle'>
-					<div class='boggle-container'></div>
+					<style type='text/css'>
+    .highlighted {
+        background-color: red;
+    }
+</style>
+<div id="boggle-container">
+    <table id='boggle-board'>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <form action="" id='word-form'>
+      <input type="text">
+      <input type="submit">
+    </form>
+    <button id="solutions">Solutions</button>
+    <ul id="guesses"></ul>
+    <ul id="answers"></ul>
+</div>
 <script
-    data-main="https://rawgit.com/abernet2/boggle-solver/master/web/scripts/app" 
+    data-main="https://rawgit.com/abernet2/boggle-solver/master/web/scripts/app.js" 
     src="https://rawgit.com/abernet2/boggle-solver/master/web/scripts/require.js">
 </script>
 
 				</div>
-				<p>Eventually will be a fully functional game of boggle. Right now, it simply highlights a word if it exists in the board.</p>
+				<p>Now implemented without React, the highlighting time is noticeably slower due to DOM accesses. Does not handle Q exception, but can check whether a submission is correct or it can retrieve all answers.</p>
 			
 		</div>
 </main>
