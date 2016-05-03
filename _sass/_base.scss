@@ -13,6 +13,16 @@ dl, dd, ol, ul, figure {
 /**
  * Basic styling
  */
+* {
+    box-sizing: border-box;
+    -webkit-transition: all .15s; /* Safari */
+    transition: all .15s;
+}
+
+html {
+    background-color: $grey-color-light;
+}
+
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
@@ -23,6 +33,16 @@ body {
     -o-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
+    /*My Additions*/
+    min-width: $min-content-width;
+    max-width: $max-content-width;
+    padding: 0!important;
+    box-sizing: initial;
+    margin: 0 auto;
+    box-shadow: $spacing-unit/2 0 rgba(0, 0, 0, 0.075),
+                1px 0 rgba(0, 0, 0, 0.1),
+                -$spacing-unit/2 0 rgba(0, 0, 0, 0.075),
+                -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 
@@ -82,7 +102,8 @@ li {
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: $base-font-weight;
+    font-family: $serif-font-family;
+    font-weight: 700;
 }
 
 
@@ -91,16 +112,19 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
+    /*color: $brand-color;*/
+    color: $text-color;
     text-decoration: none;
 
     &:visited {
-        color: darken($brand-color, 15%);
+        color: darken($text-color, 15%);
     }
 
     &:hover {
-        color: $text-color;
-        text-decoration: underline;
+        text-decoration: none;
+        color: red;
+        padding-bottom: 5px;
+        border-bottom: 3px solid $text-color;
     }
 }
 
@@ -156,8 +180,7 @@ pre {
  * Wrapper
  */
 .wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width: $max-content-width;
     margin-right: auto;
     margin-left: auto;
     padding-right: $spacing-unit;
@@ -165,10 +188,14 @@ pre {
     @extend %clearfix;
 
     @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        max-width: -webkit-calc(#{$max-content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$max-content-width} - (#{$spacing-unit}));
         padding-right: $spacing-unit / 2;
         padding-left: $spacing-unit / 2;
+    }
+
+    @include media-query($on-desktop) {
+
     }
 }
 
