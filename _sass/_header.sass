@@ -2,6 +2,8 @@ header
   height: $spacing-unit * 20
   background-color: $main-color
   position: relative
+  @include media-query($on-palm)
+    height: 100vh
 
   .tagline
     margin: 0 8%
@@ -9,6 +11,8 @@ header
       position: absolute
       bottom: 0
       font-size: 4em
+      @include media-query($on-palm)
+        font-size: 10vw
 
 .arrow-bar
   height: 0
