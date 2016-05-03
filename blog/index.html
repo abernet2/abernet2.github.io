@@ -6,16 +6,24 @@ title: Jack's Blog
 <main>
 	<div class="container">
 		<ul id="blog-landing">
+
 		  {% for post in site.posts %}
-		    <li class="preview"
-		    {% if post == site.posts.first %} id = "recent" {% endif %}
-		    >
+
+		    <li class="preview">
 		      <a href="{{ post.url }}"></a>
-		      <img src="{{ post.imageurl }}" alt="{{post.imagealt}}">
-		      <h3>{{ post.title }}</h3>
-			  <p>{{ post.excerpt | truncatewords: 30 }}</p>
+		      
+		      <div class='blog-tag-image'>
+			      <img src="{{ post.imageurl }}" alt="{{post.imagealt}}">
+		      </div>
+
+		      <div class='blog-tag-text'>
+			      <h3>{{ post.title }}</h3>
+		      </div>
+			  <!-- <p>{{ post.excerpt | truncatewords: 30 }}</p> -->
 		    </li>
+
 		  {% endfor %}
+
 		</ul>
 
 		<!-- The more part should come with JS + JQuery -->

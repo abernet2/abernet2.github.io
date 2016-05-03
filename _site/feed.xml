@@ -6,8 +6,8 @@
 </description>
     <link>http://abernet2.github.io/</link>
     <atom:link href="http://abernet2.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Apr 2016 16:49:04 -0500</pubDate>
-    <lastBuildDate>Mon, 04 Apr 2016 16:49:04 -0500</lastBuildDate>
+    <pubDate>Mon, 02 May 2016 20:48:20 -0500</pubDate>
+    <lastBuildDate>Mon, 02 May 2016 20:48:20 -0500</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -373,10 +373,18 @@ end
 	&lt;div&gt;
 		&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;
         &lt;ul class=&quot;social-media&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;
+    &lt;i class=&#39;fa fa-github fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;
+    &lt;i class=&#39;fa fa-medium fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;
+    &lt;i class=&#39;fa fa-linkedin fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;
+    &lt;i class=&#39;fa fa-twitter fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
     &lt;/div&gt;
  &lt;/div&gt;
@@ -394,52 +402,26 @@ end
     
       <item>
         <title>Enumerable Methods</title>
-        <description>&lt;main&gt;
-	&lt;div class=&quot;container&quot;&gt;
-		&lt;h4 id=&quot;date&quot;&gt;11.20.2015&lt;/h4&gt;	
-		&lt;div id=&quot;blog-text&quot;&gt;
-			&lt;article class=&quot;post&quot;&gt;
-				&lt;h2&gt;Enumerable#map&lt;/h2&gt;
-				&lt;p&gt;One of the most basic ways to use an enumerable is to simlpy apply an operation to each element. Say you had an array of ints and you wanted to double all of them, #Map would be a great function to help with that!&lt;/p&gt;
-				&lt;p&gt;Map works by applying a block of code to each element that is enumerated over and then putting it in an array to return. It&#39;s important to know that no matter what you call Map on, it always returns an array. This is what makes map great! If you were to do the same operation with each, you would have to declare a new array and push every operated element in.&lt;/p&gt;
-				&lt;p&gt;An alternative way to use map is to pass in the symbol for a method name. If you&#39;re not familiar, all the names of your methods have a symbol associated with them. For instance:&lt;pre class=&quot;prettyprint lang-rb&quot;&gt;def sum&lt;/pre&gt; would be &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;:sum&lt;/pre&gt;&lt;/p&gt;
-				&lt;h2&gt;Enumerable#group_by&lt;/h2&gt;
-				&lt;p&gt;Where the #map function always returns an array, #group_by always returns a hash. To use #group_by you need to understand that it will turn each element of your enumerable into a VALUE. That means that the block of code that you pass into #group_by calculates the KEY that each element will be hashed to.&lt;/p&gt;
-				&lt;p&gt;This confused me at first, but then I thought about it and it made sense. If you had an array of values and you wanted to hash each of them as a key to a new value, basically anything you could calculate in an enumerator would be redundant. The example given in our book is &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;colors.group_by {|color| color.size}&lt;/pre&gt;
-				If you wanted to do the inverse (map color =&gt; size), I would ask why do you need to hash? All you need to do to access the color&#39;s size is to literally code color.size.&lt;/p&gt;
+        <description>&lt;h2&gt;Enumerable#map&lt;/h2&gt;
+&lt;p&gt;One of the most basic ways to use an enumerable is to simlpy apply an operation to each element. Say you had an array of ints and you wanted to double all of them, #Map would be a great function to help with that!&lt;/p&gt;
+&lt;p&gt;Map works by applying a block of code to each element that is enumerated over and then putting it in an array to return. It&#39;s important to know that no matter what you call Map on, it always returns an array. This is what makes map great! If you were to do the same operation with each, you would have to declare a new array and push every operated element in.&lt;/p&gt;
+&lt;p&gt;An alternative way to use map is to pass in the symbol for a method name. If you&#39;re not familiar, all the names of your methods have a symbol associated with them. For instance:&lt;pre class=&quot;prettyprint lang-rb&quot;&gt;def sum&lt;/pre&gt; would be &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;:sum&lt;/pre&gt;&lt;/p&gt;
+&lt;h2&gt;Enumerable#group_by&lt;/h2&gt;
+&lt;p&gt;Where the #map function always returns an array, #group_by always returns a hash. To use #group_by you need to understand that it will turn each element of your enumerable into a VALUE. That means that the block of code that you pass into #group_by calculates the KEY that each element will be hashed to.&lt;/p&gt;
+&lt;p&gt;This confused me at first, but then I thought about it and it made sense. If you had an array of values and you wanted to hash each of them as a key to a new value, basically anything you could calculate in an enumerator would be redundant. The example given in our book is &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;colors.group_by {|color| color.size}&lt;/pre&gt;
+If you wanted to do the inverse (map color =&gt; size), I would ask why do you need to hash? All you need to do to access the color&#39;s size is to literally code color.size.&lt;/p&gt;
 
-				&lt;h2&gt;Enumerable#cycle&lt;/h2&gt;
-				&lt;p&gt;The #cycle function works basically the same way as .times, just for enumerables. Basically, if you call the cycle function it will &quot;cycle&quot; through your elements as many times as you tell it to.&lt;/p&gt;
-				&lt;h2&gt;Enumerable#zip&lt;/h2&gt;
-				&lt;p&gt;For my last piece, I chose a function I&#39;d never heard of: zip. Zip is a little bit tricky, but basically it merges its arguments into arrays with each other. Some of the behavior gets weird unless you understand how it works.&lt;/p&gt;
-				&lt;figure class=&quot;block&quot;&gt;
-					&lt;img src=&quot;/imgs/zip.PNG&quot; alt=&quot;demo from ruby docs&quot;&gt;
-				&lt;/figure&gt;
-				&lt;p&gt;As seen above, if you zip two arrays together you get an array of arrays paired by index. So &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;c[0] = [a[0], b[0]]&lt;/pre&gt; Notice this is the transpose of creating a 2d array by saying &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;c = [a,b]&lt;/pre&gt;&lt;/p&gt;
-				&lt;p&gt;But what if your arrays are different sizes? You have to remember that since it is an enumerable, it iterates over each element of the object that CALLS it. So you will never get a shorter or longer array as a result. It will fill in empty spaces with nil or disregard extra values, so use wisely!&lt;/p&gt;
-				&lt;h2&gt;In Conclusion...&lt;/h2&gt;
-				&lt;p&gt;Enumerables are at the heart of what separates Ruby from other languages and they are really a big part of what makes Ruby, Ruby. There&#39;s a lot more methods out there, but I hope these are a little bit clearer now!&lt;/p&gt;
-			&lt;/article&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/main&gt;
-&lt;aside id=&quot;about-me&quot;&gt;
- &lt;div class=&quot;container&quot;&gt;
-    &lt;figure id=&quot;me&quot;&gt;
-      &lt;img src=&quot;/imgs/me.png&quot; alt=&quot;me&quot;&gt;
-      &lt;h4&gt;Jack Abernethy&lt;/h4&gt;
-    &lt;/figure&gt;
-	&lt;div&gt;
-		&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;
-        &lt;ul class=&quot;social-media&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-    &lt;/div&gt;
- &lt;/div&gt;
-&lt;/aside&gt;
+&lt;h2&gt;Enumerable#cycle&lt;/h2&gt;
+&lt;p&gt;The #cycle function works basically the same way as .times, just for enumerables. Basically, if you call the cycle function it will &quot;cycle&quot; through your elements as many times as you tell it to.&lt;/p&gt;
+&lt;h2&gt;Enumerable#zip&lt;/h2&gt;
+&lt;p&gt;For my last piece, I chose a function I&#39;d never heard of: zip. Zip is a little bit tricky, but basically it merges its arguments into arrays with each other. Some of the behavior gets weird unless you understand how it works.&lt;/p&gt;
+&lt;figure class=&quot;block&quot;&gt;
+	&lt;img src=&quot;/imgs/zip.PNG&quot; alt=&quot;demo from ruby docs&quot;&gt;
+&lt;/figure&gt;
+&lt;p&gt;As seen above, if you zip two arrays together you get an array of arrays paired by index. So &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;c[0] = [a[0], b[0]]&lt;/pre&gt; Notice this is the transpose of creating a 2d array by saying &lt;pre class=&quot;prettyprint lang-rb&quot;&gt;c = [a,b]&lt;/pre&gt;&lt;/p&gt;
+&lt;p&gt;But what if your arrays are different sizes? You have to remember that since it is an enumerable, it iterates over each element of the object that CALLS it. So you will never get a shorter or longer array as a result. It will fill in empty spaces with nil or disregard extra values, so use wisely!&lt;/p&gt;
+&lt;h2&gt;In Conclusion...&lt;/h2&gt;
+&lt;p&gt;Enumerables are at the heart of what separates Ruby from other languages and they are really a big part of what makes Ruby, Ruby. There&#39;s a lot more methods out there, but I hope these are a little bit clearer now!&lt;/p&gt;
 	
 
 </description>
@@ -489,10 +471,18 @@ end
 	&lt;div&gt;
 		&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;
         &lt;ul class=&quot;social-media&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;
+    &lt;i class=&#39;fa fa-github fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;
+    &lt;i class=&#39;fa fa-medium fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;
+    &lt;i class=&#39;fa fa-linkedin fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;
+    &lt;i class=&#39;fa fa-twitter fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
     &lt;/div&gt;
  &lt;/div&gt;
@@ -566,10 +556,18 @@ end
 	&lt;div&gt;
 		&lt;p style=&quot;color:#e0e7e2&quot;&gt;My name is Jack and I&#39;m a fledgling Web Developer currently enrolled at Dev Bootcamp!&lt;/p&gt;
         &lt;ul class=&quot;social-media&quot;&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;&lt;img class=&quot;twitter&quot; src=&quot;/imgs/Twitter_white_logo.svg&quot; onmouseover=&quot;this.src=&#39;/imgs/Twitter_blue_logo.svg&#39;&quot; onmouseout=&quot;this.src=&#39;/imgs/Twitter_white_logo.svg&#39;&quot; alt=&quot;twitter&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;&lt;img src=&quot;/imgs/GitHub-Mark-Light.svg&quot; onmouseover=&quot;src=&#39;/imgs/GitHub-Mark.svg&#39;&quot; onmouseout=&quot;src=&#39;/imgs/GitHub-Mark-Light.svg&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;&lt;img src=&quot;/imgs/medium-light.png&quot; onmouseover=&quot;src=&#39;/imgs/medium-m-color.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/medium-light.png&#39;&quot; alt=&quot;Medium&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;&lt;img src=&quot;/imgs/In-White-34px-TM.png&quot; onmouseover=&quot;src=&#39;/imgs/In-2C-34px-R.png&#39;&quot; onmouseout=&quot;src=&#39;/imgs/In-White-34px-TM.png&#39;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/abernet2&quot;&gt;
+    &lt;i class=&#39;fa fa-github fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://medium.com/@jackabernethy&quot;&gt;
+    &lt;i class=&#39;fa fa-medium fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/in/jack-abernethy-ab257b9b&quot;&gt;
+    &lt;i class=&#39;fa fa-linkedin fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.com/jabber_26&quot;&gt;
+    &lt;i class=&#39;fa fa-twitter fa-2x&#39;&gt;&lt;/i&gt;
+  &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
     &lt;/div&gt;
  &lt;/div&gt;

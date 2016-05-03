@@ -1,0 +1,76 @@
+/** Nav Panel/Bars */
+
+nav#bar {
+  display: table-header-group;
+  width: 100%;
+  height: 3em;
+  ul {
+    margin: auto;
+    display: block;
+    width: 100%;
+  }
+  li {
+    display: inline-block;
+    a {
+      color: $light-grey;
+      padding: 5px 10px;
+      text-transform: uppercase;
+      font-size: .8em;
+      letter-spacing: 2px;
+      border: 1px solid rgba(255,255,255,.3);
+      &:hover {
+        border: 1px solid yellow;
+        background: rgba(0,0,0,.3);
+      }
+    }
+  }
+}
+
+header {
+  background-image: url("../imgs/mountain-valley.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 550px;
+  width: 100%;
+  div.container {
+    display: table;
+    h1 {
+      letter-spacing: .1em;
+      vertical-align: middle;
+      display: table-cell;
+    }
+    .social-media {
+      display: table-footer-group;
+      position: relative;
+      bottom: 0;
+    }
+  }
+}
+
+/* Social Media Specific */
+.social-media {
+  li {
+    display: inline;
+    margin: 0 5px 0 5px;
+    a {
+      padding-bottom: 4px;
+    }
+    i {
+      color: white;
+      height: $spacing-unit;
+      padding: 3px;
+    }
+    .fa-twitter:hover {
+      color: #1da1f2;
+    }
+    .fa-linkedin:hover {
+      color: #1B86BC;
+    }
+    .fa-medium:hover {
+      color: rgb(2, 184, 117);
+    }
+    .fa-github:hover {
+      color: #333;
+    }
+  }
+}

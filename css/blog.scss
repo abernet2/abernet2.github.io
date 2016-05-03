@@ -1,0 +1,217 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+@import "default", "header", "about-me";
+
+main {
+  padding: 0;
+}
+
+nav#blog-bar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: auto;dex: 2;
+  padding: 10px;
+
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+
+  &.scrolled {
+    background-color: $dark-blue;
+    padding: 0;
+  }
+  a {
+    color: $light-green;
+  }
+
+  ul {
+    float: right;
+    padding: 0 1.5em;
+    margin: 0;
+    li {
+      display: inline;
+      padding: 1em;
+    }
+  }
+}
+
+h1#blog-header {
+  background-image: url("../imgs/mountain-valley.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 2em;
+}
+
+/** 
+Blog Index
+
+  Main Body of Blog-Index
+ */
+
+.preview {
+  width: 250px;
+  display: inline-block;
+  position: relative;
+  margin: 15px;
+  box-sizing: border-box;
+  height: 300px;
+  overflow: hidden;
+  a:hover {
+    border: 0;
+  }
+  &:hover{
+    box-shadow: 0px 0px 20px black;
+    transform: scale(1.1);
+  }
+  div.blog-tag-image {
+    width: 100%;
+    height: calc(100% - 4.5em);
+    overflow: hidden;
+    img {
+      width: 100%;
+      margin-right: 15px;
+    }
+  }
+  .blog-tag-text {
+    text-align: center;
+    padding: 8px;
+  }
+  h3 {
+    line-height: 1.2em;
+    display: inline;
+    margin-left: 5px;
+    position: relative;
+    font-size: 1.5em;
+  }
+  p {
+    line-height: 1.4em;
+  }
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    &::hover {
+      border: none;
+    }
+  }
+}
+
+
+
+/**
+ *  Section for Blog Post CSS
+ */
+
+#blog-header {
+  max-width: initial;
+}
+
+article.post ul {
+  margin: 0;
+  li {
+    padding-left: 1em;
+    margin: 5px;
+  }
+}
+
+div#blog-text {
+  padding: 1em;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: $light-grey;
+  img {
+    margin-bottom: 1em;
+    width: 100%;
+  }
+  p {
+    margin-bottom: 1.5em;
+    font-size: 20px;
+  }
+  h5 {
+    font-size: 22px;
+    margin-bottom: 1em;
+  }
+}
+
+figure p.descriptor {
+  font-size: 14px !important;
+}
+
+h4#date {
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-bottom: .5em;
+}
+
+pre {
+  padding: 1em 1.5em;
+  margin-bottom: 1.5em;
+  border-radius: 25px;
+}
+
+p#intro-blurb {
+  font-size: 1.375em !important;
+  line-height: 1.5 !important;
+}
+
+#blog-footer {
+  padding: 2em 7em;
+  a {
+    color: $light-green;
+  }
+  .nxt {
+    float: right;
+  }
+  .prev {
+    float: left;
+  }
+}
+
+
+
+@media (max-width: $on-palm) {
+  html {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-wrap: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+  }
+  .container {
+    max-width: 100%;
+  }
+  nav#blog-bar {
+    width: 100vw;
+    li {
+      padding: 0!important;
+      margin: 2px;
+      a {
+        padding: 10px 5px;
+        margin: 2px;
+      }
+    }
+  }
+  h1#blog-header {
+    padding: 10px;
+  }
+}
+@media (max-width: 2400px) and (min-width: 800px) {
+  div.container {
+    max-width: 1200px;
+  }
+}

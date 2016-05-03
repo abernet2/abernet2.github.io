@@ -455,3 +455,21 @@ pre {
     color: #008080; }
   .highlight .il {
     color: #099; }
+
+/* About Me */
+#about-me {
+  padding: 2em 0; }
+  #about-me div div {
+    max-width: 250px;
+    display: inline-block; }
+    #about-me div div p {
+      font-size: 1.1em; }
+  #about-me figure#me {
+    display: inline-block;
+    padding: 20px 50px; }
+    #about-me figure#me img {
+      width: 125px;
+      display: inline-block;
+      padding: 0 10px;
+      position: relative;
+      border-radius: 100%; }
