@@ -43,7 +43,6 @@ header {
       display: table-footer-group;
       position: relative;
       bottom: 0;
-      height: 3em;
     }
   }
 }
@@ -53,8 +52,25 @@ header {
   li {
     display: inline;
     margin: 0 5px 0 5px;
-    a img {
+    a {
+      padding-bottom: 4px;
+    }
+    i {
+      color: white;
       height: $spacing-unit;
+      padding: 3px;
+    }
+    .fa-twitter:hover {
+      color: #1da1f2;
+    }
+    .fa-linkedin:hover {
+      color: #1B86BC;
+    }
+    .fa-medium:hover {
+      color: rgb(2, 184, 117);
+    }
+    .fa-github:hover {
+      color: #333;
     }
   }
 }
