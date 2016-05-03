@@ -15,10 +15,9 @@ header
         font-size: 10vw
 
 .arrow-bar
-  height: 0
-  width: 0
-  margin: 0 auto $spacing-unit auto
   border-right: $spacing-unit solid transparent
   border-left: $spacing-unit solid transparent
   border-top: $spacing-unit solid yellow
-  background: rgba(0,0,0,0)
+  position: absolute
+  left: calc(#{50%} - #{$spacing-unit})
+  z-index: 2
