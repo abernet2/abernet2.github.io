@@ -4,7 +4,6 @@
 @charset "utf-8";
 
 
-
 // Our variables
 /*$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
 $base-font-family: Arial, sans-serif;
@@ -35,6 +34,12 @@ $on-desktop:       1100px;
 
 $main-color: yellow;
 
+.absolute-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -51,4 +56,4 @@ $main-color: yellow;
 
 
 
-@import "base", "nav", "header", "blog-section"
+@import "base", "nav", "header", "index-blog-section"

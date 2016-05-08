@@ -1,4 +1,4 @@
-nav
+nav.top-nav
   width: 100%
   max-width: $max-content-width
   padding: $spacing-unit
@@ -69,6 +69,46 @@ nav
           padding-bottom: $spacing-unit/3 + 3px
 
 
+nav.bar-nav
+  background-color: $main-color
+  height: $spacing-unit
+  text-align: center
+  text-transform: uppercase
+
+  &.fixed
+    position: fixed
+    top: 0
+    width: 100%
+    background-color: rgba(255, 255, 0, .5)
+  
+  a
+    display: inline-block
+    position: relative
+    margin: 5px
+    &.left-of-arrow
+      left: -$spacing-unit
+    &.right-of-arrow
+      right: -2.5 * $spacing-unit
+
+  &.condensed
+    height: 0
+    a
+      display: none
+
+  .arrow-bar
+    display: inline-block
+    position: static
+    width: 0
+    height: 0
+    &.extended
+      position: absolute
+      border-bottom: 30px solid #828282
+      border-top: 0
+      z-index: 2
+    &:hover
+      border-bottom-color: red
+      border-top-color: red
+      cursor: pointer
 
    
  

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include header.html %}
+
+    <main>
+      <nav class='bar-nav condensed'>
+        <a href="" class='left-of-arrow'>Home</a>
+        <a href="" class='left-of-arrow'>Projects</a>
+        <div class='arrow-bar'> </div>
+        <a href="" class='right-of-arrow'>Resources</a>
+        <a href="" class='right-of-arrow'>Contact</a>
+      </nav>
+      <section id='blog-post'>
+        {{ content }}
+      </section>
+    </main>
+
+  </body>
+
+</html>
