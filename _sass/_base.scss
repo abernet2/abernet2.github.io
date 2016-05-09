@@ -123,18 +123,19 @@ h1, h2, h3, h4, h5, h6 {
  */
 a {
     /*color: $brand-color;*/
-    color: $text-color;
+    color: $grey-color;
+    font-weight: bold;
     text-decoration: none;
 
     &:visited {
-        color: darken($text-color, 15%);
+        /*color: darken($grey-color, 15%);*/
     }
 
     &:hover {
-        text-decoration: none;
         color: red;
+        /*text-decoration: none;
         padding-bottom: 5px;
-        border-bottom: 3px solid $text-color;
+        border-bottom: 3px solid $text-color;*/
     }
 }
 

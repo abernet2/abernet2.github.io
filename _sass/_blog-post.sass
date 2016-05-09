@@ -5,17 +5,27 @@ html
 header
   position: fixed
   top: 0
+  width: 100%
 
 body
   padding-top: 600px
 
 main
   position: relative
-  background-color: white
+  background-color: $background-color
 
 #blog-post
   padding: 3 * $spacing-unit 5 * $spacing-unit
   font-size: 20px
+  min-height: 20 * $spacing-unit
+  background-color: $background-color
+  
+  a
+    font-family: $serif-font-family
+    border-bottom: 3px solid rgba(255,0,0,.5)
+    &:hover
+      color: $grey-color
+      border-bottom-color: yellow
 
 .blog-header
   background-color: red
