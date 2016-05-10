@@ -17,12 +17,6 @@ function log() {
         window.dispatchEvent(event);
     }
 
-    function toggleBar(evt) {
-        var $bar = $(evt.target),
-            $nav = $bar.parent();
-        $bar.toggleClass('extended');
-        $nav.toggleClass('condensed');
-    }
 
     $(document).ready(function(){
         var $topnav = $('nav.top-nav'),
@@ -30,6 +24,13 @@ function log() {
             $header = $('header'),
             scrollLine = $header.height(),
             scrolling = false;
+
+        function toggleBar(evt) {
+            var $arrow = $('.arrow-bar'),
+                $nav = $arrow.parent();
+            $arrow.toggleClass('extended');
+            $nav.toggleClass('condensed');
+        }
 
         function customEvents(){
             var y = getY();
@@ -46,7 +47,7 @@ function log() {
             $navbar.toggleClass('fixed');
         }
 
-        $($navbar).on('click', toggleBar);
+        $($navbar).on('click', '.arrow-bar', toggleBar);
         $(window).on('scroll', customEvents);
         $(window).on('scrollPastHeader', console.log.bind(console));
         $(window).on('scrollUpToHeader', console.log.bind(console));
