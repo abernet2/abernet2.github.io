@@ -1,40 +1,19 @@
----
-layout: default
-title: Jack's DBC Website
----
-
-<main>
-  <div class="container">
-
-    <section class="rec blog" class="thumbnail">
-  		<h2>Recent Blog Posts</h2>
-
-    	{% for post in site.posts limit: 3 %}
-      <figure class="img">
-        <img src={{post.imageurl}} alt={{post.imagealt}}>
-        <figcaption>
-          <p>{{ post.title }}</p>
-        </figcaption>
-    	 <a href={{ post.url }}></a>
-      </figure>
-  	  {% endfor %}
-
-    </section>
-
-    <section class="rec projects">
-      <h2>Recent Projects</h2>
-
-      {% for project in site.projects limit: 3 %}
-        <figure class="img">
-          <img src="{{project.imageurl}}" alt="{{project.imagealt}}">
-          <figcaption>
-            <p>{{project.title}}</p>
-          </figcaption>
-          <a href="{{project.repo}}"></a>
-        </figure>
-      {% endfor %}
-    </section>
-
-</main>
-
-{% include about-me.html %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Links</title>
+<style>
+  body { margin: 0; padding: 12vh 24px; background: #fff; color: #111; font: 18px/1.6 system-ui, sans-serif; }
+  ul { list-style: none; margin: 0 auto; padding: 0; max-width: 480px; }
+  li + li { margin-top: 8px; }
+  a { color: #0645ad; }
+</style>
+</head>
+<body>
+  <ul>
+    <li><a href="/wins-pool/">NFL Wins Pool</a></li>
+  </ul>
+</body>
+</html>
